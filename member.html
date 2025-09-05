@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPE - IIT Guwahati Student Chapter</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      color: #333;
+    }
+    .navbar { 
+      background: #003366; 
+      padding: 15px 0;
+    }
+    .navbar a { 
+      color: #fff !important; 
+      font-weight: 500; 
+      margin: 0 10px;
+    }
+    .navbar a:hover {
+      color: #ffc107 !important;
+    }
+    .hero { 
+      background: url('images/Khursaniyah-Plant_2.jpg') no-repeat center center/cover; 
+      color: white; 
+      text-align: center; 
+      padding: 120px 20px; 
+      position: relative; 
+    }
+    .hero::before { 
+      content: ""; 
+      position: absolute; 
+      top: 0; 
+      left: 0; 
+      width: 100%; 
+      height: 100%; 
+      background: rgba(0, 51, 102, 0.6); 
+    }
+    .hero-content { 
+      position: relative; 
+      z-index: 2; 
+    }
+    .hero h1 { 
+      font-size: 3rem; 
+      font-weight: bold; 
+      margin-bottom: 20px;
+    }
+    .hero p { 
+      font-size: 1.25rem; 
+      margin-bottom: 30px; 
+    }
+    .section-title { 
+      color: #003366; 
+      font-weight: bold; 
+      margin-bottom: 30px; 
+      text-align: center;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #003366;
+    }
+    .icon-box { 
+      text-align: center; 
+      padding: 30px 20px; 
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      height: 100%;
+    }
+    .icon-box:hover {
+      transform: translateY(-5px);
+    }
+    .icon-box i { 
+      font-size: 40px; 
+      color: #003366; 
+      margin-bottom: 15px; 
+    }
+    .icon-box h5 {
+      color: #003366;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    .members-table {
+      margin: 40px 0;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .members-table thead {
+      background: #0B64A0;
+      color: white;
+    }
+    .members-table th {
+      text-align: center;
+      padding: 12px 15px;
+      font-weight: 600;
+    }
+    .members-table td {
+      padding: 10px 15px;
+      vertical-align: middle;
+    }
+    .members-table tr:nth-child(even) {
+      background-color: #F8FBFC;
+    }
+    .spotlight { 
+      background: #f5f7fa; 
+      padding: 60px 20px; 
+    }
+    footer { 
+      background: #003366; 
+      color: white; 
+      padding: 40px 0 20px; 
+    }
+    footer h3 {
+      color: #ffc107;
+      margin-bottom: 20px;
+      font-size: 1.4rem;
+    }
+    footer ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    footer ul li {
+      margin-bottom: 10px;
+    }
+    footer a { 
+      color: #fff; 
+      text-decoration: none; 
+    }
+    footer a:hover {
+      color: #ffc107;
+    }
+    .footer-social {
+      font-size: 24px;
+    }
+    .footer-social a {
+      margin-right: 15px;
+    }
+    .copyright {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.2);
+    }
+    .btn-warning {
+      background-color: #ffc107;
+      border-color: #ffc107;
+      color: #003366;
+      font-weight: 600;
+    }
+    .btn-primary {
+      background-color: #003366;
+      border-color: #003366;
+      font-weight: 600;
+    }
+    .btn-light {
+      background-color: #f8f9fa;
+      border-color: #f8f9fa;
+      color: #003366;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="images/logo.png" alt="SPE Logo" height="80">
+      <span class="ms-2">IIT Guwahati Student Chapter</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="join.html">Join SPE Today!</a></li>
+        <li class="nav-item"><a class="nav-link" href="event.html">Events</a></li>
+        <li class="nav-item"><a class="nav-link active" href="member.html">Members</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero d-flex align-items-center">
+  <div class="container hero-content">
+    <h1>Indian Institute of Technology Guwahati</h1>
+    <h2>SPE Student Chapter #6246</h2>
+    <p>Join us to advance knowledge in petroleum engineering and connect with industry professionals</p>
+    <a href="join.html" class="btn btn-warning btn-lg m-2">Join SPE Today</a>
+    <a href="about.html" class="btn btn-light btn-lg m-2">Learn More</a>
+  </div>
+</section>
+
+<!-- Mission Section -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="section-title">Mission of IITG Student Chapter</h2>
+    <div class="row">
+      <div class="col-md-4 icon-box">
+        <i class="fas fa-chalkboard-teacher"></i>
+        <h5>Workshops</h5>
+        <p>To carry out workshops so as to enlighten ourselves with knowledge at a wider perspective</p>
+      </div>
+      <div class="col-md-4 icon-box">
+        <i class="fas fa-microchip"></i>
+        <h5>Technologies</h5>
+        <p>Be up to date with the current technologies being used petroleum industries</p>
+      </div>
+      <div class="col-md-4 icon-box">
+        <i class="fas fa-users"></i>
+        <h5>Active Participation</h5>
+        <p>Make ourselves more competent and take active participation in related areas</p>
+      </div>
+      <div class="col-md-4 icon-box">
+        <i class="fas fa-book"></i>
+        <h5>Courses</h5>
+        <p>Increase the courses related to petroleum engineering in IITG</p>
+      </div>
+      <div class="col-md-4 icon-box">
+        <i class="fas fa-conference"></i>
+        <h5>Symposiums</h5>
+        <p>Carry out symposiums to share knowledge and research findings</p>
+      </div>
+      <div class="col-md-4 icon-box">
+        <i class="fas fa-bus"></i>
+        <h5>Field Trips</h5>
+        <p>Organize field trips to refineries and exploration sites</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Members Section -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="section-title">Our Members</h2>
+    <div class="table-responsive members-table">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Master Customer ID</th>
+            <th>Name</th>
+            <th>Degree Name</th>
+            <th>Field of Study</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>5442342</td><td>SHRIKANT KASHYAP</td><td>PhD</td><td>Chemical Engineering</td></tr>
+          <tr><td>5442335</td><td>SHANMUGAM V</td><td>PhD</td><td>Chemical Engineering</td></tr>
+          <tr><td>5444193</td><td>VENKATESH</td><td>PhD</td><td>Chemical Engineering</td></tr>
+          <tr><td>5444490</td><td>VISHAL DHAR</td><td>PhD</td><td>Chemical Engineering</td></tr>
+          <tr><td>5484179</td><td>VINEET R JAGGA</td><td>Bachelor of Technology</td><td>Chemical Engineering</td></tr>
+          <tr><td>5484177</td><td>SUBHAMOY HALDER</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
+          <tr><td>5483960</td><td>NIKHIL RAHUL DHONGDE</td><td>PhD</td><td>Chemical Engineering</td></tr>
+          <tr><td>5484227</td><td>RAHUL BASNAL</td><td>Bachelor of Technology</td><td>Chemical Engineering</td></tr>
+          <tr><td>5485288</td><td>VIKRAM SAHA</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
+          <tr><td>5485704</td><td>LAXMI PRASAD RAO PALA</td><td>PhD</td><td>Chemical Engineering</td></tr>
+          <tr><td>5485705</td><td>HEMANT KUMAR</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
+          <tr><td>5485715</td><td>SHANKU PRATIM BORAH</td><td>PhD</td><td>Chemical Engineering</td></tr>
+          <tr><td>5485723</td><td>GNANA SANGEETHA R</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
+          <tr><td>5444068</td><td>RUPAK BHOWMIK</td><td>PhD</td><td>Chemical Engineering</td></tr>
+          <tr><td>5485716</td><td>SANJEEV PATEL</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
+          <tr><td>5485802</td><td>ADARSH GOSWAMI</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
+          <tr><td>5485900</td><td>SONU KUMAR</td><td>Master of Engineering</td><td>Chemical Engineering</td></tr>
+          <tr><td>5485905</td><td>SHUBHAM GUPTA</td><td>PhD</td><td>Chemical Engineering</td></tr>
+          <tr><td>5485901</td><td>VIVEK SHARMA</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
+          <tr><td>5485895</td><td>MITAN DAS</td><td>Master of Technology</td><td>Civil Engineering</td></tr>
+          <tr><td>5444203</td><td>DINESH KUMAR GAUTAM</td><td>PhD</td><td>Chemical Engineering</td></tr>
+          <tr><td>5442623</td><td>STUTI DUBEY</td><td>PhD</td><td>Chemical Engineering</td></tr>
+          <tr><td>5485166</td><td>KIRTI VARDHAN</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
+          <tr><td>5484622</td><td>DHRITI LEKHA DEKA</td><td>PhD</td><td>Civil Engineering</td></tr>
+          <tr><td>5444474</td><td>PATTA PRAVIN SAI KUMAR</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
+          <tr><td>5109535</td><td>BALAKUMARA VIGNESH M</td><td>PhD</td><td>Chemical Engineering</td></tr>
+          <tr><td>5485960</td><td>ABHISHEK DIXIT</td><td>PhD</td><td>Civil Engineering</td></tr>
+          <tr><td>5485964</td><td>SUSHI KALI A KUHO</td><td>Master of Technology</td><td>Civil Engineering</td></tr>
+          <tr><td>5485991</td><td>NADIM PARVEJ</td><td>PhD</td><td>Civil Engineering</td></tr>
+          <tr><td>5476874</td><td>SHIV KUMAR MAURYA</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
+          <tr><td>5486073</td><td>SAKET KUCHIBHOTALA</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
+          <tr><td>5484123</td><td>PRITOM HAZARIKA</td><td>PhD</td><td>Civil Engineering</td></tr>
+          <tr><td>5486126</td><td>SACHIN KURIACHAN E</td><td>PhD</td><td>Chemical Engineering</td></tr>
+          <tr><td>5486128</td><td>ADITYA SAWANT</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
+          <tr><td>5486153</td><td>ADNAN AHMED</td><td>PhD</td><td>Civil Engineering</td></tr>
+          <tr><td>5486461</td><td>IMRAN HUSSAIN</td><td>PhD</td><td>Chemical Engineering</td></tr>
+          <tr><td>5484221</td><td>MUKESH BHARTI</td><td>PhD</td><td>Chemical Engineering</td></tr>
+          <tr><td>544496</td><td>VIKAS KUMAR SHARMA</td><td>PhD</td><td>Chemical Engineering</td></tr>
+          <tr><td>5503699</td><td>ARIHANT JAIN</td><td>Bachelor of Technology</td><td>Chemical Engineering</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-5 text-center" style="background-color: #003366; color: white;">
+  <div class="container">
+    <h2 class="mb-4">Become Part of Our Community</h2>
+    <p class="lead mb-4">Join the SPE IIT Guwahati Student Chapter to expand your knowledge and network in petroleum engineering</p>
+    <a href="join.html" class="btn btn-warning btn-lg">Join SPE Today</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Office Address</h3>
+        <ul>
+          <li>Department of Chemical Engineering</li>
+          <li>Indian Institute of Technology, Guwahati</li>
+          <li>Guwahati-781039</li>
+          <li>India, Assam</li>
+        </ul>
+        <a href="join.html" class="btn btn-outline-warning">Join Us <i class="fas fa-arrow-right ms-2"></i></a>
+      </div>
+      <div class="col-md-6">
+        <h3>Follow Us</h3>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-google-plus"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright text-center">
+      <p>&copy; Department of Chemical Engineering, IIT Guwahati | 2023 <span>Designed by Jayanta & Ariful</span></p>  
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
