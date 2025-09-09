@@ -3,10 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>SPE</title>
-<!-- Favicon -->
+  <title>SPE Event - Seminar by Prof. Akhil Datta-Gupta</title>
+  <!-- Favicon -->
   <link rel="icon" href="logo.ico" type="image/x-icon">
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Fonts -->
@@ -43,44 +42,169 @@
     }
 
     /* Hero Section */
-    .hero {
+    .event-hero {
       position: relative;
-      background: url('images/slide_6.jpg') center/cover no-repeat;
+      background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.8)), url('images/event-bg.jpg') center/cover no-repeat;
       color: #fff;
-      height: 70vh;
-      display: flex;
-      align-items: center;
-      text-align: left;
+      padding: 100px 0;
+      text-align: center;
     }
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.5);
+    
+    /* Event Content */
+    .event-content {
+      padding: 60px 0;
     }
-    .hero .container {
-      position: relative;
-      z-index: 2;
-    }
-    .hero h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 2.5rem;
-    }
-    .hero p {
-      font-size: 1.25rem;
-    }
-
-    /* Section */
     .section-title {
       text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
     }
     .section-title h2 {
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
-      font-size: 2rem;
+      font-size: 2.5rem;
       color: #003366;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 15px;
+    }
+    .section-title h2:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: #f1c40f;
+    }
+    
+    /* Speaker Card */
+    .speaker-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      margin-bottom: 30px;
+      border-top: 5px solid #003366;
+    }
+    .speaker-img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 20px;
+      display: block;
+      border: 5px solid #f8f9fa;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    .speaker-name {
+      font-family: 'Montserrat', sans-serif;
+      color: #003366;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+    .speaker-title {
+      color: #f1c40f;
+      background-color: #003366;
+      display: inline-block;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+      text-align: center;
+      width: 100%;
+    }
+    .speaker-bio {
+      color: #555;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+    .social-links {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .social-links a {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background: #003366;
+      color: #fff;
+      border-radius: 50%;
+      line-height: 40px;
+      text-align: center;
+      margin: 0 5px;
+      transition: all 0.3s ease;
+    }
+    .social-links a:hover {
+      background: #f1c40f;
+      transform: translateY(-3px);
+    }
+    
+    /* Event Details */
+    .event-details {
+      background: #f8f9fa;
+      border-radius: 10px;
+      padding: 30px;
+      margin-bottom: 30px;
+    }
+    .detail-item {
+      margin-bottom: 20px;
+      display: flex;
+      align-items: flex-start;
+    }
+    .detail-icon {
+      color: #003366;
+      font-size: 1.5rem;
+      margin-right: 15px;
+      min-width: 30px;
+      text-align: center;
+    }
+    .detail-content h4 {
+      font-family: 'Montserrat', sans-serif;
+      color: #003366;
+      margin-bottom: 5px;
+      font-size: 1.2rem;
+    }
+    .detail-content p {
+      color: #555;
+      margin-bottom: 0;
+    }
+    
+    /* Abstract Section */
+    .abstract-section {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+      padding: 30px;
+      margin-bottom: 30px;
+    }
+    .abstract-section h3 {
+      font-family: 'Montserrat', sans-serif;
+      color: #003366;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #f1c40f;
+    }
+    
+    /* CTA Button */
+    .cta-button {
+      text-align: center;
+      margin: 30px 0;
+    }
+    .btn-primary {
+      background-color: #003366;
+      border-color: #003366;
+      padding: 12px 30px;
+      font-weight: 600;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+      background-color: #f1c40f;
+      border-color: #f1c40f;
+      color: #003366;
+      transform: translateY(-3px);
     }
 
     /* Footer */
@@ -146,28 +270,109 @@
         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
         <li class="nav-item"><a class="nav-link" href="join.html">Join SPE Today!</a></li>
-        <li class="nav-item"><a class="nav-link" href="event.html">Events</a></li>
-        <li class="nav-item"><a class="nav-link active" href="member.html">Members</a></li>
+        <li class="nav-item"><a class="nav-link active" href="event.html">Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="member.html">Members</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-
 <!-- Hero Section -->
-<section class="hero">
+<section class="event-hero">
   <div class="container">
-    <h2>Upcoming Events</h2>
-    <p>"Will Update Soon"</p>
+    <h1>Special Seminar</h1>
+    <p class="lead">CO2 Plume Imaging with Accelerated Deep Learning-based Data Assimilation</p>
+    <p>Organized by SPE IIT Guwahati Student Chapter</p>
   </div>
 </section>
 
-<!-- Guest Lecture Section -->
-<section class="py-5">
+<!-- Event Content -->
+<section class="event-content">
   <div class="container">
     <div class="section-title">
-      <h2><a href="docs/profile.docx">Click here to see the details of the guest lecture</a></h2>
+      <h2>Event Details</h2>
+    </div>
+    
+    <div class="row">
+      <div class="col-lg-8">
+        <!-- Event Abstract -->
+        <div class="abstract-section">
+          <h3>Seminar Abstract</h3>
+          <p>This seminar presented innovative approaches to CO2 plume imaging using accelerated deep learning-based data assimilation techniques. The method leverages distributed pressure and temperature measurements to enhance the monitoring and management of carbon capture, utilization, and storage (CCUS) operations.</p>
+          
+          <p>Prof. Datta-Gupta discussed how machine learning algorithms can be integrated with traditional reservoir simulation to significantly reduce computational time while maintaining accuracy in predicting CO2 plume migration. This research has significant implications for improving the safety and efficiency of carbon sequestration projects.</p>
+          
+          <p>The presentation covered both theoretical foundations and practical applications, featuring case studies that demonstrate the effectiveness of these methods in real-world scenarios.</p>
+        </div>
+        
+        <!-- Event Details -->
+        <div class="event-details">
+          <h3 class="mb-4">Event Information</h3>
+          
+          <div class="detail-item">
+            <div class="detail-icon">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+            <div class="detail-content">
+              <h4>Date & Time</h4>
+              <p>July 16, 2025 | 10:00 AM - 12:00 PM IST</p>
+            </div>
+          </div>
+          
+          <div class="detail-item">
+            <div class="detail-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="detail-content">
+              <h4>Venue</h4>
+              <p>Lecture Hall Complex, Department of Chemical Engineering<br>Indian Institute of Technology Guwahati<br>Guwahati-781039, Assam, India</p>
+            </div>
+          </div>
+          
+          <div class="detail-item">
+            <div class="detail-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <div class="detail-content">
+              <h4>Audience</h4>
+              <p>Faculty members, research scholars, postgraduate and undergraduate students interested in petroleum engineering, carbon capture, and machine learning applications.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-4">
+        <!-- Speaker Card -->
+        <div class="speaker-card">
+          <img src="akhil.jpg" alt="Prof. Akhil Datta-Gupta" class="speaker-img">
+          <h3 class="speaker-name">Prof. Akhil Datta-Gupta</h3>
+          <div class="speaker-title">University Distinguished Professor<br>Texas A&M University</div>
+          
+          <div class="speaker-bio">
+            <p>Prof. Akhil Datta-Gupta is a University Distinguished Professor and holder of the LeSuer Chair in Petroleum Engineering at Texas A&M University. He is a member of the U.S. National Academy of Engineering and has received numerous awards including the SPE John Franklin Carll Award and the SPE Lester C. Uren Award.</p>
+            
+            <p>His research focuses on reservoir engineering, simulation and characterization, and has pioneered the use of streamlines and fast marching methods for flow simulation and history matching in complex reservoirs.</p>
+          </div>
+          
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/akhil-dattagupta/" target="_blank" title="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://scholar.google.com/citations?user=Al-SABYAAAAJ&hl=en" target="_blank" title="Google Scholar">
+              <i class="fas fa-graduation-cap"></i>
+            </a>
+            <a href="https://engineering.tamu.edu/petroleum/profiles/adattagupta.html" target="_blank" title="University Profile">
+              <i class="fas fa-globe"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- CTA Button -->
+        <div class="cta-button">
+          <a href="#" class="btn btn-primary btn-lg" target="_blank">Registration Ended </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
