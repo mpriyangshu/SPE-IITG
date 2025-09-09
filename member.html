@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SPE - IIT Guwahati Student Chapter</title>
+  <title>IIT Guwahati SPE Student Chapter</title>
+  <!-- Favicon -->
+  <link rel="icon" href="logo.ico" type="image/x-icon">
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
@@ -60,31 +63,30 @@
       padding-bottom: 15px;
       border-bottom: 2px solid #003366;
     }
-    .icon-box { 
-      text-align: center; 
-      padding: 30px 20px; 
-      margin-bottom: 20px;
+    .degree-section {
+      margin-bottom: 50px;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .degree-header {
+      background: #003366;
+      color: white;
+      padding: 15px;
       border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-      height: 100%;
+      margin-bottom: 20px;
     }
-    .icon-box:hover {
-      transform: translateY(-5px);
-    }
-    .icon-box i { 
-      font-size: 40px; 
-      color: #003366; 
-      margin-bottom: 15px; 
-    }
-    .icon-box h5 {
+    .field-header {
+      background: #f1c40f;
       color: #003366;
+      padding: 12px 15px;
+      border-radius: 6px;
+      margin: 20px 0 15px;
       font-weight: bold;
-      margin-bottom: 15px;
     }
     .members-table {
-      margin: 40px 0;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin: 20px 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       border-radius: 8px;
       overflow: hidden;
     }
@@ -93,7 +95,7 @@
       color: white;
     }
     .members-table th {
-      text-align: center;
+      text-align: left;
       padding: 12px 15px;
       font-weight: 600;
     }
@@ -104,19 +106,29 @@
     .members-table tr:nth-child(even) {
       background-color: #F8FBFC;
     }
-    .spotlight { 
-      background: #f5f7fa; 
-      padding: 60px 20px; 
+    .badge {
+      font-size: 0.75rem;
+      padding: 5px 10px;
+      border-radius: 15px;
+    }
+    .badge-bachelor {
+      background: #17a2b8;
+    }
+    .badge-master {
+      background: #28a745;
+    }
+    .badge-phd {
+      background: #dc3545;
     }
     footer { 
       background: #003366; 
       color: white; 
       padding: 40px 0 20px; 
     }
-    footer h3 {
+    footer h5 {
       color: #ffc107;
       margin-bottom: 20px;
-      font-size: 1.4rem;
+      font-size: 1.2rem;
     }
     footer ul {
       list-style: none;
@@ -160,6 +172,23 @@
       color: #003366;
       font-weight: 600;
     }
+    .stats-box {
+      background: #f8f9fa;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .stats-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #003366;
+    }
+    .stats-label {
+      font-size: 1rem;
+      color: #6c757d;
+    }
   </style>
 </head>
 <body>
@@ -169,7 +198,7 @@
   <div class="container">
     <a class="navbar-brand" href="index.html">
       <img src="logo.png" alt="SPE Logo" height="80">
-      <span class="ms-2">IIT Guwahati Student Chapter</span>
+      <span class="ms-2">IIT Guwahati SPE Student Chapter</span>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
@@ -190,75 +219,249 @@
 <!-- Hero Section -->
 <section class="hero d-flex align-items-center">
   <div class="container hero-content">
-    <h1>Indian Institute of Technology Guwahati</h1>
-    <h2>SPE Student Chapter #6246</h2>
-    <p>Join us to advance knowledge in petroleum engineering and connect with industry professionals</p>
-    <a href="join.html" class="btn btn-warning btn-lg m-2">Join SPE Today</a>
-    <a href="about.html" class="btn btn-light btn-lg m-2">Learn More</a>
+    <h1>SPE IIT Guwahati Student Chapter</h1>
+    <h2>Our Members</h2>
+    <p>Meet our diverse community of students passionate about petroleum engineering and energy</p>
   </div>
 </section>
 
-
-<!-- Members Section -->
+<!-- Members Statistics -->
 <section class="py-5 bg-light">
   <div class="container">
-    <h2 class="section-title">Our Members</h2>
-    <div class="table-responsive members-table">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Master Customer ID</th>
-            <th>Name</th>
-            <th>Degree Name</th>
-            <th>Field of Study</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>5442342</td><td>SHRIKANT KASHYAP</td><td>PhD</td><td>Chemical Engineering</td></tr>
-          <tr><td>5442335</td><td>SHANMUGAM V</td><td>PhD</td><td>Chemical Engineering</td></tr>
-          <tr><td>5444193</td><td>VENKATESH</td><td>PhD</td><td>Chemical Engineering</td></tr>
-          <tr><td>5444490</td><td>VISHAL DHAR</td><td>PhD</td><td>Chemical Engineering</td></tr>
-          <tr><td>5484179</td><td>VINEET R JAGGA</td><td>Bachelor of Technology</td><td>Chemical Engineering</td></tr>
-          <tr><td>5484177</td><td>SUBHAMOY HALDER</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
-          <tr><td>5483960</td><td>NIKHIL RAHUL DHONGDE</td><td>PhD</td><td>Chemical Engineering</td></tr>
-          <tr><td>5484227</td><td>RAHUL BASNAL</td><td>Bachelor of Technology</td><td>Chemical Engineering</td></tr>
-          <tr><td>5485288</td><td>VIKRAM SAHA</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
-          <tr><td>5485704</td><td>LAXMI PRASAD RAO PALA</td><td>PhD</td><td>Chemical Engineering</td></tr>
-          <tr><td>5485705</td><td>HEMANT KUMAR</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
-          <tr><td>5485715</td><td>SHANKU PRATIM BORAH</td><td>PhD</td><td>Chemical Engineering</td></tr>
-          <tr><td>5485723</td><td>GNANA SANGEETHA R</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
-          <tr><td>5444068</td><td>RUPAK BHOWMIK</td><td>PhD</td><td>Chemical Engineering</td></tr>
-          <tr><td>5485716</td><td>SANJEEV PATEL</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
-          <tr><td>5485802</td><td>ADARSH GOSWAMI</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
-          <tr><td>5485900</td><td>SONU KUMAR</td><td>Master of Engineering</td><td>Chemical Engineering</td></tr>
-          <tr><td>5485905</td><td>SHUBHAM GUPTA</td><td>PhD</td><td>Chemical Engineering</td></tr>
-          <tr><td>5485901</td><td>VIVEK SHARMA</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
-          <tr><td>5485895</td><td>MITAN DAS</td><td>Master of Technology</td><td>Civil Engineering</td></tr>
-          <tr><td>5444203</td><td>DINESH KUMAR GAUTAM</td><td>PhD</td><td>Chemical Engineering</td></tr>
-          <tr><td>5442623</td><td>STUTI DUBEY</td><td>PhD</td><td>Chemical Engineering</td></tr>
-          <tr><td>5485166</td><td>KIRTI VARDHAN</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
-          <tr><td>5484622</td><td>DHRITI LEKHA DEKA</td><td>PhD</td><td>Civil Engineering</td></tr>
-          <tr><td>5444474</td><td>PATTA PRAVIN SAI KUMAR</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
-          <tr><td>5109535</td><td>BALAKUMARA VIGNESH M</td><td>PhD</td><td>Chemical Engineering</td></tr>
-          <tr><td>5485960</td><td>ABHISHEK DIXIT</td><td>PhD</td><td>Civil Engineering</td></tr>
-          <tr><td>5485964</td><td>SUSHI KALI A KUHO</td><td>Master of Technology</td><td>Civil Engineering</td></tr>
-          <tr><td>5485991</td><td>NADIM PARVEJ</td><td>PhD</td><td>Civil Engineering</td></tr>
-          <tr><td>5476874</td><td>SHIV KUMAR MAURYA</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
-          <tr><td>5486073</td><td>SAKET KUCHIBHOTALA</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
-          <tr><td>5484123</td><td>PRITOM HAZARIKA</td><td>PhD</td><td>Civil Engineering</td></tr>
-          <tr><td>5486126</td><td>SACHIN KURIACHAN E</td><td>PhD</td><td>Chemical Engineering</td></tr>
-          <tr><td>5486128</td><td>ADITYA SAWANT</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
-          <tr><td>5486153</td><td>ADNAN AHMED</td><td>PhD</td><td>Civil Engineering</td></tr>
-          <tr><td>5486461</td><td>IMRAN HUSSAIN</td><td>PhD</td><td>Chemical Engineering</td></tr>
-          <tr><td>5484221</td><td>MUKESH BHARTI</td><td>PhD</td><td>Chemical Engineering</td></tr>
-          <tr><td>544496</td><td>VIKAS KUMAR SHARMA</td><td>PhD</td><td>Chemical Engineering</td></tr>
-          <tr><td>5503699</td><td>ARIHANT JAIN</td><td>Bachelor of Technology</td><td>Chemical Engineering</td></tr>
-        </tbody>
-      </table>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="stats-box">
+          <div class="stats-number">85</div>
+          <div class="stats-label">Total Members</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="stats-box">
+          <div class="stats-number">16</div>
+          <div class="stats-label">Bachelor's Students</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="stats-box">
+          <div class="stats-number">37</div>
+          <div class="stats-label">Master's Students</div>
+        </div>
+      </div>
+      <div class="col-md-4 offset-md-2">
+        <div class="stats-box">
+          <div class="stats-number">32</div>
+          <div class="stats-label">PhD Students</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="stats-box">
+          <div class="stats-number">12</div>
+          <div class="stats-label">Different Departments</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- Members Section -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="section-title">Our Members</h2>
+    
+    <!-- Bachelor's Students -->
+    <div class="degree-section">
+      <div class="degree-header">
+        <h3><i class="fas fa-user-graduate me-2"></i>Bachelor's Students</h3>
+      </div>
+      
+      <!-- Chemical Engineering -->
+      <div class="field-header">Chemical Engineering</div>
+      <div class="table-responsive members-table">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Degree Name</th>
+              <th>Field of Study</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Aditya Prasad Mohanty</td><td>Bachelor of Technology</td><td>Chemical Engineering</td></tr>
+            <tr><td>Akash Kumar</td><td>Bachelor of Technology</td><td>Chemical Engineering</td></tr>
+            <tr><td>Astha Gupta</td><td>Bachelor of Technology</td><td>Civil Engineering</td></tr>
+            <tr><td>Ayush Gupta</td><td>Bachelor of Technology</td><td>Mechanical Engineering</td></tr>
+            <tr><td>Goutam Kumar Hembram</td><td>Bachelor of Technology</td><td>Chemical Engineering</td></tr>
+            <tr><td>MANISH Jangir</td><td>Bachelor of Technology</td><td>Chemical Technology</td></tr>
+            <tr><td>Prayansh Kumar</td><td>Bachelor of Technology</td><td>Computer Science</td></tr>
+            <tr><td>Ravi Patel</td><td>Bachelor of Technology</td><td>Chemical Engineering</td></tr>
+            <tr><td>Samiksha Mitra</td><td>Bachelor of Technology</td><td>Civil Engineering</td></tr>
+            <tr><td>Sunidhi Prakash</td><td>Bachelor of Technology</td><td>Engineering Physics</td></tr>
+            <tr><td>Venkat Sai Teja Kalluri</td><td>Bachelor of Technology</td><td>Engineering Physics</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+    <!-- Master's Students -->
+    <div class="degree-section">
+      <div class="degree-header">
+        <h3><i class="fas fa-graduation-cap me-2"></i>Master's Students</h3>
+      </div>
+      
+      <!-- Chemical Engineering -->
+      <div class="field-header">Chemical Engineering</div>
+      <div class="table-responsive members-table">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Degree Name</th>
+              <th>Field of Study</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Amal Abraham</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
+            <tr><td>Anindya Anupam</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
+            <tr><td>Anushka Singh</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
+            <tr><td>Avinash Pandey</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
+            <tr><td>Bablu Singh</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
+            <tr><td>Bijirgiri Basumatary</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
+            <tr><td>Debashis Dey</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
+            <tr><td>Muni Puneeth Pinjala</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
+            <tr><td>Nikhil J Amin</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
+            <tr><td>Nikhil Jadhav</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
+            <tr><td>Parag Shrivastava</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
+            <tr><td>Prateek Gupta</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
+            <tr><td>Rishabh Nayan</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
+            <tr><td>Rohit Vinayak Vidhate</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
+            <tr><td>Sneha Kumari</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
+            <tr><td>Sudhakar Verma</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
+            <tr><td>Sumit Singh</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
+            <tr><td>Sumit Sinha</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
+            <tr><td>Uday Bharat Mhapsekar</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
+            <tr><td>VEDKUMAR PRITAMBHAI PATEL</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
+            <tr><td>Zaffar Zeshan</td><td>Master of Engineering</td><td>Chemical Engineering</td></tr>
+            <tr><td>Zeeshan Akhtar</td><td>Master of Engineering</td><td>Chemical Engineering</td></tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <!-- Petroleum Engineering -->
+      <div class="field-header">Petroleum Engineering</div>
+      <div class="table-responsive members-table">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Degree Name</th>
+              <th>Field of Study</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Amarjit Pandey</td><td>Master of Technology</td><td>Petroleum Engineering</td></tr>
+            <tr><td>Ms. Shagun Dahiya</td><td>Master of Technology</td><td>Petroleum Technology</td></tr>
+            <tr><td>RAHUL DEV</td><td>Master of Technology</td><td>Petroleum Science</td></tr>
+            <tr><td>Rutvik Kapoor</td><td>Master of Technology</td><td>Petrochemical Engineering</td></tr>
+            <tr><td>Vishvajeet Vijay Patil</td><td>Master in Petroleum Engineering</td><td>Petroleum Science</td></tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <!-- Other Fields -->
+      <div class="field-header">Other Fields</div>
+      <div class="table-responsive members-table">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Degree Name</th>
+              <th>Field of Study</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>ABHISHEK DHIMAN</td><td>Master of Technology</td><td>Petroleum Science</td></tr>
+            <tr><td>ABHISHEK SHRIVASTAVA</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
+            <tr><td>Anshuman Mondal</td><td>Bachelor of Technology</td><td>Electronics & Communications</td></tr>
+            <tr><td>Arjun Satheesh</td><td>Master Of Science</td><td>Polymer Science</td></tr>
+            <tr><td>Ashish S Khutale</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
+            <tr><td>ASTHA KALITA</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
+            <tr><td>Murru Purna Anand Kumar</td><td>Master of Engineering</td><td>Chemical Engineering</td></tr>
+            <tr><td>Pentapalli Venkata Satyanarayana</td><td>Master of Engineering</td><td>Chemical Engineering</td></tr>
+            <tr><td>SONU KUMAR</td><td>Master of Technology</td><td>Chemical & Petroleum Engineering</td></tr>
+            <tr><td>Sudhanshu Bhaskar</td><td>Master of Technology</td><td>BioTechnology</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+    <!-- PhD Students -->
+    <div class="degree-section">
+      <div class="degree-header">
+        <h3><i class="fas fa-book-open me-2"></i>PhD Students</h3>
+      </div>
+      
+      <!-- Chemical Engineering -->
+      <div class="field-header">Chemical Engineering</div>
+      <div class="table-responsive members-table">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Degree Name</th>
+              <th>Field of Study</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>AKASHDEEP HAZARIKA</td><td>Doctor of Philosophy</td><td>Chemical Engineering</td></tr>
+            <tr><td>Biswajit Mondal</td><td>Doctor of Philosophy</td><td>Chemical Engineering</td></tr>
+            <tr><td>BIKASH KUMAR DAS</td><td>Doctor of Philosophy</td><td>Chemistry</td></tr>
+            <tr><td>Hrishikesh Sarma</td><td>Doctor of Philosophy</td><td>Chemical Engineering</td></tr>
+            <tr><td>Indrajeet Kumar</td><td>Doctor of Philosophy</td><td>Chemical Engineering</td></tr>
+            <tr><td>Manosh Jyoti Das</td><td>Doctor of Engineering</td><td>Energy</td></tr>
+            <tr><td>Mukesh Bharti</td><td>Doctor of Philosophy</td><td>Chemical Engineering</td></tr>
+            <tr><td>Mr. Arnab Kumar Pal</td><td>Doctor of Philosophy</td><td>Engineering</td></tr>
+            <tr><td>Mr. Bineet Kumar Tripathi</td><td>Doctor of Philosophy</td><td>Chemical Engineering</td></tr>
+            <tr><td>NILESH MOHAN KHALSE</td><td>Doctor of Philosophy</td><td>Chemical Engineering</td></tr>
+            <tr><td>Prince Kumar Barnwal</td><td>Doctor of Philosophy</td><td>Chemical Engineering</td></tr>
+            <tr><td>RAMANUJ SHANKAR PANDEY</td><td>Doctor of Philosophy</td><td>Energy</td></tr>
+            <tr><td>Rushabh Kamalakar Kale</td><td>Doctor of Philosophy</td><td>Chemical Engineering</td></tr>
+            <tr><td>Satish Kumar</td><td>Doctor of Philosophy</td><td>Chemical Engineering</td></tr>
+            <tr><td>Sayani Adhikari</td><td>Doctor of Philosophy</td><td>Chemical Engineering</td></tr>
+            <tr><td>Shilpa Nandi</td><td>Doctor of Philosophy</td><td>Research</td></tr>
+            <tr><td>Stuti Dubey</td><td>Doctor of Engineering</td><td>Chemical Engineering</td></tr>
+            <tr><td>Sumit Kumar</td><td>Doctor of Philosophy</td><td>Chemical Engineering</td></tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <!-- Other Fields -->
+      <div class="field-header">Other Fields</div>
+      <div class="table-responsive members-table">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Degree Name</th>
+              <th>Field of Study</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>ANINDITA SAHA</td><td>Doctor of Philosophy</td><td>Mathematics</td></tr>
+            <tr><td>Arnab Kumar Roy</td><td>Doctor of Engineering</td><td>Chemical & Fuels Engineering</td></tr>
+            <tr><td>Debajyoti Saha</td><td>Doctor of Philosophy</td><td>BioTechnology</td></tr>
+            <tr><td>GAURAV BONDE</td><td>Doctor of Philosophy</td><td>Physics</td></tr>
+            <tr><td>Mousumi Mondal</td><td>Doctor of Philosophy</td><td>Mathematics</td></tr>
+            <tr><td>NAYAN HALDAR</td><td>Doctor of Philosophy</td><td>Mathematics</td></tr>
+            <tr><td>PANKAJ ROY</td><td>Doctor of Philosophy</td><td>Mathematics</td></tr>
+            <tr><td>Shankhari Swaminathan</td><td>Doctor of Philosophy</td><td>Chemical Engineering</td></tr>
+            <tr><td>TUSHAR SHAH</td><td>Post Doctoral</td><td>Electrical/Electronic Engineering</td></tr>
+            <tr><td>Vishal Dhar</td><td>Bachelor of Petroleum Engineering</td><td>Petroleum Technology</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- Footer -->
 <footer>
