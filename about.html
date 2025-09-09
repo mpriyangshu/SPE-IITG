@@ -1,25 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>SPE IITG Student Chapter</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPE IIT Guwahati - Committee Profiles</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Open Sans', sans-serif;
-      color: #333;
-      background-color: #fff;
+    body { 
+      font-family: Arial, sans-serif; 
+      background-color: #f8f9fa;
     }
 
     /* Navbar */
@@ -43,12 +33,27 @@
     .section-title {
       text-align: center;
       margin-bottom: 2rem;
+      position: relative;
     }
     .section-title h2 {
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
-      font-size: 2rem;
+      font-size: 2.5rem;
       color: #003366;
+      display: inline-block;
+      padding-bottom: 10px;
+      position: relative;
+    }
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, #003366, #f1c40f, #003366);
+      border-radius: 2px;
     }
 
     /* About */
@@ -66,49 +71,106 @@
     .team-section {
       padding: 60px 0;
     }
+    .team-row {
+      margin-bottom: 40px;
+    }
+    .team-row-title {
+      text-align: center;
+      margin-bottom: 30px;
+      position: relative;
+    }
+    .team-row-title h3 {
+      display: inline-block;
+      padding: 8px 25px;
+      background-color: #003366;
+      color: white;
+      border-radius: 30px;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
     .team-card {
       background: #fff;
       border: 1px solid #e0e0e0;
-      border-radius: 8px;
+      border-radius: 12px;
       text-align: center;
-      padding: 20px;
+      padding: 25px 20px;
       transition: 0.3s ease;
       height: 100%;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    .team-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #003366, #f1c40f);
     }
     .team-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
     }
     .team-card img {
       width: 100%;
-      max-width: 220px;
-      height: 220px;
+      max-width: 180px;
+      height: 180px;
       object-fit: cover;
       border-radius: 50%;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
+      border: 4px solid #f8f9fa;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+    .team-card:hover img {
+      border-color: #f1c40f;
+      transform: scale(1.05);
     }
     .team-card h3 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 1.25rem;
-      margin-bottom: 5px;
+      font-size: 1.3rem;
+      margin-bottom: 8px;
       color: #003366;
     }
     .team-card h5 {
       font-weight: 600;
-      margin-bottom: 10px;
-      color: #555;
+      margin-bottom: 12px;
+      color: #f1c40f;
+      background-color: #003366;
+      display: inline-block;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
     }
     .team-card p {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: #666;
+      margin-bottom: 20px;
+    }
+    .team-card .social {
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #f0f0f0;
     }
     .team-card .social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: #f8f9fa;
       color: #003366;
-      margin: 0 8px;
-      font-size: 1.2rem;
+      border-radius: 50%;
+      margin: 0 5px;
+      transition: all 0.3s ease;
+      text-decoration: none;
     }
     .team-card .social a:hover {
-      color: #f1c40f;
+      background: #003366;
+      color: #fff;
+      transform: translateY(-3px);
     }
 
     /* Footer */
@@ -150,6 +212,39 @@
     .social-icons a:hover {
       color: #f1c40f;
     }
+
+    /* Decorative elements */
+    .decorative-circle {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.1;
+      z-index: -1;
+    }
+    .circle-1 {
+      width: 200px;
+      height: 200px;
+      background: #003366;
+      top: 10%;
+      left: 5%;
+    }
+    .circle-2 {
+      width: 150px;
+      height: 150px;
+      background: #f1c40f;
+      bottom: 15%;
+      right: 5%;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .team-row-title h3 {
+        font-size: 1rem;
+        padding: 6px 18px;
+      }
+      .team-card {
+        margin-bottom: 25px;
+      }
+    }
   </style>
 </head>
 
@@ -158,9 +253,9 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark">
   <div class="container">
-    <a class="navbar-brand" href="#">
-      <img src="logo.png" alt="SPE Logo" height="80">
-      <span class="ms-2">IIT Guwahati Student Chapter</span>
+    <a class="navbar-brand" href="index.html">
+      <img src="images/logo.png" alt="SPE Logo">
+      <span>IIT Guwahati Student Chapter</span>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
@@ -177,6 +272,10 @@
     </div>
   </div>
 </nav>
+
+<!-- Decorative elements -->
+<div class="decorative-circle circle-1"></div>
+<div class="decorative-circle circle-2"></div>
 
 <!-- About Section -->
 <section class="about-section">
@@ -206,180 +305,200 @@
 <section class="team-section">
   <div class="container">
     <div class="section-title">
-      <h2>Meet Our Team</h2>
+      <h2>Committee Profiles</h2>
     </div>
-    <div class="row g-4">
+    
+    <!-- President and Vice President -->
+    <div class="team-row">
+      <div class="team-row-title">
+        <h3>Leadership</h3>
+      </div>
+      <div class="row justify-content-center g-4">
+        <div class="col-md-5">
+          <div class="team-card">
+            <img src="images/Akashdeep Hazarika.png" alt="Akashdeep Hazarika">
+            <h3>Mr. Akashdeep Hazarika</h3>
+            <h5>President</h5>
+            <p>PhD, Dept. of Chemical Engineering, IIT Guwahati</p>
+            <div class="social">
+              <a href="https://scholar.google.com/citations?user=_jBFtQ0AAAAJ&hl=en&oi=sra"><i class="fab fa-google"></i></a>
+              <a href="https://www.linkedin.com/in/akashdeep-hazarika-1a26a2296/"><i class="fab fa-linkedin"></i></a>
+             
+            </div>
+          </div>
+        </div>
 
-      <!-- Team Members -->
-      <div class="col-md-4">
-        <div class="team-card">
-          <img src="sumit.png" alt="">
-          <h3>Dr. Sumit Kumar</h3>
-          <h5>Faculty Advisor</h5>
-          <p>Assistant Professor, Dept. of Chemical Engineering, IIT Guwahati</p>
-          <div class="social">
-            <a href="#"><i class="fab fa-google"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+        <div class="col-md-5">
+          <div class="team-card">
+            <img src="images/mondal.png" alt="Biswajit Mondal">
+            <h3>Mr. Biswajit Mondal</h3>
+            <h5>Vice-President</h5>
+            <p>PhD, Dept. of Chemical Engineering, IIT Guwahati</p>
+            <div class="social">
+              <a href="#"><i class="fab fa-google"></i></a>
+              <a href="https://www.linkedin.com/in/biswajit-mondal-1099981a3/"><i class="fab fa-linkedin"></i></a>
+
+            </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="col-md-4">
-        <div class="team-card">
-          <img src="Akashdeep Hazarika.png" alt="">
-          <h3>Mr. Akashdeep Hazarika</h3>
-          <h5>President</h5>
-          <p>PhD, Dept. of Chemical Engineering, IIT Guwahati</p>
-          <div class="social">
-            <a href="#"><i class="fab fa-google"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+    <!-- Secretary and Associate Secretary -->
+    <div class="team-row">
+      <div class="team-row-title">
+        <h3>Secretariat</h3>
+      </div>
+      <div class="row justify-content-center g-4">
+        <div class="col-md-5">
+          <div class="team-card">
+            <img src="images/parag.png" alt="Parag Shrivastava">
+            <h3>Mr. Parag Shrivastava</h3>
+            <h5>Secretary</h5>
+            <p>MTech, Dept. of Chemical Engineering, IIT Guwahati</p>
+            <div class="social">
+              <a href="#"><i class="fab fa-google"></i></a>
+              <a href="https://www.linkedin.com/in/parag-shrivastava-a22b5826b/"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <div class="team-card">
+            <img src="images/sarma.png" alt="Hrishikesh Sarma">
+            <h3>Mr. Hrishikesh Sarma</h3>
+            <h5>Associate Secretary</h5>
+            <p>PhD, Dept. of Chemical Engineering, IIT Guwahati</p>
+            <div class="social">
+              <a href="#"><i class="fab fa-google"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="col-md-4">
-        <div class="team-card">
-          <img src="mondal.png" alt="">
-          <h3>Mr. BISWAJIT MONDAL</h3>
-          <h5>Vice-President</h5>
-          <p>PhD, Dept. of Chemical Engineering, IIT Guwahati</p>
-          <div class="social">
-            <a href="#"><i class="fab fa-google"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+    <!-- Webmaster -->
+    <div class="team-row">
+      <div class="team-row-title">
+        <h3>Technical Team</h3>
+      </div>
+      <div class="row justify-content-center g-4">
+        <div class="col-md-5 mx-auto">
+          <div class="team-card">
+            <img src="images/priyangshu.png" alt="Priyangshu Malakar">
+            <h3>Mr. Priyangshu Malakar</h3>
+            <h5>WebMaster</h5>
+            <p>MTech, Dept. of Chemical Engineering, IIT Guwahati</p>
+            <div class="social">
+              <a href="#"><i class="fab fa-google"></i></a>
+              <a href="https://www.linkedin.com/in/priyangshumalakar/"><i class="fab fa-linkedin"></i></a>
+            </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="col-md-4">
-        <div class="team-card">
-          <img src="parag.png" alt="">
-          <h3>Mr. PARAG SHRIVASTAVA</h3>
-          <h5>Secretary</h5>
-          <p>MTech, Dept. of Chemical Engineering, IIT Guwahati</p>
-          <div class="social">
-            <a href="#"><i class="fab fa-google"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+    <!-- Program Coordinators -->
+    <div class="team-row">
+      <div class="team-row-title">
+        <h3>Program Coordination</h3>
+      </div>
+      <div class="row justify-content-center g-4">
+        <div class="col-md-5">
+          <div class="team-card">
+            <img src="images/sneha.png" alt="Sneha Kumar">
+            <h3>Ms. Sneha Kumari</h3>
+            <h5>Program Coordinator</h5>
+            <p>MTech, Dept. of Chemical Engineering, IIT Guwahati</p>
+            <div class="social">
+              <a href="#"><i class="fab fa-google"></i></a>
+              <a href="https://www.linkedin.com/in/sneha-kumari-b29771216/"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <div class="team-card">
+            <img src="images/nikhil2.png" alt="Nikhil Dattatray Jadhav">
+            <h3>Mr. Nikhil Dattatray Jadhav</h3>
+            <h5>Program Coordinator</h5>
+            <p>MTech, Dept. of Chemical Engineering, IIT Guwahati</p>
+            <div class="social">
+              <a href="#"><i class="fab fa-google"></i></a>
+              <a href="https://www.linkedin.com/in/nikhil-jadhav-process-engineer/"><i class="fab fa-linkedin"></i></a>
+            </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="col-md-4">
-        <div class="team-card">
-          <img src="sarma.png" alt="">
-          <h3>Mr. HRISHIKESH SARMA</h3>
-          <h5>Associate Secretary</h5>
-          <p>PhD, Dept. of Chemical Engineering, IIT Guwahati</p>
-          <div class="social">
-            <a href="#"><i class="fab fa-google"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+    <!-- Publicity Heads -->
+    <div class="team-row">
+      <div class="team-row-title">
+        <h3>Publicity Team</h3>
+      </div>
+      <div class="row justify-content-center g-4">
+        <div class="col-md-5">
+          <div class="team-card">
+            <img src="images/abishek.png" alt="Abhishek Shrivastava">
+            <h3>Mr. Abhishek Shrivastava</h3>
+            <h5>Publicity Head</h5>
+            <p>MTech, Dept. of Chemical Engineering, IIT Guwahati</p>
+            <div class="social">
+              <a href="#"><i class="fab fa-google"></i></a>
+              <a href="https://www.linkedin.com/in/abhishek-iitg-che/"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <div class="team-card">
+            <img src="images/rishab.png" alt="Rishabh Nayan">
+            <h3>Mr. Rishabh Nayan</h3>
+            <h5>Publicity Head</h5>
+            <p>MTech, Dept. of Chemical Engineering, IIT Guwahati</p>
+            <div class="social">
+              <a href="#"><i class="fab fa-google"></i></a>
+              <a href="https://www.linkedin.com/in/rishabh-nayan-709720167/"><i class="fab fa-linkedin"></i></a>
+            </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="col-md-4">
-        <div class="team-card">
-          <img src="ved.png" alt="">
-          <h3>Mr. VEDKUMAR PRITAMBHAI PATEL</h3>
-          <h5>Treasurer</h5>
-          <p>MTech, Dept. of Chemical Engineering, IIT Guwahati</p>
-          <div class="social">
-            <a href="#"><i class="fab fa-google"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+    <!-- Membership Chairperson and Treasurer -->
+    <div class="team-row">
+      <div class="team-row-title">
+        <h3>Administration & Finance</h3>
+      </div>
+      <div class="row justify-content-center g-4">
+        <div class="col-md-5">
+          <div class="team-card">
+            <img src="images/nikhil.png" alt="Nikhil J Amin">
+            <h3>Mr. Nikhil J Amin</h3>
+            <h5>Membership Chairperson</h5>
+            <p>MTech, Dept. of Chemical Engineering, IIT Guwahati</p>
+            <div class="social">
+              <a href="#"><i class="fab fa-google"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <div class="team-card">
+            <img src="images/ved.png" alt="Vedkumar Pritambhai Patel">
+            <h3>Mr. Vedkumar Pritambhai Patel</h3>
+            <h5>Treasurer</h5>
+            <p>MTech, Dept. of Chemical Engineering, IIT Guwahati</p>
+            <div class="social">
+              <a href="#"><i class="fab fa-google"></i></a>
+              <a href="https://www.linkedin.com/in/ved-patel-45b516228/"><i class="fab fa-linkedin"></i></a>
+            </div>
           </div>
         </div>
       </div>
-
-      <div class="col-md-4">
-        <div class="team-card">
-          <img src="nikhil.png" alt="">
-          <h3>Mr. NIKHIL J AMIN</h3>
-          <h5>Membership Chairperson</h5>
-          <p>MTech, Dept. of Chemical Engineering, IIT Guwahati</p>
-          <div class="social">
-            <a href="#"><i class="fab fa-google"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="team-card">
-          <img src="abishek.png" alt="">
-          <h3>Mr. ABHISHEK SHRIVASTAVA</h3>
-          <h5>Publicity Head</h5>
-          <p>MTech, Dept. of Chemical Engineering, IIT Guwahati</p>
-          <div class="social">
-            <a href="#"><i class="fab fa-google"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-      </div>
-
-
-<div class="col-md-4">
-        <div class="team-card">
-          <img src="rishab.png" alt="">
-          <h3>Mr. RISHABH NAYAN</h3>
-          <h5>Publicity Head</h5>
-          <p>MTech, Dept. of Chemical Engineering, IIT Guwahati</p>
-          <div class="social">
-            <a href="#"><i class="fab fa-google"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-      </div>
-
-<div class="row justify-content-center g-4">
-      <div class="col-md-4">
-        <div class="team-card">
-          <img src="sneha.png" alt="">
-          <h3>Ms. SNEHA KUMAR</h3>
-          <h5>Program Coordinator</h5>
-          <p>MTech, Dept. of Chemical Engineering, IIT Guwahati</p>
-          <div class="social">
-            <a href="#"><i class="fab fa-google"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-      </div>
-
-
-<div class="col-md-4">
-        <div class="team-card">
-          <img src="priyangshu.png" alt="">
-          <h3>Mr. PRIYANGSHU MALAKAR</h3>
-          <h5>WebMaster</h5>
-          <p>MTech, Dept. of Chemical Engineering, IIT Guwahati</p>
-          <div class="social">
-            <a href="#"><i class="fab fa-google"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-      </div>
-
-
     </div>
   </div>
 </section>
@@ -402,16 +521,14 @@
       <div class="col-md-6 text-md-end">
         <h5>Follow Us</h5>
         <div class="social-icons">
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/spe-iit-guwahati-student-chapter"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/iitg_spe_sc/"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
 
     </div>
     <div class="footer-bottom mt-4">
-      &copy; 2025 Department of Chemical Engineering, IIT Guwahati | Designed by Priyangshu Malakar
+      &copy; 2025 Department of Chemical Engineering, IIT Guwahati | Designed by Priyangshu
     </div>
   </div>
 </footer>
