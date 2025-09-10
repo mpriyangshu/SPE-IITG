@@ -1,22 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- SEO Meta Tags -->
-  <title>Contact IIT Guwahati SPE Student Chapter - Get In Touch</title>
-  <meta name="description" content="Contact the IIT Guwahati SPE Student Chapter for inquiries about membership, events, and collaborations in petroleum engineering.">
-  <meta name="keywords" content="contact SPE IITG, petroleum engineering contact, chapter inquiry, SPE information">
-  <link rel="canonical" href="https://www.speiitg.in/contact.html" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>IIT Guwahati SPE Student Chapter - Contact Us</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Contact IIT Guwahati SPE Student Chapter - Get In Touch">
-  <meta property="og:description" content="Contact the IIT Guwahati SPE Student Chapter for inquiries about membership, events, and collaborations.">
-  <meta property="og:url" content="https://www.speiitg.in/contact.html">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://www.speiitg.in/logo.png">
-  
-  <!-- Rest of your head content -->
-  
-<!-- Favicon -->
+  <!-- Favicon -->
   <link rel="icon" href="logo.ico" type="image/x-icon">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -258,20 +250,45 @@
       transform: translateY(-3px);
     }
 
-    /* Google Map */
+    /* Custom Map Container */
     .map-container {
-      overflow: hidden;
+      position: relative;
       width: 100%;
       height: 450px;
-      resize: none;
-      max-width: 100%;
+      overflow: hidden;
       border-top: 5px solid #003366;
       border-bottom: 5px solid #003366;
     }
-    .map-container iframe {
-      height: 100%;
-      width: 100%;
-      border: 0;
+    
+    .map-overlay {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      max-width: 280px;
+    }
+    
+    .map-overlay h4 {
+      color: #003366;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+    
+    .map-overlay p {
+      margin: 5px 0;
+      font-size: 0.9rem;
+      color: #333;
+    }
+    
+    .map-overlay i {
+      color: #f1c40f;
+      width: 20px;
+      margin-right: 8px;
     }
 
     /* Footer */
@@ -318,6 +335,48 @@
       font-size: 0.9rem;
       color: #bbb;
     }
+    
+    /* Leaflet Map Customization */
+    #leaflet-map {
+      width: 100%;
+      height: 100%;
+      z-index: 100;
+    }
+    
+    .custom-marker {
+      background-color: #003366;
+      border: 3px solid #f1c40f;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+    
+    .leaflet-popup-content {
+      font-family: 'Open Sans', sans-serif;
+      margin: 15px;
+    }
+    
+    .leaflet-popup-content-wrapper {
+      border-radius: 8px;
+      box-shadow: 0 3px 14px rgba(0,0,0,0.2);
+    }
+    
+    .leaflet-popup-content h3 {
+      color: #003366;
+      margin-top: 0;
+      border-bottom: 2px solid #f1c40f;
+      padding-bottom: 5px;
+    }
+    
+    /* Ensure map container has proper dimensions */
+    .leaflet-container {
+      height: 450px;
+      width: 100%;
+    }
   </style>
 </head>
 <body>
@@ -328,7 +387,7 @@
       <div class="container">
         <a class="navbar-brand" href="index.html">
           <img src="logo.png" alt="SPE Logo" height="80">
-          <span class="ms-2">IIT Guwahati Student Chapter</span>
+          <span class="ms-2">IIT Guwahati SPE Student Chapter</span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
@@ -435,7 +494,6 @@
               <div class="social">
                 <a href="https://iitg.ac.in/chemeng/faculty_profile.php?name=skumar"><i class="fab fa-google"></i></a>
               <a href="https://www.linkedin.com/in/sumit-kumar-ph-d-53204b55/"><i class="fab fa-linkedin"></i></a>
-
               </div>
             </div>
           </div>
@@ -464,7 +522,6 @@
               <div class="social">
                 <a href="#"><i class="fab fa-google"></i></a>
               <a href="https://www.linkedin.com/in/biswajit-mondal-1099981a3/"><i class="fab fa-linkedin"></i></a>
-
               </div>
             </div>
           </div>
@@ -472,9 +529,15 @@
       </div>
     </section>
 
-    <!-- Google Map -->
+    <!-- Custom Map Section -->
     <div class="map-container">
-      <iframe frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=IIT+Guwahati,+Guwahati,+Assam,+India&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe>
+      <div id="leaflet-map"></div>
+      <div class="map-overlay">
+        <h4><i class="fas fa-map-marker-alt"></i> IIT Guwahati</h4>
+        <p><i class="fas fa-building"></i> Department of Chemical Engineering</p>
+        <p><i class="fas fa-location-arrow"></i> Guwahati-781039, Assam, India</p>
+        <p><i class="fas fa-phone"></i> +91 361 258 2300</p>
+      </div>
     </div>
 
     <!-- Footer -->
@@ -525,5 +588,60 @@
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <script>
+    // Wait for the DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize Leaflet map
+      const map = L.map('leaflet-map').setView([26.1862, 91.6917], 16);
+      
+      // Add OpenStreetMap tiles with a custom style
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 19
+      }).addTo(map);
+      
+      // Create a custom icon
+      const customIcon = L.divIcon({
+        className: 'custom-marker',
+        html: '<i class="fas fa-university"></i>',
+        iconSize: [30, 30],
+        iconAnchor: [15, 15]
+      });
+      
+      // Add marker for Chemical Engineering Department
+      const marker = L.marker([26.1862, 91.6917], {icon: customIcon}).addTo(map);
+      
+      // Custom popup content
+      marker.bindPopup(`
+        <h3>IIT Guwahati</h3>
+        <p><strong>Department of Chemical Engineering</strong></p>
+        <p>Indian Institute of Technology Guwahati<br>
+        Guwahati-781039, Assam, India</p>
+        <p><i class="fas fa-phone"></i> +91 361 258 2300</p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:spe_iitguwahati@iitg.ac.in">spe_iitguwahati@iitg.ac.in</a></p>
+      `);
+      
+      // Add a circle to highlight the area
+      L.circle([26.1862, 91.6917], {
+        color: '#003366',
+        fillColor: '#f1c40f',
+        fillOpacity: 0.2,
+        radius: 100
+      }).addTo(map);
+      
+      // Open the popup by default
+      marker.openPopup();
+      
+      // Fix for map display issues
+      setTimeout(function() {
+        map.invalidateSize();
+      }, 100);
+    });
+  </script>
+
 </body>
 </html>
