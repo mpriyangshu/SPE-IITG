@@ -47,29 +47,117 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   
   <style>
-    /* Your existing CSS remains unchanged */
-    body { font-family: Arial, sans-serif; }
+    /* Base styles */
+    body { 
+      font-family: Arial, sans-serif; 
+      overflow-x: hidden;
+      padding-top: 70px; /* adjust if your navbar height changes */
+    }
+    
+    /* Improved Navigation */
     .navbar {
       background-color: #003366;
-      padding: 1rem 2rem;
+      padding: 0.5rem 1rem;
     }
+    
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      margin-right: 0;
+    }
+    
     .navbar-brand img {
-      height: 80px;
+      height: 50px;
+      width: auto;
+      max-width: 100%;
     }
+    
+    .navbar-brand span {
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-left: 8px;
+      white-space: normal;
+      line-height: 1.2;
+    }
+    
+    .navbar-toggler {
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 0.25rem 0.5rem;
+    }
+    
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      width: 1.2em;
+      height: 1.2em;
+    }
+    
     .navbar-nav .nav-link {
       color: #fff !important;
       font-weight: 600;
-      margin-left: 1rem;
+      padding: 0.5rem 1rem;
+      font-size: 0.95rem;
     }
+    
     .navbar-nav .nav-link:hover {
       color: #f1c40f !important;
     }
-    .hero { background: url('iitgp.gif') no-repeat center center/cover; color: white; text-align: center; padding: 120px 20px; position: relative; }
-    .hero::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 51, 102, 0.6); }
-    .hero-content { position: relative; z-index: 2; }
-    .hero h1 { font-size: 3rem; font-weight: bold; }
-    .hero p { font-size: 1.25rem; margin-bottom: 20px; }
-    .section-title { color: #003366; font-weight: bold; margin-bottom: 30px; text-align: center; position: relative; padding-bottom: 15px; }
+    
+    /* Hero Section */
+    .hero { 
+      background: url('iitgp.gif') no-repeat center center/cover; 
+      color: white; 
+      text-align: center; 
+      padding: 80px 15px;
+      position: relative; 
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+    }
+    
+    .hero::before { 
+      content: ""; 
+      position: absolute; 
+      top: 0; 
+      left: 0; 
+      width: 100%; 
+      height: 100%; 
+      background: rgba(0, 51, 102, 0.6); 
+    }
+    
+    .hero-content { 
+      position: relative; 
+      z-index: 2; 
+      max-width: 100%;
+    }
+    
+    .hero h1 { 
+      font-size: 2.2rem; 
+      font-weight: bold; 
+      margin-bottom: 1rem;
+      word-wrap: break-word;
+    }
+    
+    .hero p { 
+      font-size: 1rem; 
+      margin-bottom: 20px; 
+    }
+    
+    .hero .btn {
+      margin: 5px;
+      white-space: nowrap;
+    }
+    
+    .section-title { 
+      color: #003366; 
+      font-weight: bold; 
+      margin-bottom: 30px; 
+      text-align: center; 
+      position: relative; 
+      padding-bottom: 15px; 
+      font-size: 1.8rem;
+    }
+    
     .section-title::after {
       content: '';
       position: absolute;
@@ -83,164 +171,297 @@
     
     /* Mission Section */
     .mission-section {
-      padding: 80px 0;
+      padding: 60px 0;
       background: linear-gradient(to bottom, #ffffff, #f8f9fa);
     }
+    
     .mission-card {
       background: white;
       border-radius: 8px;
-      padding: 30px;
+      padding: 25px 20px;
       height: 100%;
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       border-top: 4px solid #003366;
+      margin-bottom: 20px;
     }
+    
     .mission-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
     }
+    
     .mission-icon {
-      font-size: 2.5rem;
+      font-size: 2rem;
       color: #003366;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       background: rgba(0, 51, 102, 0.1);
-      width: 80px;
-      height: 80px;
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 20px;
+      margin: 0 auto 15px;
     }
+    
     .mission-card h5 {
       color: #003366;
       font-weight: 700;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
       text-align: center;
+      font-size: 1.1rem;
     }
+    
     .mission-card p {
       color: #555;
       text-align: center;
       line-height: 1.6;
+      font-size: 0.9rem;
     }
     
     /* Benefits Section */
     .benefits-section {
-      padding: 80px 0;
+      padding: 60px 0;
       background-color: #f8f9fa;
     }
+    
     .benefits-container {
       background: white;
       border-radius: 12px;
-      padding: 40px;
+      padding: 30px 20px;
       box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
     }
+    
     .benefit-card {
       text-align: center;
-      padding: 25px 20px;
+      padding: 20px 15px;
       transition: all 0.3s ease;
       border-radius: 8px;
+      margin-bottom: 15px;
     }
+    
     .benefit-card:hover {
       background: rgba(0, 51, 102, 0.03);
     }
+    
     .benefit-icon {
-      font-size: 2.2rem;
+      font-size: 1.8rem;
       color: #003366;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       display: inline-block;
-      padding: 15px;
+      padding: 12px;
       border-radius: 50%;
       background: rgba(0, 51, 102, 0.1);
     }
+    
     .benefit-card h5 {
       color: #003366;
       font-weight: 700;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
+      font-size: 1.1rem;
     }
+    
     .benefit-card p {
       color: #555;
       line-height: 1.6;
+      font-size: 0.9rem;
     }
     
     /* Events Section */
     .events-section {
-      padding: 60px 0;
+      padding: 50px 0;
       background-color: #fff;
     }
+    
     .card {
       border: none;
       border-radius: 8px;
       overflow: hidden;
       transition: transform 0.3s ease;
+      margin-bottom: 20px;
     }
+    
     .card:hover {
       transform: translateY(-5px);
     }
+    
     .card-body {
-      padding: 25px;
+      padding: 20px;
+    }
+    
+    .card-title {
+      font-size: 1.1rem;
     }
     
     /* Spotlight Section */
     .spotlight {
       background: #f5f7fa;
-      padding: 60px 20px;
+      padding: 50px 15px;
     }
     
     /* Footer */
     footer {
       background-color: #002244;
       color: #fff;
-      padding: 40px 0;
+      padding: 30px 0 20px;
     }
+    
     footer h5 {
       font-weight: 700;
       margin-bottom: 15px;
+      font-size: 1.1rem;
     }
+    
     footer ul {
       list-style: none;
       padding: 0;
     }
+    
     footer ul li {
       margin-bottom: 6px;
+      font-size: 0.9rem;
     }
+    
     footer p, footer li {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       color: #ccc;
     }
+    
     footer a {
       color: #f1c40f;
       text-decoration: none;
     }
+    
     footer a:hover {
       text-decoration: underline;
     }
+    
     .social-icons a {
       color: #fff;
       font-size: 1.3rem;
       margin: 0 8px;
     }
+    
     .social-icons a:hover {
       color: #f1c40f;
     }
+    
     .footer-bottom {
       text-align: center;
       margin-top: 20px;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: #bbb;
+      padding-top: 15px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .navbar-brand span {
+        font-size: 0.8rem;
+        max-width: 120px;
+      }
+      
+      .hero {
+        padding: 60px 15px;
+        min-height: 50vh;
+      }
+      
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      
+      .hero p {
+        font-size: 0.95rem;
+      }
+      
+      .hero .btn {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+      }
+      
+      .section-title {
+        font-size: 1.6rem;
+      }
+      
+      .mission-section, .benefits-section, .events-section {
+        padding: 40px 0;
+      }
+      
+      .mission-card, .benefit-card {
+        padding: 20px 15px;
+      }
+      
+      .mission-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+      }
+      
+      .benefit-icon {
+        font-size: 1.5rem;
+        padding: 10px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .navbar-brand {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .navbar-brand span {
+        margin-left: 0;
+        margin-top: 5px;
+        max-width: 150px;
+      }
+      
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+      
+      .hero .btn {
+        display: block;
+        width: 100%;
+        margin: 8px auto;
+        max-width: 250px;
+      }
+      
+      .section-title {
+        font-size: 1.4rem;
+      }
+      
+      footer .col-md-3 {
+        margin-bottom: 25px;
+      }
+    }
+    
+    @media (max-width: 360px) {
+      .navbar-brand img {
+        height: 40px;
+      }
+      
+      .navbar-brand span {
+        font-size: 0.7rem;
+      }
+      
+      .hero h1 {
+        font-size: 1.4rem;
+      }
     }
   </style>
 </head>
 <body>
 
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   <div class="container">
     <a class="navbar-brand" href="index.html">
       <img src="logo.png" alt="IIT Guwahati SPE Student Chapter Logo">
       <span>IIT Guwahati SPE Student Chapter</span>
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -261,8 +482,8 @@
   <div class="container hero-content">
     <h1>Solutions. People. Energy.</h1>
     <p>IIT Guwahati SPE Student Chapter provides access to premier programs, events, and a dynamic global network — all designed to accelerate professional growth and career development.</p>
-    <a href="about.html" class="btn btn-light btn-lg m-2">Our Story</a>
-    <a href="https://www.spe.org/en/join/#join" target="_blank" class="btn btn-warning btn-lg m-2">Join / Renew</a>
+    <a href="about.html" class="btn btn-light btn-lg">Our Story</a>
+    <a href="https://www.spe.org/en/join/#join" target="_blank" class="btn btn-warning btn-lg">Join / Renew</a>
   </div>
 </section>
 
