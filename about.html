@@ -22,7 +22,6 @@
 <link rel="apple-touch-icon" href="https://www.speiitg.in/logo.png">
 <meta property="og:image" content="https://www.speiitg.in/logo.png">
 
-
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
@@ -30,21 +29,54 @@
       font-family: Arial, sans-serif; 
       background-color: #f8f9fa;
       padding-top: 70px; /* adjust if your navbar height changes */
+      overflow-x: hidden;
     }
 
-    /* Navbar */
+    /* Improved Navigation */
     .navbar {
       background-color: #003366;
-      padding: 1rem 2rem;
+      padding: 0.5rem 1rem;
     }
+    
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      margin-right: 0;
+    }
+    
     .navbar-brand img {
-      height: 90px;
+      height: 50px;
+      width: auto;
+      max-width: 100%;
     }
+    
+    .navbar-brand span {
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-left: 8px;
+      white-space: normal;
+      line-height: 1.2;
+    }
+    
+    .navbar-toggler {
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 0.25rem 0.5rem;
+    }
+    
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      width: 1.2em;
+      height: 1.2em;
+    }
+    
     .navbar-nav .nav-link {
       color: #fff !important;
       font-weight: 600;
-      margin-left: 1rem;
+      padding: 0.5rem 1rem;
+      font-size: 0.95rem;
     }
+    
     .navbar-nav .nav-link:hover {
       color: #f1c40f !important;
     }
@@ -56,9 +88,8 @@
       position: relative;
     }
     .section-title h2 {
-      font-family: 'Montserrat', sans-serif;
       font-weight: 700;
-      font-size: 2.5rem;
+      font-size: 2rem;
       color: #003366;
       display: inline-block;
       padding-bottom: 10px;
@@ -78,34 +109,34 @@
 
     /* About */
     .about-section {
-      padding: 60px 0;
+      padding: 40px 0;
       background-color: #f8f9fa;
     }
     .about-section p {
-      font-size: 1.05rem;
+      font-size: 1rem;
       line-height: 1.7;
       text-align: justify;
     }
 
     /* Team */
     .team-section {
-      padding: 60px 0;
+      padding: 40px 0;
     }
     .team-row {
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
     .team-row-title {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
       position: relative;
     }
     .team-row-title h3 {
       display: inline-block;
-      padding: 8px 25px;
+      padding: 6px 20px;
       background-color: #003366;
       color: white;
       border-radius: 30px;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-weight: 600;
     }
     .team-card {
@@ -113,12 +144,13 @@
       border: 1px solid #e0e0e0;
       border-radius: 12px;
       text-align: center;
-      padding: 25px 20px;
+      padding: 20px 15px;
       transition: 0.3s ease;
       height: 100%;
       position: relative;
       overflow: hidden;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      margin-bottom: 20px;
     }
     .team-card::before {
       content: '';
@@ -135,11 +167,11 @@
     }
     .team-card img {
       width: 100%;
-      max-width: 180px;
-      height: 180px;
+      max-width: 150px;
+      height: 150px;
       object-fit: cover;
       border-radius: 50%;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       border: 4px solid #f8f9fa;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       transition: all 0.3s ease;
@@ -149,25 +181,24 @@
       transform: scale(1.05);
     }
     .team-card h3 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       margin-bottom: 8px;
       color: #003366;
     }
     .team-card h5 {
       font-weight: 600;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       color: #f1c40f;
       background-color: #003366;
       display: inline-block;
-      padding: 5px 15px;
+      padding: 4px 12px;
       border-radius: 20px;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
     .team-card p {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       color: #666;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
     .team-card .social {
       margin-top: 15px;
@@ -178,14 +209,15 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 36px;
-      height: 36px;
+      width: 32px;
+      height: 32px;
       background: #f8f9fa;
       color: #003366;
       border-radius: 50%;
-      margin: 0 5px;
+      margin: 0 4px;
       transition: all 0.3s ease;
       text-decoration: none;
+      font-size: 0.9rem;
     }
     .team-card .social a:hover {
       background: #003366;
@@ -193,16 +225,31 @@
       transform: translateY(-3px);
     }
 
+    /* Special styling for Faculty Advisor card */
+    .faculty-advisor-card {
+      border: 2px solid #f1c40f;
+      box-shadow: 0 8px 20px rgba(241, 196, 15, 0.2);
+    }
+    .faculty-advisor-card::before {
+      background: linear-gradient(90deg, #f1c40f, #003366, #f1c40f);
+      height: 6px;
+    }
+    .faculty-advisor-card h5 {
+      background-color: #f1c40f;
+      color: #003366;
+      font-weight: 700;
+    }
+
     /* Footer */
     footer {
       background-color: #002244;
       color: #fff;
-      padding: 40px 0;
+      padding: 30px 0 20px;
     }
     footer h5 {
       font-weight: 700;
       margin-bottom: 15px;
-      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem;
     }
     footer ul {
       list-style: none;
@@ -210,6 +257,7 @@
     }
     footer ul li {
       margin-bottom: 8px;
+      font-size: 0.9rem;
     }
     footer ul li a {
       color: #ccc;
@@ -221,12 +269,14 @@
     .footer-bottom {
       text-align: center;
       margin-top: 20px;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: #bbb;
+      padding-top: 15px;
+      border-top: 1px solid rgba(255,255,255,0.1);
     }
     .social-icons a {
       color: #fff;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       margin: 0 8px;
     }
     .social-icons a:hover {
@@ -257,12 +307,94 @@
 
     /* Responsive adjustments */
     @media (max-width: 768px) {
+      .navbar-brand span {
+        font-size: 0.8rem;
+        max-width: 120px;
+      }
+      
+      .section-title h2 {
+        font-size: 1.8rem;
+      }
+      
+      .about-section, .team-section {
+        padding: 30px 0;
+      }
+      
       .team-row-title h3 {
         font-size: 1rem;
         padding: 6px 18px;
       }
+      
+      .team-card {
+        padding: 18px 12px;
+        margin-bottom: 20px;
+      }
+      
+      .team-card img {
+        max-width: 130px;
+        height: 130px;
+      }
+      
+      .team-card h3 {
+        font-size: 1.1rem;
+      }
+      
+      footer .col-md-6 {
+        margin-bottom: 25px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .navbar-brand {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .navbar-brand span {
+        margin-left: 0;
+        margin-top: 5px;
+        max-width: 150px;
+      }
+      
+      .section-title h2 {
+        font-size: 1.6rem;
+      }
+      
+      .about-section p {
+        font-size: 0.95rem;
+        text-align: left;
+      }
+      
       .team-card {
         margin-bottom: 25px;
+      }
+      
+      .team-card img {
+        max-width: 120px;
+        height: 120px;
+      }
+    }
+    
+    @media (max-width: 360px) {
+      .navbar-brand img {
+        height: 40px;
+      }
+      
+      .navbar-brand span {
+        font-size: 0.7rem;
+      }
+      
+      .section-title h2 {
+        font-size: 1.4rem;
+      }
+      
+      .team-card {
+        padding: 15px 10px;
+      }
+      
+      .team-card img {
+        max-width: 100px;
+        height: 100px;
       }
     }
   </style>
@@ -308,9 +440,9 @@
       <div class="col-lg-10">
         <p>
           The SPE IIT Guwahati Student Chapter was founded in 2016 with a vision to fulfil the mission of SPE International —
-          “To collect, disseminate, and exchange technical knowledge regarding exploration, development, and production of Oil & Gas resources,
+          "To collect, disseminate, and exchange technical knowledge regarding exploration, development, and production of Oil & Gas resources,
           and related technologies for the public benefit and to provide opportunities for students & professionals to enhance their technical
-          and professional expertise.”
+          and professional expertise."
         </p>
         <p>
           We aim to foster an environment that nurtures talent, sparks creativity, and encourages students to take up exciting careers in the
@@ -347,9 +479,8 @@
             </div>
           </div>
         </div>
-</div>
-</div>
-
+      </div>
+    </div>
     
     <!-- President and Vice President -->
     <div class="team-row">
@@ -453,7 +584,6 @@
         </div>
       </div>
     </div>
-  </div>
 
   
     <!-- Webmaster -->
@@ -544,6 +674,7 @@
         </div>
       </div>
     </div>
+  </div>
 </section>
   
 
