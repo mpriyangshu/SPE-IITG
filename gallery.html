@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | IIT Guwahati SPE Student Chapter</title>
+  <meta name="description" content="Explore the achievements and events of IIT Guwahati SPE Student Chapter through our gallery of memorable moments.">
+  <meta name="keywords" content="SPE IITG gallery, petroleum engineering events, IIT Guwahati achievements, student chapter activities">
+  <link rel="canonical" href="https://www.speiitg.in/gallery.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Gallery - IIT Guwahati SPE Student Chapter">
+  <meta property="og:description" content="Explore the achievements and events of IIT Guwahati SPE Student Chapter.">
+  <meta property="og:url" content="https://www.speiitg.in/gallery.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://www.speiitg.in/logo.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="IITG SPE" />
+  <link rel="manifest" href="/favicon/site.webmanifest" />
+
+  <!-- Schema.org Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "IIT Guwahati SPE Student Chapter",
+    "url": "https://www.speiitg.in/",
+    "logo": "https://www.speiitg.in/logo.png",
+    "description": "Student chapter of the Society of Petroleum Engineers at Indian Institute of Technology Guwahati",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Department of Chemical Engineering, Indian Institute of Technology",
+      "addressLocality": "Guwahati",
+      "addressRegion": "Assam",
+      "postalCode": "781039",
+      "addressCountry": "India"
+    }
+  }
+  </script>
+
+  <!-- CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="navbar.css" rel="stylesheet">
+  
+  <style>
+    /* Global Styles */
+    body {
+      scroll-behavior: smooth;
+      font-family: 'Arial', sans-serif;
+      padding-top: 80px;
+      background-color: #f8f9fa;
+    }
+    
+    /* Animation Keyframes */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    /* Navbar Animation */
+    .navbar {
+      transition: all 0.3s ease;
+      background: rgba(0, 34, 68, 0.95);
+      backdrop-filter: blur(6px);
+    }
+    
+    .navbar.scrolled {
+      background: rgba(0, 34, 68, 0.98);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Hero Section */
+    .hero { 
+      background: #003366; 
+      padding: 80px 0; 
+      position: relative;
+      overflow: hidden;
+      color: white;
+      text-align: center;
+    }
+    
+    .hero h1 { 
+      font-weight: 700; 
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+    }
+    
+    .hero.animated h1 {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Gallery Section */
+    .gallery-section {
+      padding: 60px 0;
+    }
+    
+    .gallery-post {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      margin-bottom: 30px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+    
+    .gallery-post.animated {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .post-header {
+      padding: 20px;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      align-items: center;
+    }
+    
+    .post-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 12px;
+      object-fit: cover;
+    }
+    
+    .post-title {
+      font-weight: 700;
+      color: #003366;
+      margin: 0;
+    }
+    
+    .post-images {
+      position: relative;
+    }
+    
+    .post-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .carousel-control-prev, .carousel-control-next {
+      width: 40px;
+      height: 40px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .post-images:hover .carousel-control-prev,
+    .post-images:hover .carousel-control-next {
+      opacity: 1;
+    }
+    
+    .post-body {
+      padding: 20px;
+      position: relative;
+    }
+    
+    .post-preview {
+      margin-bottom: 15px;
+      color: #555;
+      line-height: 1.6;
+    }
+    
+    .post-full {
+      display: none;
+      color: #555;
+      line-height: 1.6;
+    }
+    
+    .read-more-btn {
+      color: #003366;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    
+    .read-more-btn:hover {
+      color: #f1c40f;
+    }
+    
+    .highlight {
+      background-color: rgba(241, 196, 15, 0.2);
+      padding: 2px 4px;
+      border-radius: 3px;
+      font-weight: 600;
+    }
+    
+    /* Footer */
+    footer { 
+      background: #002244; 
+      color: #fff;
+      padding: 50px 0 20px; 
+      margin-top: 40px; 
+    }
+    
+    footer a { 
+      color: #f1c40f; 
+      text-decoration: none; 
+      transition: all 0.3s ease;
+    }
+    
+    footer a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+    
+    .social-icons a {
+      color: #fff;
+      font-size: 1.3rem;
+      margin: 0 8px;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+    
+    .social-icons a:hover {
+      color: #f1c40f;
+      transform: translateY(-5px);
+    }
+    
+    /* Scroll to Top Button */
+    .scroll-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: #003366;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 1000;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .scroll-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .scroll-top:hover {
+      background: #f1c40f;
+      transform: translateY(-5px);
+    }
+    
+    /* Loading Animation */
+    .loader-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #003366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+    
+    .loader {
+      width: 50px;
+      height: 50px;
+      border: 5px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      border-top: 5px solid #f1c40f;
+      animation: spin 1s linear infinite;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Loading Animation -->
+<div class="loader-wrapper">
+  <div class="loader"></div>
+</div>
+
+<!-- Scroll to Top Button -->
+<div class="scroll-top">
+  <i class="fas fa-arrow-up"></i>
+</div>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="logo.png" alt="SPE Logo">
+      <span>IIT Guwahati SPE Student Chapter</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+
+        <!-- Dropdown for About -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            About
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+            <li><a class="dropdown-item" href="about.html">About Us</a></li>
+            <li><a class="dropdown-item active" href="gallery.html">Gallery</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="join.html">Join SPE Today!</a></li>
+        <li class="nav-item"><a class="nav-link" href="event.html">Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://event.iitg.ac.in/icphd" target="_blank">IPCHD 2023</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <h1>Our Achievements & Events</h1>
+    <p class="mt-3">Explore the milestones and memorable moments of IIT Guwahati SPE Student Chapter</p>
+  </div>
+</section>
+
+<!-- Gallery Section -->
+<section class="gallery-section">
+  <div class="container">
+    
+    <!-- Post 0: Guest Seminar by Prof. Akhil Datta-Gupta -->
+    <div class="gallery-post">
+      <div class="post-header">
+        <img src="logo.png" alt="SPE Logo" class="post-logo">
+        <h3 class="post-title">🎓 Guest Seminar by Prof. Akhil Datta-Gupta</h3>
+      </div>
+      <div class="post-images">
+        <img src="gallery/1752757209364.jpeg" alt="Guest Seminar by Prof. Akhil Datta-Gupta" class="post-image">
+      </div>
+      <div class="post-body">
+        <div class="post-preview">
+          Texas A&M University | Department of Chemical Engineering, IIT Guwahati<br><br>
+          We were honored to host Prof. Akhil Datta-Gupta from Texas A&M University for a seminar organized by the Department of Chemical Engineering, IIT Guwahati...
+        </div>
+        <div class="post-full">
+          Texas A&M University | Department of Chemical Engineering, IIT Guwahati<br><br>
+          We were honored to host Prof. Akhil Datta-Gupta from Texas A&M University for a seminar organized by the Department of Chemical Engineering, IIT Guwahati.<br><br>
+          Prof. Datta-Gupta delivered an insightful talk on:<br>
+          "CO₂ Plume Imaging with Accelerated Deep Learning-based Data Assimilation Using Distributed Pressure and Temperature Measurements"<br><br>
+          The seminar provided valuable perspectives on advanced monitoring techniques for carbon storage and subsurface imaging, combining deep learning with geoscientific data. The session was well-received by faculty, researchers, and students alike, sparking engaging discussions around AI-enabled approaches to CO₂ sequestration.<br><br>
+          We extend our sincere thanks to Prof. Datta-Gupta for sharing his expertise and contributing to the academic enrichment of our research community.
+        </div>
+        <div class="read-more-btn">Read more</div>
+      </div>
+    </div>
+    
+    <!-- Post 0.1: Symposium on the Role of Upstream Petroleum Engineering -->
+    <div class="gallery-post">
+      <div class="post-header">
+        <img src="logo.png" alt="SPE Logo" class="post-logo">
+        <h3 class="post-title">🌍🔬 Symposium on the Role of Upstream Petroleum Engineering in Energy Transition</h3>
+      </div>
+      <div class="post-images">
+        <div id="carousel1" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="gallery/1746959667370.jpeg" class="d-block w-100 post-image" alt="Symposium Image 1">
+            </div>
+            <div class="carousel-item">
+              <img src="gallery/1746959667632.jpeg" class="d-block w-100 post-image" alt="Symposium Image 2">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carousel1" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+      <div class="post-body">
+        <div class="post-preview">
+          Focus Areas: Geothermal Energy & Geosequestration<br>
+          🗓️ Held on 5th May 2025 | Organized by IIT Guwahati SPE Student Chapter<br><br>
+          The IIT Guwahati SPE Student Chapter extends its sincere gratitude to all who contributed to the success of the one-day symposium...
+        </div>
+        <div class="post-full">
+          Focus Areas: Geothermal Energy & Geosequestration<br>
+          🗓️ Held on 5th May 2025 | Organized by IIT Guwahati SPE Student Chapter<br><br>
+          The IIT Guwahati SPE Student Chapter extends its sincere gratitude to all who contributed to the success of the one-day symposium on "The Role of Upstream Petroleum Engineering in Energy Transition," with a focused lens on Geothermal Energy and Geologic Carbon Sequestration (GCS).<br><br>
+          This event, held on May 5, 2025, provided a dynamic platform to explore how traditional upstream disciplines such as reservoir characterization, fluid dynamics, and subsurface modeling are being redefined in light of the energy transition. Discussions delved into cutting-edge domains including Enhanced Geothermal Systems (EGS), machine learning applications in fracture network analysis, and integrated CCUS workflows.<br><br>
+          🎤 We are especially grateful to our distinguished speakers:<br><br>
+          - Prof. Raj Kiran<br>
+          - Prof. Rajeev Upadhyay<br>
+          - Prof. Akhil Datta-Gupta<br>
+          - Prof. Anugrah Singh<br>
+          - Prof. Sumit Kumar, Ph.D.<br><br>
+          Your thought-provoking talks enriched the dialogue and inspired attendees to critically engage with the evolving role of upstream technologies in sustainable energy development.
+        </div>
+        <div class="read-more-btn">Read more</div>
+      </div>
+    </div>
+    
+    <!-- Post 1: GOTECH 2025 -->
+    <div class="gallery-post">
+      <div class="post-header">
+        <img src="logo.png" alt="SPE Logo" class="post-logo">
+        <h3 class="post-title">GOTECH 2025 | Society of Petroleum Engineers (SPE)</h3>
+      </div>
+      <div class="post-images">
+        <div id="carousel2" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="gallery/1746107707194.jpeg" class="d-block w-100 post-image" alt="GOTECH 2025 Image 1">
+            </div>
+            <div class="carousel-item">
+              <img src="gallery/1746107704604.jpeg" class="d-block w-100 post-image" alt="GOTECH 2025 Image 2">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carousel2" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carousel2" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+      <div class="post-body">
+        <div class="post-preview">
+          A productive week was marked by the participation of <span class="highlight">Mr. Bineet Kumar Tripathi</span> at <span class="highlight">GOTECH 2025</span>, a conference held in association with the Society of Petroleum Engineers (SPE)...
+        </div>
+        <div class="post-full">
+          A productive week was marked by the participation of <span class="highlight">Mr. Bineet Kumar Tripathi</span> at <span class="highlight">GOTECH 2025</span>, a conference held in association with the Society of Petroleum Engineers (SPE). As part of the event, a technical session was delivered on the topic <span class="highlight">"Multivariate Production Forecasting via Deep-Learning Approach"</span>, contributing to discussions on the future perspectives in AI and energy.<br><br>
+          The platform facilitated valuable knowledge exchange with industry professionals, academic researchers, and peers in the artificial intelligence domain. Appreciation is extended to Mr. Indrajeet Kumar (co-author), Prof. Anugrah Singh, and Dr. Sumit Kumar, Ph.D. (supervisors) for their support and funding that enabled this participation.
+        </div>
+        <div class="read-more-btn">Read more</div>
+      </div>
+    </div>
+    
+    <!-- Post 2: EAGE GET 2024 -->
+    <div class="gallery-post">
+      <div class="post-header">
+        <img src="logo.png" alt="SPE Logo" class="post-logo">
+        <h3 class="post-title">🌍 Conference Participation at EAGE GET 2024</h3>
+      </div>
+      <div class="post-images">
+        <img src="gallery/1731335494579.jpeg" alt="EAGE GET 2024" class="post-image">
+      </div>
+      <div class="post-body">
+        <div class="post-preview">
+          A productive week was spent by <span class="highlight">Mr. Bineet Kumar Tripathi</span> attending and participating as a session speaker at <span class="highlight">EAGE GET 2024</span>, held in the Netherlands...
+        </div>
+        <div class="post-full">
+          A productive week was spent by <span class="highlight">Mr. Bineet Kumar Tripathi</span> attending and participating as a session speaker at <span class="highlight">EAGE GET 2024</span>, held in the Netherlands. The session focused on the topic:<br>
+          <span class="highlight">"Modeling of Rock-Fluid Interaction for Carbon Capture and Storage (CCS)"</span>—an area of growing importance within the global energy transition.
+        </div>
+        <div class="read-more-btn">Read more</div>
+      </div>
+    </div>
+    
+    <!-- Post 3: ICPHD 2023 -->
+    <div class="gallery-post">
+      <div class="post-header">
+        <img src="logo.png" alt="SPE Logo" class="post-logo">
+        <h3 class="post-title">🛢️ International Conference on Petroleum, Hydrogen, and Decarbonization (ICPHD 2023)</h3>
+      </div>
+      <div class="post-images">
+        <div id="carousel3" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="gallery/1701777178192.jpeg" class="d-block w-100 post-image" alt="ICPHD 2023 Image 1">
+            </div>
+            <div class="carousel-item">
+              <img src="gallery/1701777163356.jpeg" class="d-block w-100 post-image" alt="ICPHD 2023 Image 2">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carousel3" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carousel3" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+      <div class="post-body">
+        <div class="post-preview">
+          Organized by IIT Guwahati SPE Student Chapter<br>
+          📍 November 3–5, 2023 | IIT Guwahati<br><br>
+          Greetings from the IIT Guwahati SPE Student Chapter!<br><br>
+          In collaboration with the Department of Chemical Engineering, IIT Guwahati, the IIT Guwahati SPE Student Chapter successfully organized the International Conference on Petroleum, Hydrogen, and Decarbonization (ICPHD 2023)...
+        </div>
+        <div class="post-full">
+          Organized by IIT Guwahati SPE Student Chapter<br>
+          📍 November 3–5, 2023 | IIT Guwahati<br><br>
+          Greetings from the IIT Guwahati SPE Student Chapter!<br><br>
+          In collaboration with the Department of Chemical Engineering, IIT Guwahati, the IIT Guwahati SPE Student Chapter successfully organized the International Conference on Petroleum, Hydrogen, and Decarbonization (ICPHD 2023) from November 3 to 5, 2023.<br><br>
+          The conference brought together distinguished plenary, keynote, and invited speakers, who shared their insights on critical developments in petroleum, hydrogen technologies, and decarbonization strategies. Their contributions enriched the dialogue around energy transition and inspired attendees to explore innovative, forward-thinking approaches.<br><br>
+          Special thanks are extended to all participants and presenters whose research and discussions made ICPHD 2023 a truly impactful event.<br><br>
+          We gratefully acknowledge the efforts of our convenors:<br>
+          Prof. Pankaj Tiwari, Prof. Sumit Kumar, Ph.D., and Prof. Abhijit Kakati, along with the dedicated team of volunteers who made this event possible.<br><br>
+          🙏 A Heartfelt Thank You to Our Sponsors:<br><br>
+          - Department of Scientific and Industrial Research (DSIR)<br>
+          - Science and Engineering Research Board (SERB)<br>
+          - Numaligarh Refinery Limited<br>
+          - Oil India Limited<br>
+          - Agilent Technologies<br>
+          - SPE New Delhi Section<br>
+          - Chemdist Group<br>
+          - DataPhysics Instruments GmbH<br>
+          - DCAM GmbH<br>
+          - IIT Guwahati Incubation Centre<br><br>
+          📚 Publication Partners:<br><br>
+          - American Chemical Society (International - India)<br>
+          - Springer<br><br>
+          🧪 Exhibitors:<br><br>
+          - SPE Drilling Systems Automation Technical Section (DSATS)<br>
+          - DrillDocs<br>
+          - Linseis Thermal Analysis<br>
+          - TEKSOL GROUP SOLUTIONS<br><br>
+          📢 Advertisers:<br><br>
+          - Thermo Fisher Scientific<br>
+          - NETZSCH Group<br>
+          - Elementar<br>
+          - Canara Bank<br>
+          - Ansys<br>
+          - AdiChem Technology Pvt. Ltd.<br>
+          - Zenith India<br>
+          - North East Chemicals Corporation<br>
+          - ICON<br>
+          - Jaldhara<br>
+          - Digitek Solution
+        </div>
+        <div class="read-more-btn">Read more</div>
+      </div>
+    </div>
+    
+    <!-- Post 3: DSATS & DrillDocs Exhibition -->
+    <div class="gallery-post">
+      <div class="post-header">
+        <img src="logo.png" alt="SPE Logo" class="post-logo">
+        <h3 class="post-title">🤝 DSATS & DrillDocs Exhibition at ICPHD 2023</h3>
+      </div>
+      <div class="post-images">
+        <img src="gallery/1700280906487.jpeg" alt="DSATS & DrillDocs Exhibition" class="post-image">
+      </div>
+      <div class="post-body">
+        <div class="post-preview">
+          Empowering the Future of Drilling Automation<br><br>
+          Through the collaboration of the <span class="highlight">SPE Drilling Systems Automation Technical Section (DSATS)</span> and <span class="highlight">DrillDocs</span>, an exhibition was successfully hosted during the International Conference on Petroleum, Hydrogen, and Decarbonization (ICPHD 2023)...
+        </div>
+        <div class="post-full">
+          Empowering the Future of Drilling Automation<br><br>
+          Through the collaboration of the <span class="highlight">SPE Drilling Systems Automation Technical Section (DSATS)</span> and <span class="highlight">DrillDocs</span>, an exhibition was successfully hosted during the International Conference on Petroleum, Hydrogen, and Decarbonization (ICPHD 2023), held from November 3 to 5, 2023, at IIT Guwahati.<br><br>
+          As part of this initiative, DSATS-Asia conducted a quiz on drilling and automation aimed at raising awareness among students about the critical role of drilling systems automation in the petroleum industry. In addition, a presentation titled "Overview of SPE Drilling Systems Automation Technical Section (DSATS)" was delivered to introduce participants to the vision and mission of DSATS.<br><br>
+          The DSATS-Asia team also engaged in meaningful discussions with professors, researchers, and industry professionals, highlighting the growing importance of automation and digital technologies in the energy sector.<br><br>
+          We would like to extend our sincere gratitude to <span class="highlight">Mr. Dimitrios Pirovolou</span> and <span class="highlight">Mr. Calvin Holt</span> for their valuable guidance and mentorship, which played a vital role in the smooth execution of the exhibition.
+        </div>
+        <div class="read-more-btn">Read more</div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <!-- Quick Links -->
+      <div class="col-md-3 mb-4">
+        <h5 class="text-uppercase fw-bold mb-3">Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="https://www.spe.org/en/join/" target="_blank">Membership</a></li>
+          <li><a href="event.html">Events</a></li>
+          <li><a href="https://www.spe.org/en/about/" target="_blank">About SPE</a></li>
+        </ul>
+      </div>
+
+      <!-- Member Services -->
+      <div class="col-md-3 mb-4">
+        <h5 class="text-uppercase fw-bold mb-3">Member Services</h5>
+        <ul class="list-unstyled">
+          <li><a href="https://www.spe.org/en/join/" target="_blank">Join</a></li>
+          <li><a href="https://www.spe.org/en/join/" target="_blank">Renew</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Follow Us -->
+      <div class="col-md-3 mb-4">
+        <h5 class="text-uppercase fw-bold mb-3">Follow Us</h5>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/company/spe-iit-guwahati-student-chapter"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/iitg_spe_sc/"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <!-- India Office -->
+      <div class="col-md-3 mb-4">
+        <h5 class="text-uppercase fw-bold mb-3">India Office</h5>
+        <ul class="list-unstyled">
+          <li>Office Address</li>
+          <li>Department of Chemical Engineering</li>
+          <li>Indian Institute of Technology, Guwahati</li>
+          <li>Guwahati-781039</li>
+          <li>Assam, India</li>
+        </ul>
+        <p class="mb-0"><strong><a href="https://www.spe.org/chapter/6246">SPE WEB</a></strong></p>
+        <p><strong>Email:</strong> <a href="mailto:spe_iitguwahati@iitg.ac.in">spe_iitguwahati@iitg.ac.in</a></p>
+      </div>
+    </div>
+
+    <!-- Bottom -->
+    <div class="row mt-4">
+      <div class="col text-center">
+        <p class="small mb-0">
+          © 2025 Department of Chemical Engineering, IIT Guwahati | Designed by Priyangshu
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Wait for page to fully load
+  window.addEventListener('load', function() {
+    // Remove loader
+    document.querySelector('.loader-wrapper').style.opacity = '0';
+    setTimeout(function() {
+      document.querySelector('.loader-wrapper').style.display = 'none';
+    }, 500);
+    
+    // Initialize animations
+    initAnimations();
+    
+    // Set up read more functionality
+    setupReadMore();
+  });
+  
+  // Navbar scroll effect
+  window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrollTop > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+    
+    // Show/hide scroll to top button
+    const scrollButton = document.querySelector('.scroll-top');
+    if (scrollTop > 300) {
+      scrollButton.classList.add('active');
+    } else {
+      scrollButton.classList.remove('active');
+    }
+  });
+  
+  // Scroll to top functionality
+  document.querySelector('.scroll-top').addEventListener('click', function() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+  
+  // Initialize animations on scroll
+  function initAnimations() {
+    const animatedElements = document.querySelectorAll('.hero, .gallery-post');
+    
+    // Create Intersection Observer to detect when elements are in view
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animated');
+          // Stop observing after animation is triggered
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+    
+    // Observe all animated elements
+    animatedElements.forEach(element => {
+      observer.observe(element);
+    });
+  }
+  
+  // Set up read more functionality
+  function setupReadMore() {
+    const readMoreButtons = document.querySelectorAll('.read-more-btn');
+    
+    readMoreButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const postBody = this.parentElement;
+        const preview = postBody.querySelector('.post-preview');
+        const fullText = postBody.querySelector('.post-full');
+        
+        if (fullText.style.display === 'block') {
+          fullText.style.display = 'none';
+          preview.style.display = 'block';
+          this.textContent = 'Read more';
+        } else {
+          preview.style.display = 'none';
+          fullText.style.display = 'block';
+          this.textContent = 'Read less';
+        }
+      });
+    });
+  }
+</script>
+</body>
+</html>
