@@ -94,9 +94,21 @@
       100% { transform: rotate(360deg); }
     }
     
-        /* Hero Section */
+    /* Logo above hero section */
+    .logo-above-hero {
+      text-align: center;
+      padding: 20px 0 0;
+      background: #f8f9fa;
+    }
+    
+    .logo-above-hero img {
+      max-height: 120px;
+      width: auto;
+    }
+
+    /* Hero Section */
     .hero {
-      background: url('iitgp.gif') no-repeat center center/cover;
+      background: url('9410447.jpg') no-repeat center center/cover;
       min-height: 100vh;
       color: #fff;
       text-align: center;
@@ -173,6 +185,55 @@
     .hero .btn:hover {
       transform: translateY(-3px);
       box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    
+    /* Social Media & Events Section */
+    .social-events-section {
+      padding: 60px 0;
+      background-color: #fff;
+    }
+    
+    .social-events-section .section-title {
+      margin-bottom: 40px;
+    }
+    
+    .linkedin-feeds {
+      margin-bottom: 30px;
+    }
+    
+    .linkedin-feed-item {
+      margin-bottom: 20px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .view-more-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    .events-side {
+      background: #f8f9fa;
+      border-radius: 8px;
+      padding: 25px;
+      height: 100%;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    .event-item {
+      padding: 15px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .event-item:last-child {
+      border-bottom: none;
+    }
+    
+    .no-events {
+      text-align: center;
+      padding: 30px;
+      color: #6c757d;
     }
     
     .section-title { 
@@ -522,10 +583,20 @@
     }
     
     /* Responsive adjustments */
+    @media (max-width: 992px) {
+      .linkedin-feeds iframe {
+        width: 100% !important;
+      }
+    }
+    
     @media (max-width: 768px) {
       .navbar-brand span {
         font-size: 0.8rem;
         max-width: 120px;
+      }
+      
+      .logo-above-hero img {
+        max-height: 80px;
       }
       
       .hero {
@@ -551,7 +622,7 @@
         font-size: 1.6rem;
       }
       
-      .mission-section, .benefits-section, .events-section {
+      .social-events-section, .mission-section, .benefits-section, .events-section {
         padding: 40px 0;
       }
       
@@ -590,6 +661,10 @@
         max-width: 150px;
       }
       
+      .logo-above-hero img {
+        max-height: 60px;
+      }
+      
       .hero-title {
         font-size: 2rem;
       }
@@ -617,6 +692,10 @@
       
       .navbar-brand span {
         font-size: 0.7rem;
+      }
+      
+      .logo-above-hero img {
+        max-height: 50px;
       }
       
       .hero-title {
@@ -671,6 +750,11 @@
   </div>
 </nav>
 
+<!-- Logo above Hero Section -->
+<div class="logo-above-hero">
+  <img src="logo.png" alt="IIT Guwahati SPE Student Chapter Logo">
+</div>
+
 <!-- Hero Section -->
 <section class="hero d-flex align-items-center">
   <div class="container hero-content">
@@ -678,6 +762,46 @@
     <p class="hero-subtitle">Indian Institute of Technology Guwahati <em>Student Chapter</em></p>
     <a href="about.html" class="btn btn-light btn-lg">Our Story</a>
     <a href="https://www.spe.org/en/join/#join" target="_blank" class="btn btn-warning btn-lg">Join / Renew</a>
+  </div>
+</section>
+
+<!-- Social Media & Events Section -->
+<section class="social-events-section">
+  <div class="container">
+    <h2 class="section-title">Latest Updates & Events</h2>
+    <div class="row">
+      <!-- Left Column: Social Media Feeds -->
+      <div class="col-lg-8">
+        <div class="linkedin-feeds">
+          <div class="linkedin-feed-item">
+            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7371037049820282880?collapsed=1" height="877" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+          </div>
+          <div class="linkedin-feed-item">
+            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7351596578563895296?collapsed=1" height="479" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+          </div>
+          <div class="linkedin-feed-item">
+            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7323599761863790592?collapsed=1" height="567" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+          </div>
+        </div>
+        <div class="view-more-container">
+          <a href="https://www.linkedin.com/company/spe-iit-guwahati-student-chapter/" target="_blank" class="btn btn-primary">View More on LinkedIn</a>
+        </div>
+      </div>
+      
+      <!-- Right Column: Upcoming & Past Events -->
+      <div class="col-lg-4 mt-4 mt-lg-0">
+        <div class="events-side">
+          <h3 class="mb-4 text-center" style="color: #003366;">Upcoming Events</h3>
+          
+          <div class="no-events">
+            <i class="fas fa-calendar-times fa-3x mb-3" style="color: #6c757d;"></i>
+            <h5>No events coming up</h5>
+            <p class="mt-3">Check back later for upcoming events or browse our past events.</p>
+            <a href="event.html" class="btn btn-primary mt-2">View Past Events</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -744,79 +868,7 @@
   </div>
 </section>
 
-<!-- Benefits Section -->
-<section class="benefits-section">
-  <div class="container">
-    <div class="benefits-container">
-      <h2 class="section-title">Membership Benefits</h2>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <i class="fas fa-book"></i>
-            </div>
-            <h5>Access Knowledge</h5>
-            <p>Stay current with technical resources, journals, and digital libraries.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <i class="fas fa-users"></i>
-            </div>
-            <h5>Build Connections</h5>
-            <p>Network with peers across 146 countries and 200+ sections.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <i class="fas fa-chart-line"></i>
-            </div>
-            <h5>Advance Career</h5>
-            <p>Gain career support, certifications, and leadership opportunities.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- Events Section -->
-<section class="events-section">
-  <div class="container">
-    <h2 class="section-title">Upcoming Events</h2>
-    <div class="row">
-      <div class="col-md-4 mb-4">
-        <div class="card shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">Annual Technical Conference</h5>
-            <p class="card-text">Join global experts to explore the latest innovations in energy.</p>
-            <a href="#" class="btn btn-primary btn-sm">Learn More</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="card shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">Student Energy Congress</h5>
-            <p class="card-text">Empowering the next generation of energy leaders worldwide.</p>
-            <a href="#" class="btn btn-primary btn-sm">Learn More</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="card shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">Regional Workshops</h5>
-            <p class="card-text">Hands-on workshops across various disciplines and regions.</p>
-            <a href="#" class="btn btn-primary btn-sm">Learn More</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- Regions & Disciplines -->
 <section class="py-5">
