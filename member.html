@@ -48,31 +48,6 @@
       color: #333;
     }
 
-    /* === NEW: Animated Background === */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      background: 
-        radial-gradient(circle at 20% 25%, rgba(0, 85, 153, 0.08) 0%, transparent 40%),
-        radial-gradient(circle at 80% 15%, rgba(0, 85, 153, 0.07) 0%, transparent 30%),
-        radial-gradient(circle at 10% 80%, rgba(0, 85, 153, 0.06) 0%, transparent 50%),
-        radial-gradient(circle at 50% 50%, rgba(0, 85, 153, 0.09) 0%, transparent 45%),
-        radial-gradient(circle at 90% 85%, rgba(0, 85, 153, 0.05) 0%, transparent 35%);
-      background-size: 300% 300%;
-      animation: moveBubbles 45s linear infinite;
-    }
-
-    @keyframes moveBubbles {
-      0% { background-position: 0% 0%; }
-      100% { background-position: 100% 100%; }
-    }
-    /* === End of Animated Background === */
-
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -90,7 +65,7 @@
 
     /* Hero Section */
     .hero { 
-      background: url('https://i.imgur.com/lWf4B9k.jpg') no-repeat center center/cover;
+      background: url('iitg2.jpg') no-repeat center center/cover;
       position: relative; 
       padding: 150px 20px;
       color: white;
@@ -148,13 +123,10 @@
     /* Statistics Section */
     .stats-section {
       padding: 60px 0;
-      /* Switched to transparent to let the body animation show through */
-      background-color: transparent; 
+      background-color: #ffffff;
     }
     .stats-card {
-      /* Made card background slightly transparent */
-      background: rgba(255, 255, 255, 0.8);
-      backdrop-filter: blur(5px);
+      background: #f8f9fa;
       border-radius: 10px;
       padding: 25px;
       text-align: center;
@@ -184,7 +156,6 @@
     /* Members Section with Accordion */
     .members-section {
       padding: 60px 0;
-      background-color: transparent;
     }
     .accordion-item {
       border: 1px solid #dee2e6;
@@ -192,9 +163,6 @@
       margin-bottom: 15px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       overflow: hidden;
-      /* Added for background effect */
-      background-color: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(5px);
     }
     .accordion-header .accordion-button {
       background-color: #003366;
@@ -227,7 +195,6 @@
     }
     .members-table {
       border: 1px solid #e9ecef;
-      background-color: #fff; /* Table needs a solid background */
     }
     .members-table thead {
       background-color: #f8f9fa;
@@ -286,59 +253,24 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   <div class="container">
     <a class="navbar-brand" href="index.html">
-      <img src="logo.png" alt="IIT Guwahati SPE Student Chapter Logo">
-      <span>IIT Guwahati SPE Student Chapter</span>
+      <img src="logo.png" alt="SPE Logo" height="80">
+      <span class="ms-2">IIT Guwahati SPE Student Chapter</span>
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-
-        <!-- Dropdown for About -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            About
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-            <li><a class="dropdown-item" href="about.html">About Us</a></li>
-            <li><a class="dropdown-item" href="gallery.html">Gallery</a></li>
-          </ul>
-        </li>
-
-        <!-- Dropdown for Membership -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="membershipDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Membership
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="membershipDropdown">
-            <li><a class="dropdown-item" href="join.html">Join as a Member</a></li>
-            <li><a class="dropdown-item" href="member.html">Member Directory</a></li>
-          </ul>
-        </li>
-
-        <!-- Dropdown for Events by Year -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="eventsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Events by Year
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="eventsDropdown">
-            <li><a class="dropdown-item" href="2025.html">Events 2025</a></li>
-            <li><a class="dropdown-item" href="2024.html">Events 2024</a></li>
-            <li><a class="dropdown-item" href="2023.html">Events 2023</a></li>
-          </ul>
-        </li>
-
-        <!-- Single link for IPCHD 2023 -->
-        <li class="nav-item"><a class="nav-link" href="https://event.iitg.ac.in/icphd" target="_blank">IPCHD 2023</a></li>
-
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="join.html">Join SPE Today!</a></li>
+        <li class="nav-item"><a class="nav-link" href="event.html">Events</a></li>
+        <li class="nav-item"><a class="nav-link active" href="member.html">Members</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
     </div>
   </div>
 </nav>
-
 
 <!-- Hero Section -->
 <section class="hero">
