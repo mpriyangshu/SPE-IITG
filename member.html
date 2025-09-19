@@ -253,19 +253,53 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   <div class="container">
     <a class="navbar-brand" href="index.html">
-      <img src="logo.png" alt="SPE Logo" height="80">
-      <span class="ms-2">IIT Guwahati SPE Student Chapter</span>
+      <img src="logo.png" alt="IIT Guwahati SPE Student Chapter Logo">
+      <span>IIT Guwahati SPE Student Chapter</span>
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-        <li class="nav-item"><a class="nav-link" href="join.html">Join SPE Today!</a></li>
-        <li class="nav-item"><a class="nav-link" href="event.html">Events</a></li>
-        <li class="nav-item"><a class="nav-link active" href="member.html">Members</a></li>
+
+        <!-- Dropdown for About -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            About
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+            <li><a class="dropdown-item" href="about.html">About Us</a></li>
+            <li><a class="dropdown-item" href="gallery.html">Gallery</a></li>
+          </ul>
+        </li>
+
+        <!-- Dropdown for Membership -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="membershipDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Membership
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="membershipDropdown">
+            <li><a class="dropdown-item" href="join.html">Join as a Member</a></li>
+            <li><a class="dropdown-item" href="member.html">Member Directory</a></li>
+          </ul>
+        </li>
+
+        <!-- Dropdown for Events by Year -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="eventsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Events by Year
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="eventsDropdown">
+            <li><a class="dropdown-item" href="2025.html">Events 2025</a></li>
+            <li><a class="dropdown-item" href="2024.html">Events 2024</a></li>
+            <li><a class="dropdown-item" href="2023.html">Events 2023</a></li>
+          </ul>
+        </li>
+
+        <!-- Single link for IPCHD 2023 -->
+        <li class="nav-item"><a class="nav-link" href="https://event.iitg.ac.in/icphd" target="_blank">IPCHD 2023</a></li>
+
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
     </div>
