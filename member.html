@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Members | IIT Guwahati SPE Student Chapter</title>
   <meta name="description" content="Meet the dedicated team and members of the IIT Guwahati SPE Student Chapter.">
   <meta name="keywords" content="SPE IITG members, IIT Guwahati SPE team, student chapter members, spe india, spe, IITG">
   <link rel="canonical" href="https://www.speiitg.in/members.html" />
-
  
   <!-- Open Graph -->
   <meta property="og:title" content="IIT Guwahati SPE Student Chapter">
@@ -17,13 +16,12 @@
   <meta property="og:image" content="https://www.speiitg.in/logo.png">
 
   <!-- Favicon -->
- <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-<link rel="shortcut icon" href="/favicon/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="IITG SPE" />
-<link rel="manifest" href="/favicon/site.webmanifest" />
-
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="IITG SPE" />
+  <link rel="manifest" href="/favicon/site.webmanifest" />
 
   <!-- Schema.org Organization -->
   <script type="application/ld+json">
@@ -33,15 +31,7 @@
     "name": "IIT Guwahati SPE Student Chapter",
     "url": "https://www.speiitg.in/",
     "logo": "https://www.speiitg.in/logo.png",
-    "description": "Student chapter of the Society of Petroleum Engineers at Indian Institute of Technology Guwahati",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Department of Chemical Engineering, Indian Institute of Technology",
-      "addressLocality": "Guwahati",
-      "addressRegion": "Assam",
-      "postalCode": "781039",
-      "addressCountry": "India"
-    }
+    "description": "Student chapter of the Society of Petroleum Engineers at Indian Institute of Technology Guwahati"
   }
   </script>
 
@@ -51,13 +41,60 @@
   <link href="navbar.css" rel="stylesheet">
  
   <style>
+    /* Global Styles & Animations */
+    body {
+      font-family: 'Segoe UI', 'Roboto', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    /* === NEW: Animated Background === */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: 
+        radial-gradient(circle at 20% 25%, rgba(0, 85, 153, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 80% 15%, rgba(0, 85, 153, 0.07) 0%, transparent 30%),
+        radial-gradient(circle at 10% 80%, rgba(0, 85, 153, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(0, 85, 153, 0.09) 0%, transparent 45%),
+        radial-gradient(circle at 90% 85%, rgba(0, 85, 153, 0.05) 0%, transparent 35%);
+      background-size: 300% 300%;
+      animation: moveBubbles 45s linear infinite;
+    }
+
+    @keyframes moveBubbles {
+      0% { background-position: 0% 0%; }
+      100% { background-position: 100% 100%; }
+    }
+    /* === End of Animated Background === */
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
     
+    .animated-section {
+      opacity: 0;
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      transform: translateY(20px);
+    }
+    .animated-section.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Hero Section */
     .hero { 
-      background: url('images/iitg2.jpg') no-repeat center center/cover; 
-      color: white; 
-      text-align: center; 
-      padding: 120px 20px; 
+      background: url('https://i.imgur.com/lWf4B9k.jpg') no-repeat center center/cover;
       position: relative; 
+      padding: 150px 20px;
+      color: white;
+      text-align: center;
     }
     .hero::before { 
       content: ""; 
@@ -66,95 +103,149 @@
       left: 0; 
       width: 100%; 
       height: 100%; 
-      background: rgba(0, 51, 102, 0.6); 
+      background: linear-gradient(45deg, rgba(0, 34, 68, 0.8), rgba(0, 85, 153, 0.7));
     }
     .hero-content { 
       position: relative; 
       z-index: 2; 
+      animation: fadeInUp 1s ease-out;
     }
     .hero h1 { 
-      font-size: 3rem; 
-      font-weight: bold; 
-      margin-bottom: 20px;
+      font-size: 3.5rem; 
+      font-weight: 700;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
     }
     .hero p { 
-      font-size: 1.25rem; 
-      margin-bottom: 30px; 
+      font-size: 1.2rem; 
+      max-width: 700px;
+      margin: 15px auto 0;
+      font-weight: 300;
     }
-    .section-title { 
-      color: #003366; 
-      font-weight: bold; 
-      margin-bottom: 30px; 
+
+    /* Page Header */
+    .page-header {
       text-align: center;
-      padding-bottom: 15px;
-      border-bottom: 2px solid #003366;
-    }
-    .degree-section {
       margin-bottom: 50px;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    .degree-header {
-      background: #003366;
+    .page-header h2 {
+      font-weight: 700;
+      color: #002244;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+    .page-header h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background-color: #f1c40f;
+    }
+
+    /* Statistics Section */
+    .stats-section {
+      padding: 60px 0;
+      /* Switched to transparent to let the body animation show through */
+      background-color: transparent; 
+    }
+    .stats-card {
+      /* Made card background slightly transparent */
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(5px);
+      border-radius: 10px;
+      padding: 25px;
+      text-align: center;
+      border-top: 4px solid #003366;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .stats-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+    }
+    .stats-icon {
+      font-size: 2.5rem;
+      color: #003366;
+      margin-bottom: 15px;
+    }
+    .stats-number {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #002244;
+    }
+    .stats-label {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    /* Members Section with Accordion */
+    .members-section {
+      padding: 60px 0;
+      background-color: transparent;
+    }
+    .accordion-item {
+      border: 1px solid #dee2e6;
+      border-radius: 8px !important;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      overflow: hidden;
+      /* Added for background effect */
+      background-color: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(5px);
+    }
+    .accordion-header .accordion-button {
+      background-color: #003366;
       color: white;
-      padding: 15px;
-      border-radius: 8px;
-      margin-bottom: 20px;
+      font-size: 1.25rem;
+      font-weight: 600;
+      border-radius: 0 !important;
+    }
+    .accordion-header .accordion-button:not(.collapsed) {
+      background-color: #002244;
+      box-shadow: none;
+    }
+    .accordion-header .accordion-button:focus {
+      box-shadow: none;
+      border-color: rgba(0,0,0,.125);
+    }
+    .accordion-button::after {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    }
+    .accordion-body {
+      padding: 1.5rem;
     }
     .field-header {
-      background: #f1c40f;
+      font-size: 1.1rem;
+      font-weight: 600;
       color: #003366;
-      padding: 12px 15px;
-      border-radius: 6px;
-      margin: 20px 0 15px;
-      font-weight: bold;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #f1c40f;
+      margin: 25px 0 15px;
     }
     .members-table {
-      margin: 20px 0;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      border-radius: 8px;
-      overflow: hidden;
+      border: 1px solid #e9ecef;
+      background-color: #fff; /* Table needs a solid background */
     }
     .members-table thead {
-      background: #0B64A0;
-      color: white;
+      background-color: #f8f9fa;
     }
     .members-table th {
-      text-align: left;
-      padding: 12px 15px;
       font-weight: 600;
     }
-    .members-table td {
-      padding: 10px 15px;
-      vertical-align: middle;
-    }
-    .members-table tr:nth-child(even) {
-      background-color: #F8FBFC;
-    }
-    .badge {
-      font-size: 0.75rem;
-      padding: 5px 10px;
-      border-radius: 15px;
-    }
-    .badge-bachelor {
-      background: #17a2b8;
-    }
-    .badge-master {
-      background: #28a745;
-    }
-    .badge-phd {
-      background: #dc3545;
-    }
+    
+    /* Footer */
     footer { 
-      background: #003366; 
-      color: white; 
-      padding: 40px 0 20px; 
+      background: #002244; 
+      color: #ccc; 
+      padding: 50px 0 20px; 
     }
     footer h5 {
-      color: #ffc107;
+      color: #fff;
+      font-weight: 600;
       margin-bottom: 20px;
-      font-size: 1.2rem;
     }
     footer ul {
       list-style: none;
@@ -164,56 +255,28 @@
       margin-bottom: 10px;
     }
     footer a { 
-      color: #fff; 
+      color: #ccc; 
       text-decoration: none; 
+      transition: color 0.3s ease;
     }
     footer a:hover {
-      color: #ffc107;
+      color: #f1c40f;
     }
-    .footer-social {
-      font-size: 24px;
-    }
-    .footer-social a {
+    .social-icons a {
+      font-size: 1.5rem;
       margin-right: 15px;
+      display: inline-block;
+      transition: transform 0.3s ease;
     }
-    .copyright {
+    .social-icons a:hover {
+      transform: translateY(-3px);
+    }
+    .footer-bottom {
       margin-top: 30px;
       padding-top: 20px;
-      border-top: 1px solid rgba(255,255,255,0.2);
-    }
-    .btn-warning {
-      background-color: #ffc107;
-      border-color: #ffc107;
-      color: #003366;
-      font-weight: 600;
-    }
-    .btn-primary {
-      background-color: #003366;
-      border-color: #003366;
-      font-weight: 600;
-    }
-    .btn-light {
-      background-color: #f8f9fa;
-      border-color: #f8f9fa;
-      color: #003366;
-      font-weight: 600;
-    }
-    .stats-box {
-      background: #f8f9fa;
-      border-radius: 8px;
-      padding: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
       text-align: center;
-      margin-bottom: 30px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    .stats-number {
-      font-size: 2.5rem;
-      font-weight: bold;
-      color: #003366;
-    }
-    .stats-label {
-      font-size: 1rem;
-      color: #6c757d;
+      font-size: 0.9rem;
     }
   </style>
 </head>
@@ -223,268 +286,268 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   <div class="container">
     <a class="navbar-brand" href="index.html">
-      <img src="logo.png" alt="SPE Logo" height="80">
-      <span class="ms-2">IIT Guwahati SPE Student Chapter</span>
+      <img src="logo.png" alt="IIT Guwahati SPE Student Chapter Logo">
+      <span>IIT Guwahati SPE Student Chapter</span>
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-        <li class="nav-item"><a class="nav-link" href="join.html">Join SPE Today!</a></li>
-        <li class="nav-item"><a class="nav-link" href="event.html">Events</a></li>
-        <li class="nav-item"><a class="nav-link active" href="member.html">Members</a></li>
+
+        <!-- Dropdown for About -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            About
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+            <li><a class="dropdown-item" href="about.html">About Us</a></li>
+            <li><a class="dropdown-item" href="gallery.html">Gallery</a></li>
+          </ul>
+        </li>
+
+        <!-- Dropdown for Membership -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="membershipDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Membership
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="membershipDropdown">
+            <li><a class="dropdown-item" href="join.html">Join as a Member</a></li>
+            <li><a class="dropdown-item" href="member.html">Member Directory</a></li>
+          </ul>
+        </li>
+
+        <!-- Dropdown for Events by Year -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="eventsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Events by Year
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="eventsDropdown">
+            <li><a class="dropdown-item" href="2025.html">Events 2025</a></li>
+            <li><a class="dropdown-item" href="2024.html">Events 2024</a></li>
+            <li><a class="dropdown-item" href="2023.html">Events 2023</a></li>
+          </ul>
+        </li>
+
+        <!-- Single link for IPCHD 2023 -->
+        <li class="nav-item"><a class="nav-link" href="https://event.iitg.ac.in/icphd" target="_blank">IPCHD 2023</a></li>
+
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
+
 <!-- Hero Section -->
-<section class="hero d-flex align-items-center">
+<section class="hero">
   <div class="container hero-content">
-    <h1>IIT Guwahati SPE Student Chapter</h1>
-    <h2>Our Members</h2>
-    <p>Meet our diverse community of students passionate about petroleum engineering and energy</p>
+    <h1>Our Members</h1>
+    <p>Meet the diverse and dedicated community of students driving innovation at the IIT Guwahati SPE Student Chapter.</p>
   </div>
 </section>
 
-<!-- Members Statistics -->
-<section class="py-5 bg-light">
+<!-- Members Statistics Section -->
+<section class="stats-section animated-section">
   <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <div class="stats-box">
-          <div class="stats-number">85</div>
+    <div class="page-header">
+      <h2>Chapter by the Numbers</h2>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4 col-lg-2">
+        <div class="stats-card">
+          <div class="stats-icon"><i class="fas fa-users"></i></div>
+          <div class="stats-number" data-target="85">0</div>
           <div class="stats-label">Total Members</div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="stats-box">
-          <div class="stats-number">16</div>
-          <div class="stats-label">Bachelor's Students</div>
+      <div class="col-md-4 col-lg-2">
+        <div class="stats-card">
+          <div class="stats-icon"><i class="fas fa-user-graduate"></i></div>
+          <div class="stats-number" data-target="16">0</div>
+          <div class="stats-label">Bachelor's</div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="stats-box">
-          <div class="stats-number">37</div>
-          <div class="stats-label">Master's Students</div>
+      <div class="col-md-4 col-lg-2">
+        <div class="stats-card">
+          <div class="stats-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div class="stats-number" data-target="37">0</div>
+          <div class="stats-label">Master's</div>
         </div>
       </div>
-      <div class="col-md-4 offset-md-2">
-        <div class="stats-box">
-          <div class="stats-number">32</div>
-          <div class="stats-label">PhD Students</div>
+      <div class="col-md-4 col-lg-2">
+        <div class="stats-card">
+          <div class="stats-icon"><i class="fas fa-book-reader"></i></div>
+          <div class="stats-number" data-target="32">0</div>
+          <div class="stats-label">PhD Scholars</div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="stats-box">
-          <div class="stats-number">12</div>
-          <div class="stats-label">Different Departments</div>
+      <div class="col-md-4 col-lg-2">
+        <div class="stats-card">
+          <div class="stats-icon"><i class="fas fa-building"></i></div>
+          <div class="stats-number" data-target="12">0</div>
+          <div class="stats-label">Departments</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Members Section -->
-<section class="py-5">
+<!-- Members List Section -->
+<section class="members-section animated-section">
   <div class="container">
-    <h2 class="section-title">Our Members</h2>
-    
-    <!-- Bachelor's Students -->
-    <div class="degree-section">
-      <div class="degree-header">
-        <h3><i class="fas fa-user-graduate me-2"></i>Bachelor's Students</h3>
-      </div>
-      
-      <!-- Chemical Engineering -->
-      <div class="field-header">Chemical Engineering</div>
-      <div class="table-responsive members-table">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Degree Name</th>
-              <th>Field of Study</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Aditya Prasad Mohanty</td><td>Bachelor of Technology</td><td>Chemical Engineering</td></tr>
-            <tr><td>Akash Kumar</td><td>Bachelor of Technology</td><td>Chemical Engineering</td></tr>
-            <tr><td>Astha Gupta</td><td>Bachelor of Technology</td><td>Civil Engineering</td></tr>
-            <tr><td>Ayush Gupta</td><td>Bachelor of Technology</td><td>Mechanical Engineering</td></tr>
-            <tr><td>Goutam Kumar Hembram</td><td>Bachelor of Technology</td><td>Chemical Engineering</td></tr>
-            <tr><td>MANISH Jangir</td><td>Bachelor of Technology</td><td>Chemical Technology</td></tr>
-            <tr><td>Prayansh Kumar</td><td>Bachelor of Technology</td><td>Computer Science</td></tr>
-            <tr><td>Ravi Patel</td><td>Bachelor of Technology</td><td>Chemical Engineering</td></tr>
-            <tr><td>Samiksha Mitra</td><td>Bachelor of Technology</td><td>Civil Engineering</td></tr>
-            <tr><td>Sunidhi Prakash</td><td>Bachelor of Technology</td><td>Engineering Physics</td></tr>
-            <tr><td>Venkat Sai Teja Kalluri</td><td>Bachelor of Technology</td><td>Engineering Physics</td></tr>
-          </tbody>
-        </table>
-      </div>
+    <div class="page-header">
+      <h2>Member Directory</h2>
     </div>
-    
-    <!-- Master's Students -->
-    <div class="degree-section">
-      <div class="degree-header">
-        <h3><i class="fas fa-graduation-cap me-2"></i>Master's Students</h3>
+    <div class="accordion" id="membersAccordion">
+
+      <!-- Bachelor's Students -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingBachelors">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBachelors" aria-expanded="true" aria-controls="collapseBachelors">
+            <i class="fas fa-user-graduate me-3"></i>Bachelor's Students
+          </button>
+        </h2>
+        <div id="collapseBachelors" class="accordion-collapse collapse show" aria-labelledby="headingBachelors" data-bs-parent="#membersAccordion">
+          <div class="accordion-body">
+            <h4 class="field-header">Engineering & Technology</h4>
+            <div class="table-responsive">
+              <table class="table table-hover members-table">
+                <thead><tr><th>Name</th><th>Degree</th><th>Field of Study</th></tr></thead>
+                <tbody>
+                  <tr><td>Aditya Prasad Mohanty</td><td>B.Tech</td><td>Chemical Engineering</td></tr>
+                  <tr><td>Akash Kumar</td><td>B.Tech</td><td>Chemical Engineering</td></tr>
+                  <tr><td>Astha Gupta</td><td>B.Tech</td><td>Civil Engineering</td></tr>
+                  <tr><td>Ayush Gupta</td><td>B.Tech</td><td>Mechanical Engineering</td></tr>
+                  <tr><td>Goutam Kumar Hembram</td><td>B.Tech</td><td>Chemical Engineering</td></tr>
+                  <tr><td>MANISH Jangir</td><td>B.Tech</td><td>Chemical Technology</td></tr>
+                  <tr><td>Prayansh Kumar</td><td>B.Tech</td><td>Computer Science</td></tr>
+                  <tr><td>Ravi Patel</td><td>B.Tech</td><td>Chemical Engineering</td></tr>
+                  <tr><td>Samiksha Mitra</td><td>B.Tech</td><td>Civil Engineering</td></tr>
+                  <tr><td>Sunidhi Prakash</td><td>B.Tech</td><td>Engineering Physics</td></tr>
+                  <tr><td>Venkat Sai Teja Kalluri</td><td>B.Tech</td><td>Engineering Physics</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
-      
-      <!-- Chemical Engineering -->
-      <div class="field-header">Chemical Engineering</div>
-      <div class="table-responsive members-table">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Degree Name</th>
-              <th>Field of Study</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Amal Abraham</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
-            <tr><td>Anindya Anupam</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
-            <tr><td>Anushka Singh</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
-            <tr><td>Avinash Pandey</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
-            <tr><td>Bablu Singh</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
-            <tr><td>Bijirgiri Basumatary</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
-            <tr><td>Debashis Dey</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
-            <tr><td>Muni Puneeth Pinjala</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
-            <tr><td>Nikhil J Amin</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
-            <tr><td>Nikhil Jadhav</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
-            <tr><td>Parag Shrivastava</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
-            <tr><td>Prateek Gupta</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
-            <tr><td>Rishabh Nayan</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
-            <tr><td>Rohit Vinayak Vidhate</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
-            <tr><td>Sneha Kumari</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
-            <tr><td>Sudhakar Verma</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
-            <tr><td>Sumit Singh</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
-            <tr><td>Sumit Sinha</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
-            <tr><td>Uday Bharat Mhapsekar</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
-            <tr><td>VEDKUMAR PRITAMBHAI PATEL</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
-            <tr><td>Zaffar Zeshan</td><td>Master of Engineering</td><td>Chemical Engineering</td></tr>
-            <tr><td>Zeeshan Akhtar</td><td>Master of Engineering</td><td>Chemical Engineering</td></tr>
-          </tbody>
-        </table>
+
+      <!-- Master's Students -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingMasters">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMasters" aria-expanded="false" aria-controls="collapseMasters">
+            <i class="fas fa-graduation-cap me-3"></i>Master's Students
+          </button>
+        </h2>
+        <div id="collapseMasters" class="accordion-collapse collapse" aria-labelledby="headingMasters" data-bs-parent="#membersAccordion">
+          <div class="accordion-body">
+            <h4 class="field-header">Petroleum & Chemical Engineering</h4>
+            <div class="table-responsive">
+               <table class="table table-hover members-table">
+                <thead><tr><th>Name</th><th>Degree</th><th>Field of Study</th></tr></thead>
+                <tbody>
+                    <tr><td>Amal Abraham</td><td>M.Tech</td><td>Chemical Engineering</td></tr>
+                    <tr><td>Anindya Anupam</td><td>M.Tech</td><td>Chemical Engineering</td></tr>
+                    <tr><td>Anushka Singh</td><td>M.Tech</td><td>Chemical Engineering</td></tr>
+                    <tr><td>Avinash Pandey</td><td>M.Tech</td><td>Chemical Engineering</td></tr>
+                    <tr><td>Bablu Singh</td><td>M.Tech</td><td>Chemical Engineering</td></tr>
+                    <tr><td>Bijirgiri Basumatary</td><td>M.Tech</td><td>Chemical Engineering</td></tr>
+                    <tr><td>Debashis Dey</td><td>M.Tech</td><td>Chemical Engineering</td></tr>
+                    <tr><td>Muni Puneeth Pinjala</td><td>M.Tech</td><td>Chemical Engineering</td></tr>
+                    <tr><td>Nikhil J Amin</td><td>M.Tech</td><td>Chemical Engineering</td></tr>
+                    <tr><td>Nikhil Jadhav</td><td>M.Tech</td><td>Chemical Engineering</td></tr>
+                    <tr><td>Parag Shrivastava</td><td>M.Tech</td><td>Chemical Engineering</td></tr>
+                    <tr><td>Prateek Gupta</td><td>M.Tech</td><td>Chemical Engineering</td></tr>
+                    <tr><td>Rishabh Nayan</td><td>M.Tech</td><td>Chemical Engineering</td></tr>
+                    <tr><td>Rohit Vinayak Vidhate</td><td>M.Tech</td><td>Chemical Engineering</td></tr>
+                    <tr><td>Sneha Kumari</td><td>M.Tech</td><td>Chemical Engineering</td></tr>
+                    <tr><td>Sudhakar Verma</td><td>M.Tech</td><td>Chemical Engineering</td></tr>
+                    <tr><td>Sumit Singh</td><td>M.Tech</td><td>Chemical Engineering</td></tr>
+                    <tr><td>Sumit Sinha</td><td>M.Tech</td><td>Chemical Engineering</td></tr>
+                    <tr><td>Uday Bharat Mhapsekar</td><td>M.Tech</td><td>Chemical Engineering</td></tr>
+                    <tr><td>VEDKUMAR PRITAMBHAI PATEL</td><td>M.Tech</td><td>Chemical Engineering</td></tr>
+                    <tr><td>Zaffar Zeshan</td><td>M.Eng</td><td>Chemical Engineering</td></tr>
+                    <tr><td>Zeeshan Akhtar</td><td>M.Eng</td><td>Chemical Engineering</td></tr>
+                    <tr><td>Amarjit Pandey</td><td>M.Tech</td><td>Petroleum Engineering</td></tr>
+                    <tr><td>Ms. Shagun Dahiya</td><td>M.Tech</td><td>Petroleum Technology</td></tr>
+                    <tr><td>RAHUL DEV</td><td>M.Tech</td><td>Petroleum Science</td></tr>
+                    <tr><td>Rutvik Kapoor</td><td>M.Tech</td><td>Petrochemical Engineering</td></tr>
+                    <tr><td>Vishvajeet Vijay Patil</td><td>M.Pet.Eng</td><td>Petroleum Science</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <h4 class="field-header">Other Disciplines</h4>
+             <div class="table-responsive">
+              <table class="table table-hover members-table">
+                <thead><tr><th>Name</th><th>Degree</th><th>Field of Study</th></tr></thead>
+                <tbody>
+                  <tr><td>ABHISHEK DHIMAN</td><td>M.Tech</td><td>Petroleum Science</td></tr>
+                  <tr><td>Anshuman Mondal</td><td>B.Tech</td><td>Electronics & Communications</td></tr>
+                  <tr><td>Arjun Satheesh</td><td>M.Sc</td><td>Polymer Science</td></tr>
+                  <tr><td>Sudhanshu Bhaskar</td><td>M.Tech</td><td>BioTechnology</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
-      
-      <!-- Petroleum Engineering -->
-      <div class="field-header">Petroleum Engineering</div>
-      <div class="table-responsive members-table">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Degree Name</th>
-              <th>Field of Study</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Amarjit Pandey</td><td>Master of Technology</td><td>Petroleum Engineering</td></tr>
-            <tr><td>Ms. Shagun Dahiya</td><td>Master of Technology</td><td>Petroleum Technology</td></tr>
-            <tr><td>RAHUL DEV</td><td>Master of Technology</td><td>Petroleum Science</td></tr>
-            <tr><td>Rutvik Kapoor</td><td>Master of Technology</td><td>Petrochemical Engineering</td></tr>
-            <tr><td>Vishvajeet Vijay Patil</td><td>Master in Petroleum Engineering</td><td>Petroleum Science</td></tr>
-          </tbody>
-        </table>
+
+      <!-- PhD Students -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingPhd">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePhd" aria-expanded="false" aria-controls="collapsePhd">
+            <i class="fas fa-book-reader me-3"></i>PhD & Post-Doctoral Scholars
+          </button>
+        </h2>
+        <div id="collapsePhd" class="accordion-collapse collapse" aria-labelledby="headingPhd" data-bs-parent="#membersAccordion">
+          <div class="accordion-body">
+            <h4 class="field-header">Chemical Engineering & Energy</h4>
+            <div class="table-responsive">
+              <table class="table table-hover members-table">
+                <thead><tr><th>Name</th><th>Degree</th><th>Field of Study</th></tr></thead>
+                <tbody>
+                  <tr><td>AKASHDEEP HAZARIKA</td><td>PhD</td><td>Chemical Engineering</td></tr>
+                  <tr><td>Biswajit Mondal</td><td>PhD</td><td>Chemical Engineering</td></tr>
+                  <tr><td>Hrishikesh Sarma</td><td>PhD</td><td>Chemical Engineering</td></tr>
+                  <tr><td>Indrajeet Kumar</td><td>PhD</td><td>Chemical Engineering</td></tr>
+                  <tr><td>Manosh Jyoti Das</td><td>D.Eng</td><td>Energy</td></tr>
+                  <tr><td>Mukesh Bharti</td><td>PhD</td><td>Chemical Engineering</td></tr>
+                  <tr><td>Mr. Arnab Kumar Pal</td><td>PhD</td><td>Engineering</td></tr>
+                  <tr><td>Mr. Bineet Kumar Tripathi</td><td>PhD</td><td>Chemical Engineering</td></tr>
+                  <tr><td>NILESH MOHAN KHALSE</td><td>PhD</td><td>Chemical Engineering</td></tr>
+                  <tr><td>Prince Kumar Barnwal</td><td>PhD</td><td>Chemical Engineering</td></tr>
+                  <tr><td>RAMANUJ SHANKAR PANDEY</td><td>PhD</td><td>Energy</td></tr>
+                  <tr><td>Rushabh Kamalakar Kale</td><td>PhD</td><td>Chemical Engineering</td></tr>
+                  <tr><td>Satish Kumar</td><td>PhD</td><td>Chemical Engineering</td></tr>
+                  <tr><td>Sayani Adhikari</td><td>PhD</td><td>Chemical Engineering</td></tr>
+                  <tr><td>Shilpa Nandi</td><td>PhD</td><td>Research</td></tr>
+                  <tr><td>Stuti Dubey</td><td>D.Eng</td><td>Chemical Engineering</td></tr>
+                  <tr><td>Sumit Kumar</td><td>PhD</td><td>Chemical Engineering</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <h4 class="field-header">Other Disciplines</h4>
+            <div class="table-responsive">
+              <table class="table table-hover members-table">
+                <thead><tr><th>Name</th><th>Degree</th><th>Field of Study</th></tr></thead>
+                <tbody>
+                  <tr><td>ANINDITA SAHA</td><td>PhD</td><td>Mathematics</td></tr>
+                  <tr><td>BIKASH KUMAR DAS</td><td>PhD</td><td>Chemistry</td></tr>
+                  <tr><td>Debajyoti Saha</td><td>PhD</td><td>BioTechnology</td></tr>
+                  <tr><td>GAURAV BONDE</td><td>PhD</td><td>Physics</td></tr>
+                  <tr><td>Mousumi Mondal</td><td>PhD</td><td>Mathematics</td></tr>
+                  <tr><td>NAYAN HALDAR</td><td>PhD</td><td>Mathematics</td></tr>
+                  <tr><td>PANKAJ ROY</td><td>PhD</td><td>Mathematics</td></tr>
+                  <tr><td>TUSHAR SHAH</td><td>Post-Doc</td><td>Electrical Engineering</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
-      
-      <!-- Other Fields -->
-      <div class="field-header">Other Fields</div>
-      <div class="table-responsive members-table">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Degree Name</th>
-              <th>Field of Study</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>ABHISHEK DHIMAN</td><td>Master of Technology</td><td>Petroleum Science</td></tr>
-            <tr><td>ABHISHEK SHRIVASTAVA</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
-            <tr><td>Anshuman Mondal</td><td>Bachelor of Technology</td><td>Electronics & Communications</td></tr>
-            <tr><td>Arjun Satheesh</td><td>Master Of Science</td><td>Polymer Science</td></tr>
-            <tr><td>Ashish S Khutale</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
-            <tr><td>ASTHA KALITA</td><td>Master of Technology</td><td>Chemical Engineering</td></tr>
-            <tr><td>Murru Purna Anand Kumar</td><td>Master of Engineering</td><td>Chemical Engineering</td></tr>
-            <tr><td>Pentapalli Venkata Satyanarayana</td><td>Master of Engineering</td><td>Chemical Engineering</td></tr>
-            <tr><td>SONU KUMAR</td><td>Master of Technology</td><td>Chemical & Petroleum Engineering</td></tr>
-            <tr><td>Sudhanshu Bhaskar</td><td>Master of Technology</td><td>BioTechnology</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    
-    <!-- PhD Students -->
-    <div class="degree-section">
-      <div class="degree-header">
-        <h3><i class="fas fa-book-open me-2"></i>PhD Students</h3>
-      </div>
-      
-      <!-- Chemical Engineering -->
-      <div class="field-header">Chemical Engineering</div>
-      <div class="table-responsive members-table">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Degree Name</th>
-              <th>Field of Study</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>AKASHDEEP HAZARIKA</td><td>Doctor of Philosophy</td><td>Chemical Engineering</td></tr>
-            <tr><td>Biswajit Mondal</td><td>Doctor of Philosophy</td><td>Chemical Engineering</td></tr>
-            <tr><td>BIKASH KUMAR DAS</td><td>Doctor of Philosophy</td><td>Chemistry</td></tr>
-            <tr><td>Hrishikesh Sarma</td><td>Doctor of Philosophy</td><td>Chemical Engineering</td></tr>
-            <tr><td>Indrajeet Kumar</td><td>Doctor of Philosophy</td><td>Chemical Engineering</td></tr>
-            <tr><td>Manosh Jyoti Das</td><td>Doctor of Engineering</td><td>Energy</td></tr>
-            <tr><td>Mukesh Bharti</td><td>Doctor of Philosophy</td><td>Chemical Engineering</td></tr>
-            <tr><td>Mr. Arnab Kumar Pal</td><td>Doctor of Philosophy</td><td>Engineering</td></tr>
-            <tr><td>Mr. Bineet Kumar Tripathi</td><td>Doctor of Philosophy</td><td>Chemical Engineering</td></tr>
-            <tr><td>NILESH MOHAN KHALSE</td><td>Doctor of Philosophy</td><td>Chemical Engineering</td></tr>
-            <tr><td>Prince Kumar Barnwal</td><td>Doctor of Philosophy</td><td>Chemical Engineering</td></tr>
-            <tr><td>RAMANUJ SHANKAR PANDEY</td><td>Doctor of Philosophy</td><td>Energy</td></tr>
-            <tr><td>Rushabh Kamalakar Kale</td><td>Doctor of Philosophy</td><td>Chemical Engineering</td></tr>
-            <tr><td>Satish Kumar</td><td>Doctor of Philosophy</td><td>Chemical Engineering</td></tr>
-            <tr><td>Sayani Adhikari</td><td>Doctor of Philosophy</td><td>Chemical Engineering</td></tr>
-            <tr><td>Shilpa Nandi</td><td>Doctor of Philosophy</td><td>Research</td></tr>
-            <tr><td>Stuti Dubey</td><td>Doctor of Engineering</td><td>Chemical Engineering</td></tr>
-            <tr><td>Sumit Kumar</td><td>Doctor of Philosophy</td><td>Chemical Engineering</td></tr>
-          </tbody>
-        </table>
-      </div>
-      
-      <!-- Other Fields -->
-      <div class="field-header">Other Fields</div>
-      <div class="table-responsive members-table">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Degree Name</th>
-              <th>Field of Study</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>ANINDITA SAHA</td><td>Doctor of Philosophy</td><td>Mathematics</td></tr>
-            <tr><td>Arnab Kumar Roy</td><td>Doctor of Engineering</td><td>Chemical & Fuels Engineering</td></tr>
-            <tr><td>Debajyoti Saha</td><td>Doctor of Philosophy</td><td>BioTechnology</td></tr>
-            <tr><td>GAURAV BONDE</td><td>Doctor of Philosophy</td><td>Physics</td></tr>
-            <tr><td>Mousumi Mondal</td><td>Doctor of Philosophy</td><td>Mathematics</td></tr>
-            <tr><td>NAYAN HALDAR</td><td>Doctor of Philosophy</td><td>Mathematics</td></tr>
-            <tr><td>PANKAJ ROY</td><td>Doctor of Philosophy</td><td>Mathematics</td></tr>
-            <tr><td>Shankhari Swaminathan</td><td>Doctor of Philosophy</td><td>Chemical Engineering</td></tr>
-            <tr><td>TUSHAR SHAH</td><td>Post Doctoral</td><td>Electrical/Electronic Engineering</td></tr>
-            <tr><td>Vishal Dhar</td><td>Bachelor of Petroleum Engineering</td><td>Petroleum Technology</td></tr>
-          </tbody>
-        </table>
-      </div>
+
     </div>
   </div>
 </section>
@@ -493,27 +556,33 @@
 <footer>
   <div class="container">
     <div class="row">
-      
-      <div class="col-md-6">
-        <h5>Office Address</h5>
+      <div class="col-md-6 mb-4 mb-md-0">
+        <h5>Contact & Address</h5>
         <ul>
           <li>Department of Chemical Engineering</li>
-          <li>IIT Guwahati</li>
-          <li>Guwahati-781039</li>
-          <li>Assam, India</li>
+          <li>Indian Institute of Technology, Guwahati</li>
+          <li>Guwahati-781039, Assam, India</li>
+          <li><strong>Email:</strong> <a href="mailto:spe_iitguwahati@iitg.ac.in">spe_iitguwahati@iitg.ac.in</a></li>
         </ul>
       </div>
-
-      <div class="col-md-6 text-md-end">
+      <div class="col-md-3 mb-4 mb-md-0">
+        <h5>Quick Links</h5>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="event.html">Events</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
         <h5>Follow Us</h5>
         <div class="social-icons">
-          <a href="https://www.linkedin.com/company/spe-iit-guwahati-student-chapter"><i class="fab fa-linkedin"></i></a>
-          <a href="https://www.instagram.com/iitg_spe_sc/"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/spe-iit-guwahati-student-chapter" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/iitg_spe_sc/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
-
     </div>
-    <div class="footer-bottom mt-4">
+    <div class="footer-bottom">
       &copy; 2025 Department of Chemical Engineering, IIT Guwahati | Designed by Priyangshu
     </div>
   </div>
@@ -521,5 +590,51 @@
 
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  
+  // Animate sections on scroll
+  const sections = document.querySelectorAll('.animated-section');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+      }
+    });
+  }, { threshold: 0.1 });
+  sections.forEach(section => observer.observe(section));
+  
+  // Animated counter
+  const counters = document.querySelectorAll('.stats-number');
+  const speed = 200; // The lower the #, the faster the count
+
+  const countUp = (counter) => {
+    const target = +counter.getAttribute('data-target');
+    const updateCount = () => {
+      const count = +counter.innerText;
+      const increment = target / speed;
+
+      if (count < target) {
+        counter.innerText = Math.ceil(count + increment);
+        setTimeout(updateCount, 15);
+      } else {
+        counter.innerText = target;
+      }
+    };
+    updateCount();
+  };
+
+  const counterObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        countUp(entry.target);
+        counterObserver.unobserve(entry.target); // Animate only once
+      }
+    });
+  }, { threshold: 0.5 });
+  
+  counters.forEach(counter => counterObserver.observe(counter));
+});
+</script>
 </body>
 </html>
