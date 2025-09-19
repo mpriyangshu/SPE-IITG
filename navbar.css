@@ -53,8 +53,15 @@
   font-size: 0.95rem;
 }
 
-.navbar-nav .nav-link:hover {
-  color: #f1c40f !important;
+/* Show dropdown menu on hover */
+.navbar-nav .dropdown:hover > .dropdown-menu {
+  display: block;
+  margin-top: 0; /* Keeps dropdown aligned nicely */
+}
+
+/* Optional: change dropdown toggle color on hover (matching your hover style) */
+.navbar-nav .dropdown:hover > .nav-link {
+  color: #f1c40f !important; /* Match your existing hover color */
 }
 
 /* -----------------
@@ -89,3 +96,4 @@
     font-size: 0.7rem;
   }
 }
+
