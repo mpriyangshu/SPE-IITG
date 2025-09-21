@@ -1,38 +1,62 @@
 /* -----------------
-   Global Navbar CSS
-   ----------------- */
- body { 
-      font-family: Arial, sans-serif; 
-      background-color: #f8f9fa;
-      padding-top: 70px; /* adjust if your navbar height changes */
-      overflow-x: hidden;
-    }
+   Global Base Styles
+----------------- */
 
-/* Navbar container */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: linear-gradient(135deg, #e0f2f7 0%, #cceeff 50%, #e0f2f7 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 70px; /* adjust for navbar height */
+  overflow-x: hidden;
+}
+
+/* -----------------
+   Navbar Styles
+----------------- */
+
 .navbar {
-  background-color: #003366;
+  transition: all 0.3s ease;
+  background: rgba(0, 34, 68, 0.95);
+  backdrop-filter: blur(6px);
   padding: 0.5rem 1rem;
+}
+
+.navbar.scrolled {
+  background: rgba(0, 34, 68, 0.98);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-brand {
   display: flex;
   align-items: center;
   margin-right: 0;
+  flex-direction: row;
 }
 
 .navbar-brand img {
   height: 50px;
   width: auto;
   max-width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand img:hover {
+  transform: scale(1.05);
 }
 
 .navbar-brand span {
-  color: #fff;
-  font-weight: 600;
-  font-size: 0.9rem;
-  margin-left: 8px;
-  white-space: normal;
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #f1c40f;
+  letter-spacing: 1px;
   line-height: 1.2;
+  white-space: normal;
 }
 
 .navbar-toggler {
@@ -49,59 +73,112 @@
 .navbar-nav .nav-link {
   color: #fff !important;
   font-weight: 600;
+  margin: 0 8px;
   padding: 0.5rem 1rem;
   font-size: 0.95rem;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-/* Show dropdown menu on hover */
+.navbar-nav .nav-link:hover,
+.navbar-nav .dropdown:hover > .nav-link {
+  color: #f1c40f !important;
+  transform: translateY(-2px);
+}
+
+/* Dropdown Menu */
+
+.dropdown-menu {
+  background: #002244;
+  border-radius: 6px;
+  border: none;
+}
+
+.dropdown-item {
+  color: #fff !important;
+  transition: background 0.3s ease, padding-left 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background: #f1c40f;
+  color: #002244 !important;
+  padding-left: 15px;
+}
+
 .navbar-nav .dropdown:hover > .dropdown-menu {
   display: block;
-  margin-top: 0; /* Keeps dropdown aligned nicely */
-}
-
-/* Optional: change dropdown toggle color on hover (matching your hover style) */
-.navbar-nav .dropdown:hover > .nav-link {
-  color: #f1c40f !important; /* Match your existing hover color */
+  margin-top: 0;
 }
 
 /* -----------------
-   Responsive tweaks
-   ----------------- */
-@media (max-width: 768px) {
-  .navbar-brand span {
-    font-size: 0.8rem;
-    max-width: 120px;
-  }
+   LinkedIn Sections
+----------------- */
+
+.linkedin-embed-container,
+.linkedin-preview-container {
+  background: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(30px);
 }
 
-@media (max-width: 576px) {
-  .navbar-brand {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .navbar-brand span {
-    margin-left: 0;
-    margin-top: 5px;
-    max-width: 150px;
-  }
+.linkedin-embed-container.animated {
+  animation: fadeInUp 0.6s ease forwards;
 }
 
-@media (max-width: 360px) {
-  .navbar-brand img {
-    height: 40px;
-  }
-
-  .navbar-brand span {
-    font-size: 0.7rem;
-  }
+.linkedin-placeholder {
+  border: 1px dashed #ccc;
+  border-radius: 8px;
+  padding: 50px 20px;
+  width: 100%;
+  max-width: 500px;
+  font-style: italic;
+  color: #888;
 }
+
+.linkedin-preview-container {
+  margin-top: 20px;
+}
+
+.linkedin-preview-container h4 {
+  color: #0a66c2;
+  margin-bottom: 15px;
+}
+
+.linkedin-preview-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Small Carousel */
+.small-carousel {
+  max-width: 600px;
+  margin: auto;
+}
+
+.small-carousel .carousel-inner img {
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* -----------------
+   Event Card Styles
+----------------- */
 
 .event-card {
   position: relative;
   display: block;
   color: white;
-  height: 220px; /* adjust height as needed */
+  height: 220px;
   border-radius: 10px;
   overflow: hidden;
   background-size: cover;
@@ -115,7 +192,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(30, 30, 60, 0.85); /* Dark blue semi-transparent overlay */
+  background: rgba(30, 30, 60, 0.85);
   z-index: 1;
   border-radius: 10px;
 }
@@ -144,71 +221,158 @@
   text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
 }
 
-/* Optional: Hover effect */
 .event-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 15px rgba(0,0,0,0.3);
 }
-/* Existing CSS you provided */
-.linkedin-embed-container {
-    background: #fff;
-    border-radius: 15px;
-    padding: 30px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    display: flex;
+
+/* -----------------
+   Sponsor Styles
+----------------- */
+
+.section {
+  padding: 60px 0;
+  flex-grow: 1;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+.sponsor-main-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #0a66c2;
+  position: relative;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+.sponsor-main-title::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: #0a66c2;
+  border-radius: 2px;
+}
+
+.sponsor-intro {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto 4rem auto;
+  text-align: center;
+}
+
+.sponsor-category {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+  margin-bottom: 3rem;
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sponsor-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.category-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0;
+}
+
+.sponsor-logo-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.sponsor-logo-link:hover {
+  background-color: rgba(0, 102, 194, 0.05);
+  transform: translateY(-3px);
+}
+
+.sponsor-logo {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(10%) contrast(110%);
+  transition: filter 0.3s ease;
+  max-height: 150px;
+}
+
+.sponsor-logo-link:hover .sponsor-logo {
+  filter: grayscale(0%) contrast(100%);
+}
+
+.sponsor-logo.large-logo { max-height: 180px; max-width: 350px; }
+.sponsor-logo.medium-logo { max-height: 120px; max-width: 250px; }
+.sponsor-logo.small-logo { max-height: 80px; max-width: 180px; }
+
+/* -----------------
+   Button Icon Toggle
+----------------- */
+
+.btn-outline-primary .toggle-icon {
+  transition: transform 0.3s ease;
+}
+
+.btn[aria-expanded="true"] .toggle-icon {
+  transform: rotate(180deg);
+}
+
+/* -----------------
+   Responsive Styles
+----------------- */
+
+@media (max-width: 768px) {
+  .sponsor-main-title { font-size: 2rem; }
+  .category-title { font-size: 1.5rem; }
+  .sponsor-category { padding: 20px; }
+  .sponsor-logo.large-logo { max-height: 140px; }
+  .sponsor-logo.medium-logo { max-height: 100px; }
+  .sponsor-logo.small-logo { max-height: 70px; }
+
+  .navbar-brand span {
+    font-size: 0.8rem;
+    max-width: 120px;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-brand {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(30px);
+    align-items: flex-start;
+  }
+
+  .navbar-brand span {
+    margin-left: 0;
+    margin-top: 5px;
+    max-width: 150px;
+  }
 }
 
-.linkedin-embed-container.animated {
-  animation: fadeInUp 0.6s ease forwards;
-}
+@media (max-width: 360px) {
+  .navbar-brand img {
+    height: 40px;
+  }
 
-/* Placeholder for actual LinkedIn embed */
-.linkedin-placeholder {
-    border: 1px dashed #ccc;
-    border-radius: 8px;
-    padding: 50px 20px;
-    width: 100%;
-    max-width: 500px; /* LinkedIn embed max width */
-    font-style: italic;
-    color: #888;
+  .navbar-brand span {
+    font-size: 0.7rem;
+  }
 }
-
-/* NEW CSS for the collapsible section */
-.linkedin-preview-container {
-    background: #fff;
-    border-radius: 15px;
-    padding: 30px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    text-align: center;
-    margin-top: 20px;
-}
-
-.linkedin-preview-container h4 {
-    color: #0a66c2; /* LinkedIn blue */
-    margin-bottom: 15px;
-}
-
-.linkedin-preview-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.small-carousel {
-    max-width: 600px;
-    margin: auto;
-}
-
-.small-carousel .carousel-inner img {
-    height: 250px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
