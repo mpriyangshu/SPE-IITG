@@ -149,4 +149,66 @@
   transform: translateY(-5px);
   box-shadow: 0 8px 15px rgba(0,0,0,0.3);
 }
+/* Existing CSS you provided */
+.linkedin-embed-container {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.linkedin-embed-container.animated {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Placeholder for actual LinkedIn embed */
+.linkedin-placeholder {
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+    padding: 50px 20px;
+    width: 100%;
+    max-width: 500px; /* LinkedIn embed max width */
+    font-style: italic;
+    color: #888;
+}
+
+/* NEW CSS for the collapsible section */
+.linkedin-preview-container {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    text-align: center;
+    margin-top: 20px;
+}
+
+.linkedin-preview-container h4 {
+    color: #0a66c2; /* LinkedIn blue */
+    margin-bottom: 15px;
+}
+
+.linkedin-preview-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.small-carousel {
+    max-width: 600px;
+    margin: auto;
+}
+
+.small-carousel .carousel-inner img {
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
 
