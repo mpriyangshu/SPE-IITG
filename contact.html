@@ -256,45 +256,17 @@
     }
 
     /* Custom Map Container */
-    .map-container {
-      position: relative;
-      width: 100%;
-      height: 450px;
-      overflow: hidden;
-      border-top: 5px solid #003366;
-      border-bottom: 5px solid #003366;
-    }
-    
-    .map-overlay {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: rgba(255, 255, 255, 0.9);
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-      z-index: 1000;
-      max-width: 280px;
-    }
-    
-    .map-overlay h4 {
-      color: #003366;
-      margin-bottom: 10px;
-      font-size: 1.2rem;
-      font-weight: 700;
-    }
-    
-    .map-overlay p {
-      margin: 5px 0;
-      font-size: 0.9rem;
-      color: #333;
-    }
-    
-    .map-overlay i {
-      color: #f1c40f;
-      width: 20px;
-      margin-right: 8px;
-    }
+   .map-container a.btn-primary {
+  font-weight: 600;
+  padding: 12px 25px;
+  background-color: #003366;
+  border: none;
+}
+.map-container a.btn-primary:hover {
+  background-color: #002244;
+  color: #f1c40f;
+}
+
 
     /* Footer */
     footer {
@@ -341,51 +313,6 @@
       color: #bbb;
     }
     
-    /* Leaflet Map Customization */
-    #leaflet-map {
-      width: 100%;
-      height: 100%;
-      z-index: 100;
-    }
-    
-    .custom-marker {
-      background-color: #003366;
-      border: 3px solid #f1c40f;
-      border-radius: 50%;
-      width: 30px;
-      height: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-    }
-    
-    .leaflet-popup-content {
-      font-family: 'Open Sans', sans-serif;
-      margin: 15px;
-    }
-    
-    .leaflet-popup-content-wrapper {
-      border-radius: 8px;
-      box-shadow: 0 3px 14px rgba(0,0,0,0.2);
-    }
-    
-    .leaflet-popup-content h3 {
-      color: #003366;
-      margin-top: 0;
-      border-bottom: 2px solid #f1c40f;
-      padding-bottom: 5px;
-    }
-    
-    /* Ensure map container has proper dimensions */
-    .leaflet-container {
-      height: 450px;
-      width: 100%;
-    }
-  </style>
-</head>
-<body>
-  <div id="fh5co-page">
 
     <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
@@ -460,9 +387,9 @@
             <div class="contact-card">
               <h5><i class="fas fa-envelope me-2"></i>Email Us</h5>
               <ul>
-                <li><strong>General Inquiries:</strong><br><a href="mailto:rishabh.nayan@iitg.ac.in">rishabh.nayan@iitg.ac.in</a></li>
-                <li><strong>Press / Media:</strong><br><a href="mailto:abhisheks7001@iitg.ac.in">abhisheks7001@iitg.ac.in</a></li>
-                <li><strong>Membership:</strong><br><a href="mailto:n.amin@iitg.ac.in">n.amin@iitg.ac.in</a></li>
+                <li><strong>General Inquiries:</strong><br><a href="mailto:spe_iitguwahati@iitg.ac.in">spe_iitguwahati@iitg.ac.in</a></li>
+                <li><strong>Press / Media:</strong><br><a href="mailto:spe_iitguwahati@iitg.ac.in">spe_iitguwahati@iitg.ac.in</a></li>
+                <li><strong>Membership:</strong><br><a href="mailto:spe_iitguwahati@iitg.ac.in">spe_iitguwahati@iitg.ac.in</a></li>
               </ul>
             </div>
           </div>
@@ -570,16 +497,15 @@
       </div>
     </section>
 
-    <!-- Custom Map Section -->
-    <div class="map-container">
-      <div id="leaflet-map"></div>
-      <div class="map-overlay">
-        <h4><i class="fas fa-map-marker-alt"></i> IIT Guwahati</h4>
-        <p><i class="fas fa-building"></i> Department of Chemical Engineering</p>
-        <p><i class="fas fa-location-arrow"></i> Guwahati-781039, Assam, India</p>
-        <p><i class="fas fa-phone"></i> +91 361 258 2300</p>
-      </div>
-    </div>
+  <!-- Static Image Map Section -->
+<div class="map-container text-center" style="padding: 60px 20px;">
+  <h4><i class="fas fa-map-marker-alt me-2"></i> Find Us on the Map</h4>
+  <p>Department of Chemical Engineering, IIT Guwahati</p>
+  <img src="map.png" alt="IIT Guwahati Location Map" class="img-fluid rounded shadow mt-3" style="max-width: 100%; height: auto;">
+  <a href="https://maps.app.goo.gl/M3RbFqzEob2PRPw57" target="_blank" class="btn btn-primary mt-4">
+    <i class="fas fa-map"></i> View in Google Maps
+  </a>
+</div>
 
 <!-- Footer -->
 <footer>
