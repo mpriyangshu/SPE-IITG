@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seminar Events | IIT Guwahati SPE Student Chapter</title>
+  <meta name="description" content="Explore the seminar and webinar events organized by IIT Guwahati SPE Student Chapter - featuring reservoir simulation, energy transition, and career opportunities.">
+  <meta name="keywords" content="SPE IITG seminars, petroleum engineering seminars, reservoir simulation, energy transition">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Seminar Events - IIT Guwahati SPE Student Chapter">
+  <meta property="og:description" content="Explore the seminar and webinar events organized by IIT Guwahati SPE Student Chapter.">
+  <meta property="og:url" content="https://www.speiitg.in/seminar.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://www.speiitg.in/logo.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="IITG SPE" />
+  <link rel="manifest" href="/favicon/site.webmanifest" />
+
+  <!-- CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  
+  <style>
+    /* Seminar Page Specific Styles */
+    body {
+      padding-top: 70px; /* Adjusted for navbar height from navbar.css */
+    }
+    /* -----------------
+   Navbar Styles
+----------------- */
+
+.navbar {
+  transition: all 0.3s ease;
+  background: rgba(0, 34, 68, 0.95);
+  backdrop-filter: blur(6px);
+  padding: 0.5rem 1rem;
+}
+
+.navbar.scrolled {
+  background: rgba(0, 34, 68, 0.98);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  margin-right: 0;
+  flex-direction: row;
+}
+
+.navbar-brand img {
+  height: 50px;
+  width: auto;
+  max-width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand img:hover {
+  transform: scale(1.05);
+}
+
+.navbar-brand span {
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #f1c40f;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  white-space: normal;
+}
+
+.navbar-toggler {
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 0.25rem 0.5rem;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  width: 1.2em;
+  height: 1.2em;
+}
+
+.navbar-nav .nav-link {
+  color: #fff !important;
+  font-weight: 600;
+  margin: 0 8px;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .dropdown:hover > .nav-link {
+  color: #f1c40f !important;
+  transform: translateY(-2px);
+}
+
+/* Dropdown Menu */
+
+.dropdown-menu {
+  background: #002244;
+  border-radius: 6px;
+  border: none;
+}
+
+.dropdown-item {
+  color: #fff !important;
+  transition: background 0.3s ease, padding-left 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background: #f1c40f;
+  color: #002244 !important;
+  padding-left: 15px;
+}
+
+.navbar-nav .dropdown:hover > .dropdown-menu {
+  display: block;
+  margin-top: 0;
+}
+
+    /* Animation Keyframes */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    /* Hero Section */
+    .seminar-hero {
+      background: url('sponsors/symback1.png') no-repeat center center/cover;
+      min-height: 40vh;
+      color: #fff;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    .seminar-hero-content { 
+      position: relative; 
+      z-index: 2; 
+      max-width: 100%;
+      animation: fadeInUp 1s ease-out 0.5s both;
+    }
+
+    .seminar-hero-title {
+      font-size: 3rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+    }
+
+    .seminar-hero-subtitle {
+      font-size: 1.2rem;
+      font-weight: 400;
+      font-style: italic;
+      color: #f8f9fa;
+      margin-bottom: 2rem;
+    }
+    
+    /* Events Section */
+    .events-section {
+      padding: 80px 0;
+      background: linear-gradient(135deg, #f0f8ff 0%, #e6f7ff 50%, #f0f8ff 100%);
+    }
+    
+    .section-title {
+        font-weight: 700;
+        color: #002244;
+        text-align: center;
+        margin-bottom: 40px;
+        position: relative;
+        padding-bottom: 10px;
+    }
+
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 3px;
+        background-color: #f1c40f;
+    }
+    
+    .event-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      margin-bottom: 60px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.5s ease;
+    }
+    
+    .event-card.animated {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    
+    .event-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+    
+    .event-date {
+      background: #003366;
+      color: white;
+      padding: 10px 20px;
+      display: inline-block;
+      border-radius: 0 0 8px 0;
+      font-weight: 700;
+      font-size: 0.9rem;
+      position: absolute;
+      z-index: 10;
+    }
+    
+    .event-content {
+      padding: 30px;
+    }
+    
+    .event-image-container {
+      height: 350px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .event-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .event-card:hover .event-image {
+      transform: scale(1.05);
+    }
+    
+    .carousel-indicators {
+      bottom: 10px;
+    }
+    
+    .carousel-indicators button {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.5);
+      border: none;
+    }
+    
+    .carousel-indicators button.active {
+      background-color: #f1c40f;
+    }
+    
+    .event-title {
+      color: #003366;
+      font-weight: 700;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+    
+    .event-description {
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    
+    .event-highlights {
+      margin: 20px 0;
+    }
+    
+    .event-highlights ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .event-highlights li {
+      margin-bottom: 8px;
+      padding-left: 25px;
+      position: relative;
+    }
+    
+    .event-highlights li:before {
+      content: "🔹";
+      position: absolute;
+      left: 0;
+      color: #f1c40f;
+    }
+    
+    .read-more {
+      color: #003366;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      transition: all 0.3s ease;
+      border: none;
+      background: none;
+      cursor: pointer;
+      padding: 0;
+    }
+    
+    .read-more:hover {
+      color: #f1c40f;
+    }
+    
+    .read-more i {
+      margin-left: 5px;
+      transition: transform 0.3s ease;
+    }
+    
+    .read-more:hover i {
+      transform: translateX(5px);
+    }
+    
+    .collapse-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+    }
+    
+    .collapse-content.show {
+      max-height: 1000px;
+    }
+    
+    /* Footer adjustments to match navbar.css */
+    footer {
+      background-color: #002244;
+      color: #fff;
+      padding: 30px 0 20px;
+    }
+    
+    footer h5 {
+      font-weight: 700;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+    
+    footer ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    footer ul li {
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+    }
+    
+    footer ul li a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    footer ul li a:hover {
+      color: #f1c40f;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.85rem;
+      color: #bbb;
+      padding-top: 15px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .social-icons a {
+      color: #fff;
+      font-size: 1.2rem;
+      margin: 0 8px;
+      transition: color 0.3s ease;
+    }
+    
+    .social-icons a:hover {
+      color: #f1c40f;
+    }
+    
+    /* Scroll to Top Button */
+    .scroll-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: #003366;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 1000;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .scroll-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .scroll-top:hover {
+      background: #f1c40f;
+      transform: translateY(-5px);
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .seminar-hero-title {
+        font-size: 2.2rem;
+      }
+      
+      .seminar-hero-subtitle {
+        font-size: 1rem;
+      }
+      
+      .event-content {
+        padding: 20px;
+      }
+      
+      .event-title {
+        font-size: 1.3rem;
+      }
+      
+      .event-image-container {
+        height: 250px;
+      }
+      
+      .events-section {
+        padding: 60px 0;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .seminar-hero {
+        min-height: 30vh;
+      }
+      
+      .seminar-hero-title {
+        font-size: 1.8rem;
+      }
+      
+      .event-content {
+        padding: 15px;
+      }
+      
+      .event-image-container {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="logo.png" alt="IIT Guwahati SPE Student Chapter Logo">
+      <span>IIT Guwahati SPE Student Chapter</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+
+        <!-- Dropdown for About -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            About
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+            <li><a class="dropdown-item" href="story.html">Our Story</a></li>
+            <li><a class="dropdown-item" href="about.html">About Us</a></li>
+            <li><a class="dropdown-item" href="gallery.html">Gallery</a></li>
+          </ul>
+        </li>
+
+        <!-- Dropdown for Membership -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="membershipDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Membership
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="membershipDropdown">
+            <li><a class="dropdown-item" href="join.html">Join as a Member</a></li>
+            <li><a class="dropdown-item" href="member.html">Member Directory</a></li>
+          </ul>
+        </li>
+
+        <!-- Dropdown for Events -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" id="eventsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Events
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="eventsDropdown">
+            <li><a class="dropdown-item" href="symposium.html">Symposium</a></li>
+            <li><a class="dropdown-item" href="workshop.html">Workshop</a></li>
+            <li><a class="dropdown-item active" href="seminar.html">Seminar and Webinar</a></li>
+            <li><a class="dropdown-item" href="conference.html">Conferences</a></li>
+          </ul>
+        </li>
+
+        <!-- Single link for IPCHD 2023 -->
+        <li class="nav-item"><a class="nav-link" href="https://event.iitg.ac.in/icphd" target="_blank">IPCHD 2023</a></li>
+
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="seminar-hero">
+  <div class="container seminar-hero-content">
+    <h1 class="seminar-hero-title">Seminar & Webinar Events</h1>
+    <p class="seminar-hero-subtitle">Expert Insights on Petroleum Engineering, Energy Transition, and Career Development</p>
+  </div>
+</section>
+
+<!-- Events Section -->
+<section class="events-section">
+  <div class="container">
+    <h2 class="section-title">Our Seminar & Webinar Events</h2>
+    
+    <!-- Event 1 - Most Recent -->
+    <div class="event-card">
+      <div class="event-date">3rd August 2024</div>
+      <div class="row g-0">
+        <div class="col-lg-6">
+          <div class="event-image-container">
+            <div id="event1Carousel" class="carousel slide h-100" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#event1Carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              </div>
+              <div class="carousel-inner h-100">
+                <div class="carousel-item active h-100">
+                  <img src="gallery/symp10.png" class="event-image d-block w-100" alt="Energy Transition and Career Opportunities">
+                </div>
+                              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#event1Carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#event1Carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="event-content">
+            <h3 class="event-title">Energy Transition and Career Opportunities at NET Enterprise Pvt. Ltd.</h3>
+            <div class="event-description">
+              <p>The IITG SPE Student Chapter organized an interactive session on 3rd August 2024, featuring Mr. Baroruchi Mishra, Partner and Group CEO of NET Enterprise Group. The session centered around the global energy transition and the career opportunities emerging within the evolving energy landscape.</p>
+              
+              <div class="collapse-content" id="event1Content">
+                <p>Mr. Mishra shared valuable insights into the challenges and opportunities of transitioning to low-carbon energy systems, emphasizing the critical role of technology, entrepreneurship, and policy frameworks in shaping the future of the sector. He highlighted NET Enterprise Group's contributions toward sustainable energy practices and discussed the growing need for skilled professionals who can navigate both traditional petroleum engineering and emerging clean energy domains.</p>
+                
+                <div class="event-highlights">
+                  <ul>
+                    <li>Global energy transition trends and implications</li>
+                    <li>Career pathways in sustainable energy enterprises</li>
+                    <li>Integration of traditional and renewable energy expertise</li>
+                    <li>NET Enterprise Group's innovative approaches</li>
+                    <li>Skills required for success in evolving energy sector</li>
+                  </ul>
+                </div>
+                
+                <p>The interactive nature of the session allowed students to engage in open discussions with the speaker, gaining clarity on career pathways, industry expectations, and skill sets required to thrive in the dynamic energy sector. The talk not only shed light on the global shift toward sustainability but also inspired participants to explore opportunities where engineering expertise meets energy innovation.</p>
+                
+                <p>The IITG SPE Student Chapter was privileged to host this session and continues to provide its members with platforms to connect with industry leaders, broaden their horizons, and prepare for impactful careers in the energy transition era.</p>
+              </div>
+            </div>
+            <button class="read-more" data-bs-toggle="collapse" data-bs-target="#event1Content" aria-expanded="false" aria-controls="event1Content">
+              Read More <i class="fas fa-chevron-down"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Event 2 -->
+    <div class="event-card">
+      <div class="event-date">29th July 2024</div>
+      <div class="row g-0">
+        <div class="col-lg-6 order-lg-2">
+          <div class="event-content">
+            <h3 class="event-title">Reservoir Development Planning: Strategies and Methodologies</h3>
+            <div class="event-description">
+              <p>The IITG SPE Student Chapter was privileged to host an insightful seminar on 29th July 2024, featuring Mr. Anup Bora, Consulting Reservoir Engineer at Kuwait Oil Company. The seminar focused on Reservoir Development Planning (RDP), providing participants with a comprehensive understanding of strategies and methodologies used to optimize reservoir performance and production.</p>
+              
+              <div class="collapse-content" id="event2Content">
+                <p>Mr. Bora shared his extensive experience in reservoir evaluation, well placement, production optimization, and field development strategies, highlighting how integrated planning ensures maximum recovery while maintaining operational efficiency. The session emphasized the importance of data-driven decision-making, simulation tools, and collaborative reservoir management in modern petroleum engineering projects.</p>
+                
+                <div class="event-highlights">
+                  <ul>
+                    <li>Comprehensive reservoir evaluation techniques</li>
+                    <li>Strategic well placement and production optimization</li>
+                    <li>Field development planning methodologies</li>
+                    <li>Data-driven decision-making in reservoir management</li>
+                    <li>Integration of simulation tools in development planning</li>
+                  </ul>
+                </div>
+                
+                <p>Attendees gained valuable insights into practical challenges, industry best practices, and innovative approaches for developing and managing oil and gas reservoirs. The seminar also offered students an opportunity to interact directly with an industry expert, bridging the gap between academic learning and real-world applications in the petroleum sector.</p>
+                
+                <p>This session reinforced the importance of systematic reservoir development planning in maximizing resource recovery while ensuring economic viability and operational efficiency in petroleum projects.</p>
+              </div>
+            </div>
+            <button class="read-more" data-bs-toggle="collapse" data-bs-target="#event2Content" aria-expanded="false" aria-controls="event2Content">
+              Read More <i class="fas fa-chevron-down"></i>
+            </button>
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <div class="event-image-container">
+            <img src="gallery/symp11.png" class="event-image w-100" alt="Reservoir Development Plan Seminar">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Event 3 -->
+    <div class="event-card">
+      <div class="event-date">18th April 2024</div>
+      <div class="row g-0">
+        <div class="col-lg-6">
+          <div class="event-image-container">
+            <div id="event3Carousel" class="carousel slide h-100" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#event3Carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                
+              </div>
+              <div class="carousel-inner h-100">
+                <div class="carousel-item active h-100">
+                  <img src="gallery/symp12.png" class="event-image d-block w-100" alt="Dynamic Reservoir Simulation Seminar">
+                </div>
+                                
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#event3Carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#event3Carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="event-content">
+            <h3 class="event-title">Dynamic Reservoir Simulation: Techniques and Applications</h3>
+            <div class="event-description">
+              <p>The IITG SPE Student Chapter was privileged to host an insightful industry talk on 18th April 2024, featuring Mr. Pankaj Kumar, Deputy Chief Engineer at the Centre of Excellence for Energy Studies, Oil India Limited. The session focused on dynamic reservoir simulation, highlighting its importance in understanding reservoir behavior and optimizing production.</p>
+              
+              <div class="collapse-content" id="event3Content">
+                <p>Mr. Kumar shared his extensive expertise on modern simulation techniques, emphasizing the integration of real-time field data, reservoir modeling, and predictive analytics to enhance reservoir performance and management. The talk provided participants with practical insights into simulation workflows, challenges in reservoir characterization, and strategies for improved recovery.</p>
+                
+                <div class="event-highlights">
+                  <ul>
+                    <li>Advanced reservoir simulation methodologies</li>
+                    <li>Integration of real-time field data in modeling</li>
+                    <li>Predictive analytics for reservoir performance</li>
+                    <li>Challenges in reservoir characterization</li>
+                    <li>Strategies for enhanced recovery optimization</li>
+                  </ul>
+                </div>
+                
+                <p>The session offered students a unique opportunity to bridge academic knowledge with industry practices, fostering a deeper understanding of how advanced reservoir simulation tools are applied in real-world petroleum operations. Participants actively engaged with the speaker, discussing current trends, challenges, and innovations in the field.</p>
+                
+                <p>The IITG SPE Student Chapter was privileged to host this talk and remains committed to providing students with platforms to learn from industry experts, enhance technical knowledge, and explore career opportunities in the petroleum and energy sector.</p>
+              </div>
+            </div>
+            <button class="read-more" data-bs-toggle="collapse" data-bs-target="#event3Content" aria-expanded="false" aria-controls="event3Content">
+              Read More <i class="fas fa-chevron-down"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Event 4 -->
+    <div class="event-card">
+      <div class="event-date">23rd February 2023</div>
+      <div class="row g-0">
+        <div class="col-lg-6 order-lg-2">
+          <div class="event-content">
+            <h3 class="event-title">Energy Transition and its Impact on Petrochemical Industries</h3>
+            <div class="event-description">
+              <p>The IITG SPE Student Chapter organized an insightful SPE Distinguished Lecture on 23rd February 2023, delivered by Dr. Rakesh Kumar Vij, Director of PDEU and former ONGC executive. The lecture focused on the theme of energy transition and its far-reaching implications for the petrochemical industries.</p>
+              
+              <div class="collapse-content" id="event4Content">
+                <p>Dr. Vij highlighted the drivers of energy transition, including climate goals, policy shifts, and technological innovation, and examined their direct and indirect impacts on the petrochemical value chain. He discussed the challenges faced by the industry in terms of sustainability, decarbonization, and operational efficiency, while also outlining emerging opportunities in cleaner fuels, renewable integration, and circular economy practices.</p>
+                
+                <div class="event-highlights">
+                  <ul>
+                    <li>Global energy transition drivers and implications</li>
+                    <li>Impact on petrochemical value chain and operations</li>
+                    <li>Sustainability challenges and decarbonization strategies</li>
+                    <li>Emerging opportunities in cleaner fuel technologies</li>
+                    <li>Circular economy practices in petrochemical sector</li>
+                  </ul>
+                </div>
+                
+                <p>The session gave students and researchers a comprehensive understanding of how the petrochemical sector is adapting to changing energy paradigms and the critical role that innovation, policy alignment, and skilled professionals will play in ensuring its sustainable growth. Participants actively engaged with Dr. Vij during the interactive Q&A, gaining clarity on both technical and career-related aspects in the evolving energy landscape.</p>
+                
+                <p>The IITG SPE Student Chapter was privileged to host this distinguished lecture and remains committed to creating opportunities for students to learn from leaders in industry and academia, building bridges between theoretical knowledge and practical applications in the energy sector.</p>
+              </div>
+            </div>
+            <button class="read-more" data-bs-toggle="collapse" data-bs-target="#event4Content" aria-expanded="false" aria-controls="event4Content">
+              Read More <i class="fas fa-chevron-down"></i>
+            </button>
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <div class="event-image-container">
+            <img src="gallery/symp09.png" class="event-image w-100" alt="Energy Transition Seminar">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row align-items-center py-4">
+      <!-- SPE Logo Column -->
+      <div class="col-12 col-md-3 mb-4 mb-md-0 d-flex justify-content-center justify-content-md-start align-items-center">
+        <img src="logo.png" alt="SPE Logo" class="img-fluid" style="max-width: 200px;">
+      </div>
+
+      <!-- Footer Links -->
+      <div class="col-12 col-md-9">
+        <div class="row">
+          <!-- Quick Links -->
+          <div class="col-6 col-md-3 mb-4">
+            <h5 class="text-uppercase fw-bold mb-3">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="https://www.spe.org/en/join/" target="_blank">Membership</a></li>
+              <li><a href="event.html">Events</a></li>
+              <li><a href="https://www.spe.org/en/about/" target="_blank">About SPE</a></li>
+            </ul>
+          </div>
+
+          <!-- Member Services -->
+          <div class="col-6 col-md-3 mb-4">
+            <h5 class="text-uppercase fw-bold mb-3">Member Services</h5>
+            <ul class="list-unstyled">
+              <li><a href="https://www.spe.org/en/join/" target="_blank">Join</a></li>
+              <li><a href="https://www.spe.org/en/join/" target="_blank">Renew</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Social Media -->
+          <div class="col-6 col-md-3 mb-4">
+            <h5 class="text-uppercase fw-bold mb-3">Follow Us</h5>
+            <div class="social-icons">
+              <a href="https://www.linkedin.com/company/spe-iit-guwahati-student-chapter" target="_blank" class="me-3">
+                <i class="fab fa-linkedin fa-lg"></i>
+              </a>
+              <a href="https://www.instagram.com/iitg_spe_sc/" target="_blank">
+                <i class="fab fa-instagram fa-lg"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- India Office -->
+          <div class="col-6 col-md-3 mb-4">
+            <h5 class="text-uppercase fw-bold mb-3">Chapter Office</h5>
+            <ul class="list-unstyled small">
+              <li>Department of Chemical Engineering</li>
+              <li>IIT Guwahati</li>
+              <li>Guwahati-781039</li>
+              <li>Assam, India</li>
+            </ul>
+            <p class="mb-0 small"><strong><a href="https://www.spe.org/chapter/6246" target="_blank">SPE WEB</a></strong></p>
+            <p class="small mb-0"><strong>Email:</strong> <a href="mailto:spe_iitguwahati@iitg.ac.in">spe_iitguwahati@iitg.ac.in</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom Row -->
+    <div class="row mt-4">
+      <div class="col text-center">
+        <p class="mb-0 small">&copy; 2025 Department of Chemical Engineering, IIT Guwahati | Designed by 
+          <a href="https://www.linkedin.com/in/priyangshumalakar/" target="_blank">Priyangshu</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll to Top Button -->
+<div class="scroll-top">
+  <i class="fas fa-arrow-up"></i>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Initialize animations on scroll
+  document.addEventListener('DOMContentLoaded', function() {
+    const eventCards = document.querySelectorAll('.event-card');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animated');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+    
+    eventCards.forEach(card => {
+      observer.observe(card);
+    });
+    
+    // Auto-rotate carousels
+    const carousels = document.querySelectorAll('.carousel');
+    carousels.forEach(carousel => {
+      new bootstrap.Carousel(carousel, {
+        interval: 4000,
+        wrap: true
+      });
+    });
+    
+    // Read more functionality
+    const readMoreButtons = document.querySelectorAll('.read-more');
+    readMoreButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const target = this.getAttribute('data-bs-target');
+        const content = document.querySelector(target);
+        const icon = this.querySelector('i');
+        
+        if (content.classList.contains('show')) {
+          this.innerHTML = 'Read More <i class="fas fa-chevron-down"></i>';
+        } else {
+          this.innerHTML = 'Read Less <i class="fas fa-chevron-up"></i>';
+        }
+      });
+    });
+  });
+  
+  // Scroll to top button
+  window.addEventListener('scroll', function() {
+    const scrollButton = document.querySelector('.scroll-top');
+    if (window.pageYOffset > 300) {
+      scrollButton.classList.add('active');
+    } else {
+      scrollButton.classList.remove('active');
+    }
+  });
+  
+  document.querySelector('.scroll-top').addEventListener('click', function() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+</script>
+</body>
+</html>
