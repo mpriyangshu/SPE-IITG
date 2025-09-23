@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Symposium Events | IIT Guwahati SPE Student Chapter</title>
+  <meta name="description" content="Explore the symposium events organized by IIT Guwahati SPE Student Chapter - featuring geothermal energy, CO2 plume imaging, and more.">
+  <meta name="keywords" content="SPE IITG symposium, petroleum engineering events, geothermal energy, CO2 sequestration">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Symposium Events - IIT Guwahati SPE Student Chapter">
+  <meta property="og:description" content="Explore the symposium events organized by IIT Guwahati SPE Student Chapter.">
+  <meta property="og:url" content="https://www.speiitg.in/symposium.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://www.speiitg.in/logo.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="IITG SPE" />
+  <link rel="manifest" href="/favicon/site.webmanifest" />
+
+  <!-- CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  
+  <style>
+    /* Symposium Page Specific Styles */
+    body {
+      padding-top: 70px; /* Adjusted for navbar height from navbar.css */
+    }
+    /* -----------------
+   Navbar Styles
+----------------- */
+
+.navbar {
+  transition: all 0.3s ease;
+  background: rgba(0, 34, 68, 0.95);
+  backdrop-filter: blur(6px);
+  padding: 0.5rem 1rem;
+}
+
+.navbar.scrolled {
+  background: rgba(0, 34, 68, 0.98);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  margin-right: 0;
+  flex-direction: row;
+}
+
+.navbar-brand img {
+  height: 50px;
+  width: auto;
+  max-width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand img:hover {
+  transform: scale(1.05);
+}
+
+.navbar-brand span {
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #f1c40f;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  white-space: normal;
+}
+
+.navbar-toggler {
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 0.25rem 0.5rem;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  width: 1.2em;
+  height: 1.2em;
+}
+
+.navbar-nav .nav-link {
+  color: #fff !important;
+  font-weight: 600;
+  margin: 0 8px;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .dropdown:hover > .nav-link {
+  color: #f1c40f !important;
+  transform: translateY(-2px);
+}
+
+/* Dropdown Menu */
+
+.dropdown-menu {
+  background: #002244;
+  border-radius: 6px;
+  border: none;
+}
+
+.dropdown-item {
+  color: #fff !important;
+  transition: background 0.3s ease, padding-left 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background: #f1c40f;
+  color: #002244 !important;
+  padding-left: 15px;
+}
+
+.navbar-nav .dropdown:hover > .dropdown-menu {
+  display: block;
+  margin-top: 0;
+}
+
+    /* Animation Keyframes */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    /* Hero Section */
+    .symposium-hero {
+      background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.9)), url('https://images.unsplash.com/photo-1581094794329-c8112a89af24?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+      min-height: 40vh;
+      color: #fff;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    .symposium-hero-content { 
+      position: relative; 
+      z-index: 2; 
+      max-width: 100%;
+      animation: fadeInUp 1s ease-out 0.5s both;
+    }
+
+    .symposium-hero-title {
+      font-size: 3rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+    }
+
+    .symposium-hero-subtitle {
+      font-size: 1.2rem;
+      font-weight: 400;
+      font-style: italic;
+      color: #f8f9fa;
+      margin-bottom: 2rem;
+    }
+    
+    /* Events Section */
+    .events-section {
+      padding: 80px 0;
+      background: linear-gradient(135deg, #e0f2f7 0%, #cceeff 50%, #e0f2f7 100%);
+    }
+    
+    .section-title {
+        font-weight: 700;
+        color: #002244;
+        text-align: center;
+        margin-bottom: 40px;
+        position: relative;
+        padding-bottom: 10px;
+    }
+
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 3px;
+        background-color: #f1c40f;
+    }
+    
+    .event-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      margin-bottom: 60px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.5s ease;
+    }
+    
+    .event-card.animated {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    
+    .event-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+    
+    .event-date {
+      background: #003366;
+      color: white;
+      padding: 10px 20px;
+      display: inline-block;
+      border-radius: 0 0 8px 0;
+      font-weight: 700;
+      font-size: 0.9rem;
+      position: absolute;
+      z-index: 10;
+    }
+    
+    .event-content {
+      padding: 30px;
+    }
+    
+    .event-image-container {
+      height: 350px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .event-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .event-card:hover .event-image {
+      transform: scale(1.05);
+    }
+    
+    .carousel-indicators {
+      bottom: 10px;
+    }
+    
+    .carousel-indicators button {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.5);
+      border: none;
+    }
+    
+    .carousel-indicators button.active {
+      background-color: #f1c40f;
+    }
+    
+    .event-title {
+      color: #003366;
+      font-weight: 700;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+    
+    .event-description {
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    
+    .event-highlights {
+      margin: 20px 0;
+    }
+    
+    .event-highlights ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .event-highlights li {
+      margin-bottom: 8px;
+      padding-left: 25px;
+      position: relative;
+    }
+    
+    .event-highlights li:before {
+      content: "🔹";
+      position: absolute;
+      left: 0;
+      color: #f1c40f;
+    }
+    
+    .read-more {
+      color: #003366;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      transition: all 0.3s ease;
+      border: none;
+      background: none;
+      cursor: pointer;
+      padding: 0;
+    }
+    
+    .read-more:hover {
+      color: #f1c40f;
+    }
+    
+    .read-more i {
+      margin-left: 5px;
+      transition: transform 0.3s ease;
+    }
+    
+    .read-more:hover i {
+      transform: translateX(5px);
+    }
+    
+    .collapse-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+    }
+    
+    .collapse-content.show {
+      max-height: 1000px;
+    }
+    
+    /* Footer adjustments to match navbar.css */
+    footer {
+      background-color: #002244;
+      color: #fff;
+      padding: 30px 0 20px;
+    }
+    
+    footer h5 {
+      font-weight: 700;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+    
+    footer ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    footer ul li {
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+    }
+    
+    footer ul li a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    footer ul li a:hover {
+      color: #f1c40f;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.85rem;
+      color: #bbb;
+      padding-top: 15px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .social-icons a {
+      color: #fff;
+      font-size: 1.2rem;
+      margin: 0 8px;
+      transition: color 0.3s ease;
+    }
+    
+    .social-icons a:hover {
+      color: #f1c40f;
+    }
+    
+    /* Scroll to Top Button */
+    .scroll-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: #003366;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 1000;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .scroll-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .scroll-top:hover {
+      background: #f1c40f;
+      transform: translateY(-5px);
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .symposium-hero-title {
+        font-size: 2.2rem;
+      }
+      
+      .symposium-hero-subtitle {
+        font-size: 1rem;
+      }
+      
+      .event-content {
+        padding: 20px;
+      }
+      
+      .event-title {
+        font-size: 1.3rem;
+      }
+      
+      .event-image-container {
+        height: 250px;
+      }
+      
+      .events-section {
+        padding: 60px 0;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .symposium-hero {
+        min-height: 30vh;
+      }
+      
+      .symposium-hero-title {
+        font-size: 1.8rem;
+      }
+      
+      .event-content {
+        padding: 15px;
+      }
+      
+      .event-image-container {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="logo.png" alt="IIT Guwahati SPE Student Chapter Logo">
+      <span>IIT Guwahati SPE Student Chapter</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+
+        <!-- Dropdown for About -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            About
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+            <li><a class="dropdown-item" href="story.html">Our Story</a></li>
+            <li><a class="dropdown-item" href="about.html">About Us</a></li>
+            <li><a class="dropdown-item" href="gallery.html">Gallery</a></li>
+          </ul>
+        </li>
+
+        <!-- Dropdown for Membership -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="membershipDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Membership
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="membershipDropdown">
+            <li><a class="dropdown-item" href="join.html">Join as a Member</a></li>
+            <li><a class="dropdown-item" href="member.html">Member Directory</a></li>
+          </ul>
+        </li>
+
+        <!-- Dropdown for Events -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" id="eventsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Events
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="eventsDropdown">
+            <li><a class="dropdown-item" href="symposium.html">Symposium</a></li>
+            <li><a class="dropdown-item" href="workshop.html">Workshop</a></li>
+            <li><a class="dropdown-item" href="seminar.html">Seminar and Webinar</a></li>
+            <li><a class="dropdown-item" href="conference.html">Conferences</a></li>
+          </ul>
+        </li>
+
+        <!-- Single link for IPCHD 2023 -->
+        <li class="nav-item"><a class="nav-link" href="https://event.iitg.ac.in/icphd" target="_blank">IPCHD 2023</a></li>
+
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="symposium-hero">
+  <div class="container symposium-hero-content">
+    <h1 class="symposium-hero-title">Symposium Events</h1>
+    <p class="symposium-hero-subtitle">Exploring the Frontiers of Petroleum Engineering and Sustainable Energy</p>
+  </div>
+</section>
+
+<!-- Events Section -->
+<section class="events-section">
+  <div class="container">
+    <h2 class="section-title">Our Symposium Events</h2>
+    
+    <!-- Event 1 - Newest Date -->
+    <div class="event-card">
+      <div class="event-date">23rd July 2025</div>
+      <div class="row g-0">
+        <div class="col-lg-6">
+          <div class="event-image-container">
+            <div id="event1Carousel" class="carousel slide h-100" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#event1Carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#event1Carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#event1Carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner h-100">
+                <div class="carousel-item active h-100">
+                  <img src="symp05.png" class="event-image d-block w-100" alt="IITG SPE Welcome Event">
+                </div>
+                <div class="carousel-item h-100">
+                  <img src="symp06.png" class="event-image d-block w-100" alt="IITG SPE Welcome Event">
+                </div>
+                <div class="carousel-item h-100">
+                  <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80" class="event-image d-block w-100" alt="Student Welcome">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#event1Carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#event1Carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="event-content">
+            <h3 class="event-title">IITG SPE Student Chapter Welcomes the New M.Tech and Ph.D. Batch</h3>
+            <div class="event-description">
+              <p>The IITG SPE Student Chapter proudly welcomed the new M.Tech and Ph.D. students for the academic year 2025-26. This event served as an exciting introduction to the chapter, its activities, and the numerous opportunities available for students to engage, learn, and grow in the field of petroleum and energy engineering.</p>
+              
+              <div class="collapse-content" id="event1Content">
+                <p>During the session, the SPE team briefed the new students about the chapter's vision, ongoing projects, and upcoming events, including technical seminars, workshops, competitions, and networking opportunities. The discussion highlighted how active participation in SPE can provide students with hands-on experience, mentorship from industry and academia, and a global professional network.</p>
+                
+                <div class="event-highlights">
+                  <ul>
+                    <li>Introduction to SPE IITG's vision and mission</li>
+                    <li>Overview of upcoming technical events and workshops</li>
+                    <li>Networking opportunities with peers and faculty</li>
+                    <li>Guidance on leveraging SPE membership for career growth</li>
+                  </ul>
+                </div>
+                
+                <p>The welcome event also emphasized the chapter's commitment to fostering innovation, research, and collaboration among students, encouraging them to explore emerging areas such as energy transition technologies, carbon capture and storage, geothermal energy, and AI-driven reservoir modeling.</p>
+                
+                <p>The IITG SPE Student Chapter is delighted to greet the new batch and looks forward to guiding and supporting them as they embark on their academic journey while contributing to a vibrant and dynamic SPE community.</p>
+              </div>
+            </div>
+            <button class="read-more" data-bs-toggle="collapse" data-bs-target="#event1Content" aria-expanded="false" aria-controls="event1Content">
+              Read More <i class="fas fa-chevron-down"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Event 2 -->
+    <div class="event-card">
+      <div class="event-date">16th July 2025</div>
+      <div class="row g-0">
+        <div class="col-lg-6 order-lg-2">
+          <div class="event-content">
+            <h3 class="event-title">CO2 Plume Imaging with Accelerated Deep Learning-based Data Assimilation</h3>
+            <div class="event-description">
+              <p>The IITG SPE Student Chapter was privileged to host a highly insightful seminar featuring Prof. Akhil Datta-Gupta from Texas A&M University. The seminar focused on CO2 plume imaging using accelerated deep learning-based data assimilation techniques applied to distributed pressure and temperature measurements.</p>
+              
+              <div class="collapse-content" id="event2Content">
+                <p>Prof. Datta-Gupta shared his extensive expertise on how advanced machine learning algorithms can be integrated with subsurface pressure and temperature data to improve the accuracy and speed of CO2 plume imaging. The session provided a comprehensive overview of state-of-the-art data assimilation strategies, demonstrating how these approaches can enhance monitoring and management of carbon storage sites.</p>
+                
+                <div class="event-highlights">
+                  <ul>
+                    <li>Advanced machine learning for CO2 plume monitoring</li>
+                    <li>Integration of subsurface pressure and temperature data</li>
+                    <li>Enhanced accuracy in carbon storage site management</li>
+                    <li>Practical applications in carbon capture and storage</li>
+                  </ul>
+                </div>
+                
+                <p>The seminar also offered students and researchers an opportunity to understand the intersection of petroleum engineering, computational modeling, and artificial intelligence, emphasizing the evolving role of upstream engineering knowledge in addressing climate and energy challenges.</p>
+                
+                <p>Participants actively engaged in discussions on practical applications, challenges, and future research directions in CO2 sequestration and data-driven subsurface modeling, highlighting the importance of innovation in sustainable energy solutions.</p>
+              </div>
+            </div>
+            <button class="read-more" data-bs-toggle="collapse" data-bs-target="#event2Content" aria-expanded="false" aria-controls="event2Content">
+              Read More <i class="fas fa-chevron-down"></i>
+            </button>
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <div class="event-image-container">
+            <img src="symp04.png" class="event-image w-100" alt="CO2 Plume Imaging Seminar">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Event 3 - Oldest Date -->
+    <div class="event-card">
+      <div class="event-date">5th May 2025</div>
+      <div class="row g-0">
+        <div class="col-lg-6">
+          <div class="event-image-container">
+            <div id="event3Carousel" class="carousel slide h-100" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#event3Carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#event3Carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#event3Carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner h-100">
+                <div class="carousel-item active h-100">
+                  <img src="symp01.png" class="event-image d-block w-100" alt="Geothermal Energy Symposium">
+                </div>
+                <div class="carousel-item h-100">
+                  <img src="symp02.png" class="event-image d-block w-100" alt="Geothermal Energy Symposium">
+                </div>
+                <div class="carousel-item h-100">
+                  <img src="symp03.png" class="event-image d-block w-100" alt="Geothermal Energy Symposium">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#event3Carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#event3Carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="event-content">
+            <h3 class="event-title">The Role of Upstream Petroleum Engineering in Energy Transition</h3>
+            <div class="event-description">
+              <p>The IITG SPE Student Chapter successfully organized a one-day symposium on Geothermal Energy and Geosequestration, bringing together experts, students, and researchers to explore how upstream petroleum engineering has been shaping the future of sustainable energy.</p>
+              
+              <div class="collapse-content" id="event3Content">
+                <p>We extend our heartfelt gratitude to our distinguished speakers — Prof. Raj Kiran, Prof. Rajeev Upadhyay, Prof. Datta Gupta, Prof. Anugrah Singh, and Prof. Sumit Kumar, Ph.D. — who shared their expertise and perspectives. Their thought-provoking sessions provided deep technical insights into the evolving role of petroleum engineering in addressing global challenges.</p>
+                
+                <div class="event-highlights">
+                  <ul>
+                    <li>Enhanced Geothermal Systems (EGS) for clean energy generation</li>
+                    <li>Machine Learning in fracture network analysis</li>
+                    <li>Carbon Capture, Utilization, and Storage (CCUS) workflows</li>
+                    <li>Geologic carbon sequestration (GCS) for net-zero future</li>
+                  </ul>
+                </div>
+                
+                <p>The symposium served as a vibrant platform to discuss how fundamental upstream disciplines — reservoir characterization, fluid dynamics, subsurface modeling, and geomechanics — have been reimagined to support renewable energy and climate solutions.</p>
+                
+                <p>The exchange of ideas and experiences made this event not only a technical deep-dive but also an inspiring demonstration of how petroleum engineers have been uniquely positioned to drive the global energy transition. By bridging traditional subsurface expertise with emerging climate technologies, the symposium highlighted the importance of innovation, collaboration, and adaptability in paving the way for a sustainable energy future.</p>
+                
+                <p>The IITG SPE Student Chapter was privileged to host this symposium and remains committed to fostering knowledge, research, and dialogue at the intersection of petroleum engineering and sustainable energy.</p>
+              </div>
+            </div>
+            <button class="read-more" data-bs-toggle="collapse" data-bs-target="#event3Content" aria-expanded="false" aria-controls="event3Content">
+              Read More <i class="fas fa-chevron-down"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row align-items-center py-4">
+      <!-- SPE Logo Column -->
+      <div class="col-12 col-md-3 mb-4 mb-md-0 d-flex justify-content-center justify-content-md-start align-items-center">
+        <img src="logo.png" alt="SPE Logo" class="img-fluid" style="max-width: 200px;">
+      </div>
+
+      <!-- Footer Links -->
+      <div class="col-12 col-md-9">
+        <div class="row">
+          <!-- Quick Links -->
+          <div class="col-6 col-md-3 mb-4">
+            <h5 class="text-uppercase fw-bold mb-3">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="https://www.spe.org/en/join/" target="_blank">Membership</a></li>
+              <li><a href="event.html">Events</a></li>
+              <li><a href="https://www.spe.org/en/about/" target="_blank">About SPE</a></li>
+            </ul>
+          </div>
+
+          <!-- Member Services -->
+          <div class="col-6 col-md-3 mb-4">
+            <h5 class="text-uppercase fw-bold mb-3">Member Services</h5>
+            <ul class="list-unstyled">
+              <li><a href="https://www.spe.org/en/join/" target="_blank">Join</a></li>
+              <li><a href="https://www.spe.org/en/join/" target="_blank">Renew</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Social Media -->
+          <div class="col-6 col-md-3 mb-4">
+            <h5 class="text-uppercase fw-bold mb-3">Follow Us</h5>
+            <div class="social-icons">
+              <a href="https://www.linkedin.com/company/spe-iit-guwahati-student-chapter" target="_blank" class="me-3">
+                <i class="fab fa-linkedin fa-lg"></i>
+              </a>
+              <a href="https://www.instagram.com/iitg_spe_sc/" target="_blank">
+                <i class="fab fa-instagram fa-lg"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- India Office -->
+          <div class="col-6 col-md-3 mb-4">
+            <h5 class="text-uppercase fw-bold mb-3">Chapter Office</h5>
+            <ul class="list-unstyled small">
+              <li>Department of Chemical Engineering</li>
+              <li>IIT Guwahati</li>
+              <li>Guwahati-781039</li>
+              <li>Assam, India</li>
+            </ul>
+            <p class="mb-0 small"><strong><a href="https://www.spe.org/chapter/6246" target="_blank">SPE WEB</a></strong></p>
+            <p class="small mb-0"><strong>Email:</strong> <a href="mailto:spe_iitguwahati@iitg.ac.in">spe_iitguwahati@iitg.ac.in</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom Row -->
+    <div class="row mt-4">
+      <div class="col text-center">
+        <p class="mb-0 small">&copy; 2025 Department of Chemical Engineering, IIT Guwahati | Designed by 
+          <a href="https://www.linkedin.com/in/priyangshumalakar/" target="_blank">Priyangshu</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll to Top Button -->
+<div class="scroll-top">
+  <i class="fas fa-arrow-up"></i>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Initialize animations on scroll
+  document.addEventListener('DOMContentLoaded', function() {
+    const eventCards = document.querySelectorAll('.event-card');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animated');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+    
+    eventCards.forEach(card => {
+      observer.observe(card);
+    });
+    
+    // Auto-rotate carousels
+    const carousels = document.querySelectorAll('.carousel');
+    carousels.forEach(carousel => {
+      new bootstrap.Carousel(carousel, {
+        interval: 4000,
+        wrap: true
+      });
+    });
+    
+    // Read more functionality
+    const readMoreButtons = document.querySelectorAll('.read-more');
+    readMoreButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const target = this.getAttribute('data-bs-target');
+        const content = document.querySelector(target);
+        const icon = this.querySelector('i');
+        
+        if (content.classList.contains('show')) {
+          this.innerHTML = 'Read More <i class="fas fa-chevron-down"></i>';
+        } else {
+          this.innerHTML = 'Read Less <i class="fas fa-chevron-up"></i>';
+        }
+      });
+    });
+  });
+  
+  // Scroll to top button
+  window.addEventListener('scroll', function() {
+    const scrollButton = document.querySelector('.scroll-top');
+    if (window.pageYOffset > 300) {
+      scrollButton.classList.add('active');
+    } else {
+      scrollButton.classList.remove('active');
+    }
+  });
+  
+  document.querySelector('.scroll-top').addEventListener('click', function() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+</script>
+</body>
+</html>
