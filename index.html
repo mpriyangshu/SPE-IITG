@@ -61,7 +61,55 @@
       font-family: 'Arial', sans-serif;
       background-color: #fdfdfd;
     }
+    /* Notification Bar Styles */
+    .notification-bar {
+      position: fixed;
+      top: 76px; /* Height of navbar */
+      left: 0;
+      width: 100%;
+      background: linear-gradient(90deg, #003366, #f1c40f, #003366);
+      color: white;
+      padding: 10px 0;
+      z-index: 1030; /* Below navbar but above content */
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+    }
     
+    .notification-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+      animation: scrollText 25s linear infinite;
+    }
+    
+    .notification-icon {
+      margin-right: 10px;
+      font-size: 1.2rem;
+    }
+    
+    .notification-text {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+	
+	@keyframes scrollText {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    
+    /* Adjust hero section to account for notification bar */
+    .hero {
+      margin-top: 46px; /* Height of notification bar */
+    }
+    
+    /* Rest of your existing styles */
+
+      
     /* Animation Keyframes */
     @keyframes fadeInUp {
       from {
@@ -614,6 +662,16 @@
 </nav>
 
 
+<!-- Notification Bar -->
+<div class="notification-bar">
+  <div class="notification-content">
+    <span class="notification-icon">👋</span>
+    <span class="notification-text">Welcome to IITG SPE – Society of Petroleum Engineers, IIT Guwahati Chapter. | 📢 Currently, there are no new updates or events. Stay tuned!</span>
+  </div>
+</div>
+
+
+  
 <!-- Hero Section -->
 <section class="hero d-flex align-items-center">
   <div class="container hero-content">
