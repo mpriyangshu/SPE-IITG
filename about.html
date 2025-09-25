@@ -49,7 +49,29 @@
   <link href="navbar.css" rel="stylesheet">
 
   <style>
+    /* Hero Section with Team Photo */
+    .hero-section {
+      position: relative;
+      height: 70vh;
+      min-height: 800px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0; /* Account for fixed navbar */
+    }
     
+    .hero-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    
+
     /* Section Titles */
     .section-title {
       text-align: center;
@@ -428,34 +450,16 @@
   </div>
 </nav>
 
+<!-- Hero Section with Team Photo -->
+<section class="hero-section">
+  <img src="team.png" alt="IITG SPE SC Team 2025-2026" class="hero-image">
+  <div class="hero-overlay"></div>
+  </section>
 
 <!-- Decorative elements -->
 <div class="decorative-circle circle-1"></div>
 <div class="decorative-circle circle-2"></div>
 
-<!-- About Section -->
-<section class="about-section">
-  <div class="container">
-    <div class="section-title">
-      <h2>Our Story</h2>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-lg-10">
-        <p>
-          The SPE IIT Guwahati Student Chapter was founded in 2016 with a vision to fulfil the mission of SPE International —
-          "To collect, disseminate, and exchange technical knowledge regarding exploration, development, and production of Oil & Gas resources,
-          and related technologies for the public benefit and to provide opportunities for students & professionals to enhance their technical
-          and professional expertise."
-        </p>
-        <p>
-          We aim to foster an environment that nurtures talent, sparks creativity, and encourages students to take up exciting careers in the
-          oil and gas industry. The chapter bridges the gap between industry and academia through events, competitions, and industrial visits,
-          striving to improve petroleum engineering education across northeast India.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- Team Section -->
 <section class="team-section">
