@@ -50,26 +50,36 @@
 
   <style>
     /* Hero Section with Team Photo */
-    .hero-section {
-      position: relative;
-      height: 70vh;
-      min-height: 800px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 0; /* Account for fixed navbar */
-    }
-    
-    .hero-image {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-    }
+   .hero-section {
+  position: relative;
+  width: 100%;
+  height: auto;         /* auto height */
+  min-height: auto;     /* remove fixed 800px */
+  max-height: 80vh;     /* limit height */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;         /* keep aspect ratio */
+  max-height: 80vh;
+  object-fit: contain;  /* no cropping on mobile */
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .hero-section {
+    max-height: 60vh;   /* smaller height on mobile */
+  }
+  .hero-image {
+    max-height: 60vh;
+  }
+}
+
     
 
     /* Section Titles */
