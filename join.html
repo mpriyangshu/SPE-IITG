@@ -331,6 +331,19 @@
       border-top: 5px solid #f1c40f;
       animation: spin 1s linear infinite;
     }
+
+    .btn-success {
+  background-color: #28a745;
+  border: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+.btn-success:hover {
+  transform: scale(1.05);
+  background-color: #218838;
+}
+
+    
   </style>
 </head>
 <body>
@@ -415,6 +428,16 @@
   </div>
 </section>
 
+
+  <!-- New Membership Form Instruction -->
+<div class="text-center mt-5" data-aos="fade-up">
+  <p class="lead">Once you are a member, please fill out the form below to officially join SPE IITG:</p>
+  <a href="https://forms.cloud.microsoft/r/Nd4bqeW7Gj" target="_blank" class="btn btn-success btn-lg">
+    Fill Membership Form
+  </a>
+</div>
+
+
 <!-- Benefits Section -->
 <section class="py-5 text-center">
   <div class="container">
@@ -489,7 +512,7 @@
           <div class="accordion-body">
             <div class="row mb-4">
               <div class="col-md-6">
-                <img src="join/1.jpg" class="img-fluid step-image" alt="SPE Website Sign In">
+                <img src="join/1.jpg" class="img-fluid step-image" alt="SPE Website Sign In", loading="lazy">
               </div>
               <div class="col-md-6">
                 <h4>Step 1</h4>
@@ -836,5 +859,9 @@
     });
   }
 </script>
+  document.querySelector('.scroll-top').addEventListener('click', function () {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
 </body>
 </html>
